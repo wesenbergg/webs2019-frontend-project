@@ -1,9 +1,10 @@
 import React from 'react'
+import FrontPage from './FrontPage'
 
 const Content = () => {
   return(
     <>
-      <p>Content</p>
+      <FrontPage />
     </>
   )
 }
