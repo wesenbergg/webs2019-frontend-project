@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
-      <Content pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       <Footer setCurrentPage={setCurrentPage} footerContent={footerContent}/>
     </div>
   );

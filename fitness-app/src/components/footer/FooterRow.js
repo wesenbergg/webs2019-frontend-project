@@ -6,7 +6,7 @@ const FooterRow = ({content, setCurrentPage, styleAttr}) => {
   if(content.name !== undefined){
     return(
       <>
-        <li><a className="text-muted" href={content.link}><i class={content.logo}></i> {content.name}</a></li>
+        <li><a className="text-muted" href={content.link}><i className={content.logo}></i> {content.name}</a></li>
       </>
     )
   }
