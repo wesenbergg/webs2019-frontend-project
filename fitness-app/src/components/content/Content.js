@@ -14,18 +14,18 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
     )
   }
 
-  if(currentPage === pages[1]){
-    return(
+  if (currentPage === pages[1]) {
+    return (
       <>
-        <Search showUsers={showUsers} setShowUsers={setShowUsers} filter={filter} setFilter={setFilter}/>
+        <Feed />
       </>
     )
   }
 
-  if (currentPage === pages[4]) {
-    return (
+  if(currentPage === pages[2]){
+    return(
       <>
-        <Feed />
+        <Search showUsers={showUsers} setShowUsers={setShowUsers} filter={filter} setFilter={setFilter}/>
       </>
     )
   }
