@@ -40,7 +40,7 @@ function App() {
       profilepic: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20'
     }
   ]
-  const about = ['Contact', 'Team', 'Privacy', 'Terms']
+  const about = ['Contact', 'Team', 'Privacy', 'Terms', 'FAQ']
   const medias = [
     {
       logo: 'fab fa-twitter',
@@ -64,7 +64,7 @@ function App() {
     }]
   const[filter, setFilter] = useState('')
   const[showUsers, setShowUsers] = useState(users)
-  const[pages, setPages] = useState(['Front Page', 'Search', 'QA', 'FAQ', 'Feed', 'News'])
+  const[pages, setPages] = useState(['Front Page', 'Feed', 'Search', 'QA', 'About'])
   const[autPages, setAutPages] = useState(['Sign in', 'Sign up'])
   const[currentPage, setCurrentPage] = useState(pages[0])
   const[footerContent, setFooterContent] = useState([
