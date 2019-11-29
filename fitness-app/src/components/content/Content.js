@@ -4,7 +4,7 @@ import Search from './search/Search'
 import SignUp from '../authentication/SignUp'
 import SignIn from '../authentication/SignIn'
 
-const Content = ({pages, autPages, currentPage, setCurrentPage}) => {
+const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setShowUsers, filter, setFilter}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -16,7 +16,7 @@ const Content = ({pages, autPages, currentPage, setCurrentPage}) => {
   if(currentPage === pages[1]){
     return(
       <>
-        <Search />
+        <Search showUsers={showUsers} setShowUsers={setShowUsers} filter={filter} setFilter={setFilter}/>
       </>
     )
   }

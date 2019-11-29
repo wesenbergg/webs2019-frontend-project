@@ -10,14 +10,14 @@ const SignUp = ({}) => {
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="firstName">First name</label>
-                <input type="text" className="form-control" id="firstName" placeholder="" value="" required />
+                <input type="text" className="form-control" id="firstName" placeholder="Severus" required />
                 <div className="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div className="col-md-6 mb-3">
                 <label htmlFor="lastName">Last name</label>
-                <input type="text" className="form-control" id="lastName" placeholder="" value="" required />
+                <input type="text" className="form-control" id="lastName" placeholder="Snape" required />
                 <div className="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -99,7 +99,7 @@ const SignUp = ({}) => {
               <label className="custom-control-label" htmlFor="same-address" required>I have read the <a href='https://en.wikipedia.org/wiki/Terms_of_service'>terms of service</a></label>
             </div>
            
-            <button className="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <button className="btn btn-primary btn-lg btn-block" type="submit">Create account</button>
           </form>
         </div>
       </div>
