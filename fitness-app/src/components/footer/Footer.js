@@ -4,7 +4,6 @@ import FooterBrand from './FooterBrand'
 
 const Footer = (footerContent, setCurrentPage) => {
     const showFooterColumns = () => footerContent.footerContent.map(e => <FooterCol key={e} colContent={e} setCurrentPage={setCurrentPage}/>)
-    
   return(
     <>    
     <footer className="container-fluid bg-dark text-secondary py-5">

@@ -4,6 +4,7 @@ import Feed from './Feed'
 import Search from './search/Search'
 import SignUp from '../authentication/SignUp'
 import SignIn from '../authentication/SignIn'
+import About from "./about/About";
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setShowUsers, filter, setFilter}) => {
   if(currentPage === pages[0]){
@@ -27,6 +28,13 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
       <>
         <Search showUsers={showUsers} setShowUsers={setShowUsers} filter={filter} setFilter={setFilter}/>
       </>
+    )
+  }
+  if(currentPage === pages[4]){
+    return(
+        <>
+         <About/>
+        </>
     )
   }
 
