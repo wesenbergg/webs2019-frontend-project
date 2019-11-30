@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "firstname": "walter",
+      "lastname": "ruoppa",
+      "username": "wwaltsu",
+      "description": "...",
+      "email": "wwaltsu@gmail.com",
+      "password": "*******",
+      "level": "intermediate",
+      "region": "Europe",
+      "profilepic": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
+      "id": 28937192837
+    },
+    {
+      "firstname": "boriss",
+      "lastname": "jerjomkin",
+      "username": "wesenbergg",
+      "description": "...",
+      "email": "wesenbergg@gmail.com",
+      "password": "*******",
+      "level": "beginner",
+      "region": "Africa",
+      "profilepic": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
+      "id": 28937192838
+    },
+    {
+      "firstname": "elias",
+      "lastname": "keranen",
+      "username": "eliaske",
+      "description": "...",
+      "email": "eliaske@gmail.com",
+      "password": "*******",
+      "level": "advanced",
+      "region": "Europe",
+      "profilepic": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
+      "id": 28937192839
+    }
+  ]
+}

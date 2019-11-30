@@ -9,43 +9,6 @@ import userService from '../services/userServices'
 function App() {
   const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About']
   const autPages = ['Sign in', 'Sign up']
-  const about = ['Contact', 'Team', 'Privacy', 'Terms', 'FAQ']
-  const medias = [
-    {
-      logo: 'fab fa-twitter',
-      name: 'Twitter',
-      link: 'https://twitter.com'
-    },
-    {
-      logo: 'fab fa-instagram',
-      name: 'Instagram',
-      link: 'https://Instagram.com'
-    },
-    {
-      logo: 'fab fa-youtube',
-      name: 'Youtube',
-      link: 'https://Youtube.com'
-    },
-    {
-      logo: 'fab fa-facebook-f',
-      name: 'Facebook',
-      link: 'https://Facebook.com'
-    }]
-
-  const footerContent = [
-    {
-        name: 'Features',
-        content: pages
-    },
-    {
-        name: 'In other medias',
-        content: medias
-    },
-    {
-        name: 'About',
-        content: about
-    }
-  ]
 
   const[filter, setFilter] = useState('')
   const[users, setUsers] = useState([])
@@ -75,12 +38,37 @@ function App() {
     })
   }
 
+  const update = (newObject) => {
+    //console.log(newObject)
+    userService
+    .update(newObject.id, newObject)
+    .then(returnedPerson => {
+      setUsers(users.map(user => user.id !== newObject.id ? user : newObject))
+      setMessage({
+        type: 'success',
+        message: `Succesfully updated ${newObject.firstname}.`
+      })
+      setTimeout(() => {
+        setMessage(null)
+      }, 5000)
+    }).catch(error => {
+      setMessage({
+        type: 'error',
+        message: `Person '${newObject.name}' was already removed from server`
+      })
+      setTimeout(() => {
+        setMessage(null)
+      }, 5000)
+      setUsers(users.filter(p => p.id !== newObject.id))
+    })
+  }
+
   return (
     <div className="App">
       <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
       <Notification message={message} />
       <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users} setShowUsers={setUsers} filter={filter} setFilter={setFilter} />
-      <Footer setCurrentPage={setCurrentPage} footerContent={footerContent}/>
+      <Footer setCurrentPage={setCurrentPage}/>
     </div>
   );
 }
