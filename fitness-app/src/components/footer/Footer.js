@@ -41,7 +41,7 @@ const Footer = (setCurrentPage) => {
     }
   ]
 
-  const showFooterColumns = () => footerContent.map(e => <FooterCol key={e} colContent={e} setCurrentPage={setCurrentPage}/>)
+  const showFooterColumns = () => footerContent.map(e => <FooterCol key={Math.floor(Math.random() * 99999999)} colContent={e} setCurrentPage={setCurrentPage}/>)
   return(
     <>    
     <footer className="container-fluid bg-dark text-secondary py-5">

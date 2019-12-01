@@ -3,14 +3,10 @@ import Navlink from './Navlink'
 
 const Navbar = ({pages, autPages, setCurrentPage}) => {
   const showLinks = () => {
-    return pages.map(page => <Navlink key={page} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link'/>)
+    return pages.map(page => <Navlink key={Math.floor(Math.random() * 9999999999)} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link'/>)
   }
   const showButtons = () => {
-    return autPages.map(page => {
-      return page === 'Sign in' ?
-      <Navlink key={page} styleAttr="btn btn-outline-primary" name={page} setCurrentPage={setCurrentPage} /> :
-      <Navlink key={page} styleAttr="btn btn-primary" name={page} setCurrentPage={setCurrentPage} />
-    })
+    return autPages.map(page => <Navlink key={Math.floor(Math.random() * 9999999999)} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link'/>)
   }
 
   return(

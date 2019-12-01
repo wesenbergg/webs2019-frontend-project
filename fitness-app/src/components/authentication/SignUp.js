@@ -1,23 +1,36 @@
 import React from 'react'
 
-const SignUp = ({}) => {
+const SignUp = ({users, newUser, setNewUser, createUser}) => {
+  const firstnameChangeHandler = e => setNewUser({...newUser, firstname: e.target.value})
+  const lastnameChangeHandler = e => setNewUser({...newUser, lastname: e.target.value})
+  const usernameChangeHandler = e => setNewUser({...newUser, username: e.target.value})
+  const emailChangeHandler = e => setNewUser({...newUser, email: e.target.value})
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    console.log(newUser)
+
+    //setNewUser(users.concat(newUser)) || createUser(newUser)
+
+    setNewUser({...newUser, firstname: "", lastname: "", username: "", email: "", password: ""})
+  }
 
   return(
     <div className="container signup">
       <div className="col-md-12 order-md-1">
           <h4 className="mb-3">Sign up</h4>
-          <form className="needs-validation" noValidate>
+          <form className="needs-validation" onSubmit={handleSubmit} noValidate>
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="firstName">First name</label>
-                <input type="text" className="form-control" id="firstName" placeholder="Severus" required />
+                <input type="text" className="form-control" id="firstname" placeholder="Severus" value={newUser.firstname} onChange={firstnameChangeHandler} required />
                 <div className="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div className="col-md-6 mb-3">
                 <label htmlFor="lastName">Last name</label>
-                <input type="text" className="form-control" id="lastName" placeholder="Snape" required />
+                <input type="text" className="form-control" id="lastName" placeholder="Snape" value={newUser.lastname} onChange={lastnameChangeHandler} required />
                 <div className="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -30,7 +43,7 @@ const SignUp = ({}) => {
                 <div className="input-group-prepend">
                   <span className="input-group-text">@</span>
                 </div>
-                <input type="text" className="form-control" id="username" placeholder="Username" required />
+                <input type="text" className="form-control" id="username" placeholder="Username" value={newUser.username} onChange={usernameChangeHandler} required />
                 <div className="invalid-feedback">
                   <p>Your username is required.</p>
                 </div>
@@ -38,8 +51,8 @@ const SignUp = ({}) => {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="email">Email <span className="text-muted">(Optional)</span></label>
-              <input type="email" className="form-control" id="email" placeholder="you@example.com" />
+              <label htmlFor="email">Email</label>
+              <input type="email" className="form-control" id="email" placeholder="you@example.com" value={newUser.email} onChange={emailChangeHandler} required/>
               <div className="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
@@ -49,13 +62,8 @@ const SignUp = ({}) => {
               <label htmlFor="password">Password</label>
               <input type="text" className="form-control" id="password" placeholder="******" type='password' required />
               <div className="invalid-feedback">
-                Please enter your shipping address.
+                Please enter a valid password.
               </div>
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="repassword">Retype Password</label>
-              <input type="text" className="form-control" id="repassword" placeholder="*******" type='password' required/>
             </div>
 
             <div className="row">
@@ -76,23 +84,7 @@ const SignUp = ({}) => {
               </div>
             </div>
 
-            <h4 className="mb-3">Experience</h4>
-            <small>Level of experience in workouts and other sports</small>
-
-            <div className="row">
-              <div className="custom-control custom-radio col-4">
-                <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" checked required />
-                <label className="custom-control-label" htmlFor="credit">Beginner</label>
-              </div>
-              <div className="custom-control custom-radio col-4">
-                <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" required />
-                <label className="custom-control-label" htmlFor="debit">Intermediate</label>
-              </div>
-              <div className="custom-control custom-radio col-4">
-                <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
-                <label className="custom-control-label" htmlFor="paypal">Advanced</label>
-              </div>
-            </div>
+            <h4 className="mb-3">Terms of service</h4>
 
             <div className="custom-control custom-checkbox">
               <input type="checkbox" className="custom-control-input" id="same-address" />

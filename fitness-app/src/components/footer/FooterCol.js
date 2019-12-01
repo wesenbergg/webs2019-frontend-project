@@ -2,7 +2,7 @@ import React from 'react'
 import FooterRow from './FooterRow'
 
 const FooterCol = ({colContent, name, setCurrentPage, styleAttr}) => {
-  const showFooterRows = () => colContent.content.map(row => <FooterRow key={row} content={row}/>)
+  const showFooterRows = () => colContent.content.map(row => <FooterRow key={Math.floor(Math.random() * 99999999)} content={row}/>)
 
   return(
     <div className="col-6 col-md">

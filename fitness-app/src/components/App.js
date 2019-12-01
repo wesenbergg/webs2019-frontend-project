@@ -13,7 +13,20 @@ function App() {
   const[filter, setFilter] = useState('')
   const[users, setUsers] = useState([])
   const[currentPage, setCurrentPage] = useState(pages[0])
-  const[message, setMessage] = useState(null)
+  const[message, setMessage] = useState({type: "hidden", message: ""})
+  const[newUser, setNewUser] = useState({
+      firstname: "",
+      lastname: "",
+      username: "",
+      description: "This is default description",
+      email: "",
+      password: "",
+      level: "beginner",
+      region: "Europe",
+      profilepic: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
+      id: 28937192839
+  })
+  const[newName, setNewName] = useState('')
 
   useEffect(() => {
     userService
@@ -33,7 +46,7 @@ function App() {
           message: `Succesfully added '${returnedUser.firstname}' to server`
         })
         setTimeout(() => {
-          setMessage(null)
+          setMessage({...message, type: "hidden"})
         }, 5000)
     })
   }
@@ -49,7 +62,7 @@ function App() {
         message: `Succesfully updated ${newObject.firstname}.`
       })
       setTimeout(() => {
-        setMessage(null)
+        setMessage({...message, type: "hidden"})
       }, 5000)
     }).catch(error => {
       setMessage({
@@ -57,7 +70,7 @@ function App() {
         message: `Person '${newObject.name}' was already removed from server`
       })
       setTimeout(() => {
-        setMessage(null)
+        setMessage({...message, type: "hidden"})
       }, 5000)
       setUsers(users.filter(p => p.id !== newObject.id))
     })
@@ -67,7 +80,8 @@ function App() {
     <div className="App">
       <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
       <Notification message={message} />
-      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users} setShowUsers={setUsers} filter={filter} setFilter={setFilter} />
+      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
+       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName}/>
       <Footer setCurrentPage={setCurrentPage}/>
     </div>
   );
