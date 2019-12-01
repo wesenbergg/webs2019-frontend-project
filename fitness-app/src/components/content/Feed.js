@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Post from './Post'
+import NewPostForm from './NewPostForm'
 
-// Uuden postauksen lisääminen vielä kesken
 const Feed = () => {
 	// Tää siirtyy pois tästä 
 	var posts = [
@@ -79,12 +79,15 @@ const Feed = () => {
 			/>
 		)
 	return (
+		<>
+		<NewPostForm />
 		<div class="card-columns" className="feedContainer">
 			{generateFeed()}
 		</div>
+		</>
 	)
 
-	// Tällä returnilla saa kaksi kolumnia vierekkäin, mutta näyttää vielä huonolta
+	// Tällä returnilla saa kaksi kolumnia vierekkäin, näyttää vielä huonolta
 	/*
 	return (
 		<div class ="card-group" className="feedContainer">
