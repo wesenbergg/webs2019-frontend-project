@@ -10,12 +10,11 @@
     justify-content: center;
     align-content: center;
     padding: 15px;
-    background: #3c3c3c;
-    border-bottom: 3px solid #ee17c2;
+    background: #343A40;
 }
 .header h1 {
-    color: #ee17c2;
-    font-size: 28px;
+    color: white;
+    font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
 
@@ -40,14 +39,14 @@
     position: relative;
     font-size: 20px;
     padding-right: 80px;
-
+    color: #09d3ac;
     transition: all 0.4s ease;
 }
 
 .faqs .faq .faq-kysymys::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 0px;
     transform: translateY(-50%);
     width: 30px;
@@ -63,13 +62,14 @@
 
 .faqs .faq .faq-vastaus {
     opacity: 0;
+    color: #09d3ac;
     max-height: 0;
     overflow-y: hidden;
     transition: all 0.4s ease-out;
 }
 
 .faqs .faq.auki .faq-kysymys {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .faqs .faq.auki .faq-kysymys::after {
@@ -77,6 +77,6 @@
 }
 
 .faqs .faq.auki .faq-vastaus {
-    max-height: 1000px;
+    max-height: 900px;
     opacity: 1;
 }

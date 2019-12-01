@@ -13,24 +13,16 @@ return (
 </div>
 <h2>Walter Ruoppa</h2>
 <div class="details">
-    <i className="fas fa-map-marker-alt"> Finland</i>
 
-    <i className="fas fa-school"> Metropolia Myllypuro</i>
+        <i className="fas fa-map-marker-alt"> Finland</i>
 
+        <i className="fas fa-school"> Metropolia Myllypuro</i>
 
         <i className="far fa-envelope"> walter.ruoppa@metropolia.fi</i>
 
-</div>
-<div className="social">
-    <i className="fab fa-facebook"></i>
-    <i className="fab fa-instagram"></i>
-    <i className="fab fa-snapchat-square"></i>
+        <i className="fas fa-phone-alt">050123123123</i>
 
 </div>
-
-
-
-
 
 </body>
 
@@ -45,14 +37,9 @@ return (
 
             <i className="fas fa-school"> Metropolia Myllypuro</i>
 
-
             <i className="far fa-envelope"> Boriss.Jerjomkim@metropolia.fi</i>
 
-        </div>
-        <div className="social">
-            <i className="fab fa-facebook"></i>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-snapchat-square"></i>
+            <i className="fas fa-phone-alt">040123123123</i>
 
         </div>
         </body>
@@ -70,14 +57,9 @@ return (
 
         <i className="fas fa-school"> Metropolia Myllypuro</i>
 
-
         <i className="far fa-envelope"> Elias.Keränen@metropolia.fi</i>
 
-    </div>
-    <div className="social">
-        <i className="fab fa-facebook"></i>
-        <i className="fab fa-instagram"></i>
-        <i className="fab fa-snapchat-square"></i>
+        <i className="fas fa-phone-alt"> 044123123123</i>
 
     </div>
     </body>
