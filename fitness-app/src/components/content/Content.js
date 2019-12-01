@@ -5,6 +5,7 @@ import Search from './search/Search'
 import SignUp from '../authentication/SignUp'
 import SignIn from '../authentication/SignIn'
 import About from "./about/About";
+import Team from "./about/Team";
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setShowUsers, filter, setFilter}) => {
   if(currentPage === pages[0]){
@@ -37,6 +38,15 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
         </>
     )
   }
+  if(currentPage === pages[5]){
+    return(
+        <>
+          <Team/>
+        </>
+    )
+  }
+
+
 
   if(currentPage === autPages[0]){
     return(
@@ -54,5 +64,7 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
     )
   }
 }
+
+
 
 export default Content
