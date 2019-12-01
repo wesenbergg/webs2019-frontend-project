@@ -1,50 +1,89 @@
 import React from 'react'
-import x1 from '../../../img/tiimiTest.jfif'
-import x2 from '../../../img/tiimiTest.jfif'
-import x3 from '../../../img/tiimiTest.jfif'
+import walter from '../../../img/walter.jpg'
+import x1 from '../../../img/test.png'
 import '../../../styles/Team.css'
 
 const Team = () => {
 return (
 
-    <div class="team-section">
-        <h1>Our Team</h1>
-        <span className="border"> </span>
+<div>
+<body class="card">
+<div class="upper">
+    <img class="kuva" src={walter}/>
+</div>
+<h2>Walter Ruoppa</h2>
+<div class="details">
+    <i className="fas fa-map-marker-alt"> Finland</i>
 
-        <div class="ps">
-            <a href="#test1"><img className="bd-placeholder-img rounded-circle card-image"  src={x1}/> </a>
-            <a href="#test1"><img  className="bd-placeholder-img rounded-circle card-image" src={x2}/> </a>
-            <a href="#test1"><img className="bd-placeholder-img rounded-circle card-image"  src={x3}/> </a>
+    <i className="fas fa-school"> Metropolia Myllypuro</i>
 
-            </div>
 
-        <div class="section" id='i1'>
-            <span className="name">Boriss Jerjomkim </span>
-            <span className="border"></span>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <i className="far fa-envelope"> walter.ruoppa@metropolia.fi</i>
+
+</div>
+<div className="social">
+    <i className="fab fa-facebook"></i>
+    <i className="fab fa-instagram"></i>
+    <i className="fab fa-snapchat-square"></i>
+
+</div>
+
+
+
+
+
+</body>
+
+    <div>
+        <body className="card">
+        <div className="upper">
+            <img className="kuva" src={x1}/>
         </div>
+        <h2>Boriss Jerjomkim</h2>
+        <div className="details">
+            <i className="fas fa-map-marker-alt"> Finland</i>
 
-        <div class="section" id= 'i2'>
-            <span className="name">Walter Ruoppa </span>
-            <span className="border"></span>
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+            <i className="fas fa-school"> Metropolia Myllypuro</i>
+
+
+            <i className="far fa-envelope"> Boriss.Jerjomkim@metropolia.fi</i>
+
         </div>
+        <div className="social">
+            <i className="fab fa-facebook"></i>
+            <i className="fab fa-instagram"></i>
+            <i className="fab fa-snapchat-square"></i>
 
-
-        <div class="section" id='i3'>
-            <span className="name">Elias Keränen </span>
-            <span className="border"></span>
-            <p>
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            </p>
         </div>
+        </body>
 
 
+</div>
 
+    <body className="card">
+    <div className="upper">
+        <img className="kuva" src={x1}/>
+    </div>
+    <h2>Elias Keränen</h2>
+    <div className="details">
+        <i className="fas fa-map-marker-alt"> Finland</i>
+
+        <i className="fas fa-school"> Metropolia Myllypuro</i>
+
+
+        <i className="far fa-envelope"> Elias.Keränen@metropolia.fi</i>
 
     </div>
+    <div className="social">
+        <i className="fab fa-facebook"></i>
+        <i className="fab fa-instagram"></i>
+        <i className="fab fa-snapchat-square"></i>
+
+    </div>
+    </body>
 
 
+</div>
 
 )
 }
