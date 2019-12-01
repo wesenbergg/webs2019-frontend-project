@@ -1,22 +1,23 @@
 import React, {useState} from 'react'
 import FAQ from './FAQ'
+import Team from "./Team";
 
 const About = () => {
 
         const [faqs, setFaqs] = useState([
             {
-                kysymys: 'Mistä voin rekisteröidä käyttäjäksi?',
-                vastaus: 'Sign up kohdasta, etusivulla oikealla ylhäällä',
-                auki: true
+                kysymys: 'Where I can register to the website',
+                vastaus: 'From top-right of the page there is a sign up button',
+                auki: false
             },
 
             {
-                kysymys: 'kysymys?',
-                vastaus: 'KYLLÄ ON ',
+                kysymys: 'Is this website free?',
+                vastaus: '100% free, no payment information required',
                 auki: false
             },
             {
-                kysymys: 'kysymys?',
+                kysymys: '?',
                 vastaus: 'vastaus',
                 auki: false
             }
@@ -43,7 +44,13 @@ const About = () => {
                     <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
                     ))}
                 </div>
+                <div className="col-lg-3">
+                    <Team/>
+                 </div>
             </div>
+
+
+
         );
 }
 

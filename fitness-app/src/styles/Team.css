@@ -1,61 +1,85 @@
-*{
+body Team {
+
+    background-color: #09d3ac;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
-.team-section {
-    overflow: hidden;
-    text-align: center;
-    background: aquamarine;
-    padding: 60px;
-}
-.team-section h1 {
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    color: white;
-    font-size: 40px;
-}
-.border {
-    display: block;
+.card {
+    background-color: white;
+    height: 420px;
+    width: 300px;
     margin: auto;
-    width: 160px;
-    height: 3px;
-    background: #3c3c3c;
-    margin-bottom: 40px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 10px #262626;
 }
-.ps{
-    margin-bottom: 40px;
+
+.upper {
+    height: 150px;
+    width: 300px;
+    background-color: #4158d0;
+    background-image: linear-gradient(43deg,#4158d0 0%, #c850c0 30%,#ffcc70 66%);
+    border-radius: 10px 10px 0px 0px;
 }
-.ps a{
-    display: inline-block;
-    margin: 0 30px;
-    width: 160px;
-    height: 160px;
-    overflow: hidden;
+.kuva{
+    max-width: 125px;
     border-radius: 50%;
+    position: relative;
+    top:80px;
+    left: 90px;
+    border:7px solid white;
+    outline: none;
 }
-.ps img{
-    width: 100%;
-    filter: grayscale(100%);
-    transition: 0.4s all;
-}
-.ps a:hover > img{
-    filter: none;
-}
-.section {
-    width: 600px;
-    margin: auto;
-    font-size: 20px;
-    color: white;
-    text-align: justify;
-    height: 0;
-    overflow: hidden;
-}
-.section:after:target
-.name {
-    display: block;
-    margin-bottom: 30px;
+h2 {
+    padding-top: 60px;
+    color:#404040;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 22px;
+    position: relative;
+    top:30px;
+    top: 10px;
+    color: grey;;
+}
+i {
+    padding-left: 5px;
+    padding-top: 10px;
+}
+.details {
+    position: relative;
+    top:5px;
+    font-size: 18px;
+    color: #4158d0;
+}
+.details i{
+    color: black;
+    margin-left: 10px;
+    margin-bottom: 2px;
+
+}
+.social {
+    font-size: 25px;
+    position: relative;
+    top:20px;
+    left:95px;
+    margin-bottom: 20px;
+}
+social i{
+    margin-left: 50px;
+    color: #af51c3;
+
+}
+
+div Team{
+    width: 70px;
+    height: 300px;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
 }
