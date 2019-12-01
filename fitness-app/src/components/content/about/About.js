@@ -17,10 +17,35 @@ const About = () => {
                 auki: false
             },
             {
-                kysymys: '?',
-                vastaus: 'vastaus',
+                kysymys: 'Is this website also for beginners?',
+                vastaus: 'Yes, from beginner to all the way to the professional athletes',
+                auki: false
+            },
+
+            {
+                kysymys: 'Is my personal information safe?',
+                vastaus: 'We dont use your personal info, other than being able to identify the users',
+                auki: false
+            },
+
+            {
+                kysymys: 'My account was deleted, even though I didn´t do anything wrong',
+                vastaus: 'Please contact our creators, found below of this same page',
+                auki: false
+            },
+
+
+
+            {
+                kysymys: 'I have a question that I can´t find answer on FAQ',
+                vastaus: 'You can send email to one of our website creators.This can be found bottom of this page',
                 auki: false
             }
+
+
+
+
+
         ]);
 
         const toggleFAQ = index => {
@@ -43,11 +68,10 @@ const About = () => {
                 {faqs.map((faq,i)=> (
                     <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
                     ))}
+                    <h2> Creators & Contact</h2>
                 </div>
-                <div className="col-lg-3">
                     <Team/>
-                 </div>
-            </div>
+             </div>
 
 
 
