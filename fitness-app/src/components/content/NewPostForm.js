@@ -10,14 +10,16 @@ const NewPostForm = () => {
     const handleTitleChange = event => setNewTitle(event.target.value)
     const handleTextChange = event => setNewText(event.target.value)
     
-    // Tähän lisätän metodiin postaus
-    const addPost = () => {
+    // Tähän metodiin lisätään postServicen käyttö
+    const addPost = (event) => {
+        event.preventDefault()
         const newPost = {
             title: {newTitle},
             text: {newText},
             image: null,
         }
-        console.log("Title:", newPost.title, "\ntext: ", newPost.text)
+        console.log("Uuden postin lisäys vielä kesken...")
+        console.log("Title:", newPost.title, "\ntext: ", newPost.text, " ", getTimestamp())
         setNewTitle('')
         setNewText('')
     }

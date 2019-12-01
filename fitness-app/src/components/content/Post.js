@@ -8,10 +8,12 @@ const findAuthorname = (author_id, users) => {
     return author.username
 }
 
+
+//const Post = ({ title, text, author_id, image_url, date, users }) => {
+    //const author_name = findAuthorname(author_id, users)
 // Kaksi vaihtoehtoista postausta, kuvallinen ja ilman kuvaa
-const Post = ({ post_id, title, text, author_id, image_url, date, users }) => {
-    const authorName = findAuthorname(author_id, users)
-    const images = [testImage, notFound] 
+const Post = ({ title, text, author_id, image_url, date, author_name }) => {
+    const images = [testImage, notFound]
     if (image_url !== null) {
         return (
             <div class="mx-auto">
@@ -24,7 +26,7 @@ const Post = ({ post_id, title, text, author_id, image_url, date, users }) => {
                             <div class="card-body">
                                 <h5 class="card-title">{title}</h5>
                                 <p class="card-text">{text}</p>
-                                <p class="card-text"><small class="text-muted">From: <a href="#" class="card-link">{authorName}</a> {date}</small></p>
+                                <p class="card-text"><small class="text-muted">From: <a href="#" class="card-link">{author_name}</a> {date}</small></p>
                             </div>
                         </div>
                     </div>
@@ -40,7 +42,7 @@ const Post = ({ post_id, title, text, author_id, image_url, date, users }) => {
                         <div class="card-body">
                             <h5 class="card-title">{title}</h5>
                             <p class="card-text">{text}</p>
-                            <p class="card-text"><small class="text-muted">From: <a href="#" class="card-link">{authorName}</a>     {date}</small></p>
+                            <p class="card-text"><small class="text-muted">From: <a href="#" class="card-link">{author_name}</a>     {date}</small></p>
                         </div>
                     </div>
                 </div>
