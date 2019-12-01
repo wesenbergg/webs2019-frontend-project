@@ -70,12 +70,8 @@ const About = () => {
                     ))}
                     <h2> Creators & Contact</h2>
                 </div>
-
-                <div>
-
                     <Team/>
-                 </div>
-            </div>
+             </div>
 
 
 
