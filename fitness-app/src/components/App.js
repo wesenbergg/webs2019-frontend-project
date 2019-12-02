@@ -27,7 +27,7 @@ function App() {
       id: Math.floor(Math.random() * 9999999),
       //terms: false
   })
-  const[newName, setNewName] = useState('')
+  const[singleUser, setSingleUser] = useState('')
 
   useEffect(() => {
     userService
@@ -82,8 +82,8 @@ function App() {
       <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
       <Notification message={message} />
       <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
-       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName}
-       setMessage={setMessage}/>
+       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
+       setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser}/>
       <Footer setCurrentPage={setCurrentPage}/>
     </div>
   );

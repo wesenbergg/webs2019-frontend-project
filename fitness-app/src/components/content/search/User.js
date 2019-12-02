@@ -1,7 +1,8 @@
 import React from 'react'
 
-const User = ({user, setCurrentPage}) => {
+const User = ({user, setSingleUser ,setCurrentPage}) => {
   const handleClick = e => {
+    setSingleUser(user)
     setCurrentPage('User Page')
   }
 

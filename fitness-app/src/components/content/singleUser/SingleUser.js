@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SingleUser = ({}) => {
+const SingleUser = ({singleUser}) => {
 
   return(
     <>
-      <p>This is single user page</p>
+      <p>{singleUser.firstname} {singleUser.lastname}</p>
     </>
   )
 }

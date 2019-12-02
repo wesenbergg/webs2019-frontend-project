@@ -8,7 +8,8 @@ import About from "./about/About";
 import Team from "./about/Team";
 import SingleUser from './singleUser/SingleUser'
 
-const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setShowUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage}) => {
+const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
+setSingleUser, singleUser}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -28,7 +29,7 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
   if(currentPage === pages[2]){
     return(
       <>
-        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage}/>
+        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser}/>
       </>
     )
   }
@@ -68,7 +69,7 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
   if(currentPage === 'User Page'){
     return(
       <>
-        <SingleUser />
+        <SingleUser singleUser={singleUser}/>
       </>
     )
   }
