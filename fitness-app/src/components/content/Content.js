@@ -7,9 +7,10 @@ import SignIn from '../authentication/SignIn'
 import About from "./about/About";
 import Team from "./about/Team";
 import SingleUser from './singleUser/SingleUser'
+import SinglePost from './singlePost'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
-setSingleUser, singleUser}) => {
+setSingleUser, singleUser, singlePost, setSinglePost}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -21,7 +22,7 @@ setSingleUser, singleUser}) => {
   if (currentPage === pages[1]) {
     return (
       <>
-        <Feed />
+        <Feed setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />
       </>
     )
   }
@@ -29,7 +30,7 @@ setSingleUser, singleUser}) => {
   if(currentPage === pages[2]){
     return(
       <>
-        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser}/>
+        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>
       </>
     )
   }
@@ -47,8 +48,6 @@ setSingleUser, singleUser}) => {
         </>
     )
   }
-
-
 
   if(currentPage === autPages[0]){
     return(
@@ -73,8 +72,14 @@ setSingleUser, singleUser}) => {
       </>
     )
   }
+
+  if(currentPage === 'Post Page'){
+    return(
+      <>
+        <SinglePost singlePost={singlePost}/>
+      </>
+    )
+  }
 }
-
-
 
 export default Content

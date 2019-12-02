@@ -2,20 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Post from './Post'
 import NewPostForm from './NewPostForm'
 import postServices from '../../services/postServices'
-import userServices from '../../services/userServices'
 
-const Feed = () => {
+const Feed = ({ setSinglePost, setCurrentPage }) => {
 	const [posts, setPosts] = useState([])
-	const [users, setUsers] = useState([])
-
-	/*
-	useEffect(() => {
-		userServices.getAll()
-			.then(initialUsers => {
-				setUsers(initialUsers)
-			})
-	}, [])
-	*/
 	useEffect(() => {
 		postServices.getAll()
 			.then(initialPosts => {
@@ -32,11 +21,12 @@ const Feed = () => {
 				author_id={post.author_id}
 				image_url={post.image}
 				date={post.date}
-				//users={users}
+				setCurrentPage={setCurrentPage}
+				setSinglePost={setSinglePost}
+				id={post.id}
 				author_name={post.author_name}
 			/>
 		)
-
 
 	return (
 		<>
@@ -46,23 +36,6 @@ const Feed = () => {
 			</div>
 		</>
 	)
-
-	// Tällä returnilla saa kaksi kolumnia vierekkäin, näyttää vielä huonolta
-	/*
-	return (
-		<div class ="card-group" className="feedContainer">
-			{generateFeed()}
-		</div>
-	)
-	*/
-	// Sama homma tässä
-	/*
-	return (
-		<div class="row row-cols-1 row-cols-md-2" className="feedContainer">
-			{generateFeed()}
-		</div>
-	)
-	*/
 }
 
 export default Feed

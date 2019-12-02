@@ -6,6 +6,11 @@ const getAll = () => {
     return request.then(response => response.data)
 }
 
+const getById = (id) => {
+    const request = axios.get(`${baseUrl}/${id}`)
+    return request.then(response => response.data)
+}
+
 const create = newObject => {
     const request = axios.post(baseUrl, newObject)
     return request.then(response => response.data)
@@ -20,4 +25,4 @@ const deleteById = (id) =>
     axios.delete(`${baseUrl}/${id}`)
 
 
-export default { getAll, create, update, deleteById }
+export default { getAll, getById, create, update, deleteById }
