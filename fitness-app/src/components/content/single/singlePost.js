@@ -1,5 +1,5 @@
 import React from 'react'
-import Post from './Post'
+import Post from '../feed/Post'
 
 // Näyttää rumalta mutta toimii
 // Yksittäiseltä postilta voi myöhemmin ottaa setCuurentPage & setSinglePost pois

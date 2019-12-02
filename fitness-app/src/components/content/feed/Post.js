@@ -1,7 +1,7 @@
 import React from 'react'
-import postServices from '../../services/postServices'
-import testImage from '../../img/test.png'
-import notFound from '../../img/not_found.png'
+import postServices from '../../../services/postServices'
+import testImage from '../../../img/test.png'
+import notFound from '../../../img/not_found.png'
 
 // Vertaa postauksen id:tä ja käyttäjälistan henkilöiden id:tä 
 const findAuthorname = (author_id, users) => {

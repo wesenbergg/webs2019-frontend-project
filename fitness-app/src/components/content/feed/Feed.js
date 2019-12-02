@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Post from './Post'
-import NewPostForm from './NewPostForm'
-import postServices from '../../services/postServices'
+import NewPostForm from '../../utilities/NewPostForm'
+import postServices from '../../../services/postServices'
 
 const Feed = ({ setSinglePost, setCurrentPage }) => {
 	const [posts, setPosts] = useState([])

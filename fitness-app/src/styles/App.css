@@ -32,3 +32,12 @@
 .feedContainer {
   display: inline-block;
 }
+
+.filter-form{
+  margin-top: 1rem;
+}
+
+.search-title{
+  margin-top: 2rem;
+  font-style: italic;
+}

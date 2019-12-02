@@ -1,13 +1,13 @@
 import React from 'react'
 import FrontPage from './frontpage/FrontPage'
-import Feed from './Feed'
+import Feed from './feed/Feed'
 import Search from './search/Search'
 import SignUp from '../authentication/SignUp'
 import SignIn from '../authentication/SignIn'
 import About from "./about/About";
 import Team from "./about/Team";
-import SingleUser from './singleUser/SingleUser'
-import SinglePost from './singlePost'
+import SingleUser from './single/SingleUser'
+import SinglePost from './single/singlePost'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
 setSingleUser, singleUser, singlePost, setSinglePost}) => {

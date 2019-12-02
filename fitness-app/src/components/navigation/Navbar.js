@@ -1,5 +1,6 @@
 import React from 'react'
 import Navlink from './Navlink'
+import NavDropdown from './NavDropdown'
 
 const Navbar = ({pages, autPages, setCurrentPage}) => {
   const showLinks = () => {
@@ -25,7 +26,7 @@ const Navbar = ({pages, autPages, setCurrentPage}) => {
 
           <div className="form-inline mt-2 mt-md-0">
             <ul className="navbar-nav mr-auto">
-              <Navlink name="Signed in as, " setCurrentPage="" styleAttr='nav-link'/>
+              <NavDropdown name="Kalle" setCurrentPage=""/>
               {showButtons()}
             </ul>
           </div>
@@ -36,3 +37,15 @@ const Navbar = ({pages, autPages, setCurrentPage}) => {
 }
 
 export default Navbar
+/*
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>*/
