@@ -6,6 +6,7 @@ import SignUp from '../authentication/SignUp'
 import SignIn from '../authentication/SignIn'
 import About from "./about/About";
 import Team from "./about/Team";
+import SingleUser from './singleUser/SingleUser'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setShowUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage}) => {
   if(currentPage === pages[0]){
@@ -27,7 +28,7 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
   if(currentPage === pages[2]){
     return(
       <>
-        <Search showUsers={showUsers} setShowUsers={setShowUsers} filter={filter} setFilter={setFilter}/>
+        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage}/>
       </>
     )
   }
@@ -60,6 +61,14 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
     return(
       <>
         <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} setMessage={setMessage}/>
+      </>
+    )
+  }
+
+  if(currentPage === 'User Page'){
+    return(
+      <>
+        <SingleUser />
       </>
     )
   }

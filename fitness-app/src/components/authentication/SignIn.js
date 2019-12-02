@@ -1,9 +1,12 @@
 import React from 'react'
 
 const SignIn = ({}) => {
+  const handleSubmit = () => {
+      //TODO: validate form
+  }
 
   return(
-    <div className="signin container text-center">
+    <div className="signin container text-center" onSubmit={handleSubmit}>
       <form className="form-signin">
         <h1><i className="fas fa-dumbbell"></i></h1>
         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>

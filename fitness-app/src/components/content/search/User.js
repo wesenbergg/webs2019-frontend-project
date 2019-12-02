@@ -1,12 +1,14 @@
 import React from 'react'
 
-const User = ({user}) => {
-  //const showUsers = () => users.map(user => <User key={email} user={user}/>)
-  console.log(user)
+const User = ({user, setCurrentPage}) => {
+  const handleClick = e => {
+    setCurrentPage('User Page')
+  }
+
   return(
     <div>
       <img src={user.profilepic}/>
-      <p>{user.firstname} {user.lastname}</p>
+      <p onClick={handleClick} title={user.firstname}>{user.firstname} {user.lastname}</p>
     </div>
   )
 }
