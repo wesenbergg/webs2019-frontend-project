@@ -1,18 +1,45 @@
 import React from 'react'
 
-const SignUp = ({users, newUser, setNewUser, createUser}) => {
+const SignUp = ({users, newUser, setNewUser, createUser, setMessage}) => {
   const firstnameChangeHandler = e => setNewUser({...newUser, firstname: e.target.value})
   const lastnameChangeHandler = e => setNewUser({...newUser, lastname: e.target.value})
   const usernameChangeHandler = e => setNewUser({...newUser, username: e.target.value})
   const emailChangeHandler = e => setNewUser({...newUser, email: e.target.value})
+  const passwordChangeHandler = e => setNewUser({...newUser, password: e.target.value})
+  const regionChangeHandler = e => setNewUser({...newUser, region: e.target.value})
+  //const termsChangeHandler = e => setNewUser({...newUser, terms: !e.target.value}) || console.log(e.target.value)
+  const handleError = (m) => {
+    setMessage({
+      type: 'error',
+      message: m
+    })
+    setTimeout(() => {
+      setMessage({
+        type: 'hidden',
+        message: ""
+      })
+    }, 5000)
+  }
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(newUser)
 
-    //setNewUser(users.concat(newUser)) || createUser(newUser)
+    //TODO: Validointi
+    if(newUser.firstname.length < 3 || newUser.lastname.length < 3 || newUser.username.length < 3 || newUser.email.length < 5 || newUser.password.length < 6){
+      handleError(`Give valid credentials`)
+      return
+    }
 
-    setNewUser({...newUser, firstname: "", lastname: "", username: "", email: "", password: ""})
+    let foundUser = users.find(u => (u.username === newUser.username || u.email === newUser.email))
+
+    foundUser !== undefined ?
+    handleError("Username and email must be unique"):
+    setNewUser(users.concat(newUser)) || createUser(newUser)
+    
+
+    //TODO: Redirect
+    setNewUser({...newUser, firstname: "", lastname: "", username: "", email: "", password: "", id: Math.floor(Math.random() * 9999999)})
+    //console.log(newUser)
   }
 
   return(
@@ -60,7 +87,7 @@ const SignUp = ({users, newUser, setNewUser, createUser}) => {
 
             <div className="mb-3">
               <label htmlFor="password">Password</label>
-              <input type="text" className="form-control" id="password" placeholder="******" type='password' required />
+              <input type="text" className="form-control" id="password" placeholder="******" type='password' value={newUser.password} onChange={passwordChangeHandler} required />
               <div className="invalid-feedback">
                 Please enter a valid password.
               </div>
@@ -69,7 +96,7 @@ const SignUp = ({users, newUser, setNewUser, createUser}) => {
             <div className="row">
               <div className="col-md-5 mb-3">
                 <label htmlFor="country">Region</label>
-                <select className="custom-select d-block w-100" id="country" required>
+                <select className="custom-select d-block w-100" id="country" onChange={regionChangeHandler} required>
                   <option value="">Choose...</option>
                   <option>Africa</option>
                   <option>Asia</option>
@@ -87,8 +114,8 @@ const SignUp = ({users, newUser, setNewUser, createUser}) => {
             <h4 className="mb-3">Terms of service</h4>
 
             <div className="custom-control custom-checkbox">
-              <input type="checkbox" className="custom-control-input" id="same-address" />
-              <label className="custom-control-label" htmlFor="same-address" required>I have read the <a href='https://en.wikipedia.org/wiki/Terms_of_service'>terms of service</a></label>
+              <input type="checkbox" className="custom-control-input" id="same-address" required/>
+              <label className="custom-control-label" htmlFor="same-address">I have read the <a href='https://en.wikipedia.org/wiki/Terms_of_service'>terms of service</a></label>
             </div>
            
             <button className="btn btn-primary btn-lg btn-block" type="submit">Create account</button>

@@ -24,7 +24,8 @@ function App() {
       level: "beginner",
       region: "Europe",
       profilepic: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
-      id: 28937192839
+      id: Math.floor(Math.random() * 9999999),
+      //terms: false
   })
   const[newName, setNewName] = useState('')
 
@@ -67,7 +68,7 @@ function App() {
     }).catch(error => {
       setMessage({
         type: 'error',
-        message: `Person '${newObject.name}' was already removed from server`
+        message: `Person '${newObject.username}' was already removed from server`
       })
       setTimeout(() => {
         setMessage({...message, type: "hidden"})
@@ -81,7 +82,8 @@ function App() {
       <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
       <Notification message={message} />
       <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
-       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName}/>
+       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName}
+       setMessage={setMessage}/>
       <Footer setCurrentPage={setCurrentPage}/>
     </div>
   );

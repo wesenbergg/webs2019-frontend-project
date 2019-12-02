@@ -25,6 +25,7 @@ const Navbar = ({pages, autPages, setCurrentPage}) => {
 
           <div className="form-inline mt-2 mt-md-0">
             <ul className="navbar-nav mr-auto">
+              <Navlink name="Signed in as, " setCurrentPage="" styleAttr='nav-link'/>
               {showButtons()}
             </ul>
           </div>

@@ -7,7 +7,7 @@ import SignIn from '../authentication/SignIn'
 import About from "./about/About";
 import Team from "./about/Team";
 
-const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setShowUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName}) => {
+const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setShowUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -59,7 +59,7 @@ const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, setSh
   if(currentPage === autPages[1]){
     return(
       <>
-        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName}/>
+        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} setMessage={setMessage}/>
       </>
     )
   }
