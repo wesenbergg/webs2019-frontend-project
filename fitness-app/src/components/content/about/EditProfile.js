@@ -3,7 +3,7 @@ import '../../../styles/EditProfile.css'
 import walter from "../../../img/walter.jpg"
 import a from "../../../img/test.png"
 const EditProfile = () => {
-const editButton = <button type="submit">Update profile</button>
+
 
     return (
 
@@ -15,9 +15,9 @@ const editButton = <button type="submit">Update profile</button>
                 <div className="align-self-end">
                     <img  alt="Walter" src={walter}/>
                 </div>
-                <p> <h5> Walter95 </h5></p>
-                <p> <h5> Finland </h5> </p>
-                <h4>About me</h4>
+                 <h5> Walter95 </h5>
+                 <h5> Finland </h5>
+                 <h4>About me</h4>
                 Harrastuksiini kuuluu sali ja cardio. Harrastan välillä tanssia myös. Vapaa-aikani tykkään viettää Espanjan lämmössä, juoden sangriaa, olutta ja mojitoja.
                 <div className="d-flex justify-content-center">
                 </div>
