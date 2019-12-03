@@ -61,3 +61,7 @@
 .profile-links .dropdown-item:hover{
   background: rgb(86, 142, 248);
 }
+
+.signup button, .signin button{
+  min-height: 3rem;
+}

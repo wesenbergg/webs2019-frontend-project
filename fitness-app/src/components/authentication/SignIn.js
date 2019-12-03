@@ -44,7 +44,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
   }
 
   return(
-    <div className="signin container text-center" onSubmit={handleSubmit}>
+    <div className="signin container text-center signin" onSubmit={handleSubmit}>
       <form className="form-signin">
         <h1><i className="fas fa-dumbbell"></i></h1>
         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
