@@ -20,3 +20,9 @@
 .card-img {
     width: 200px;
 }
+
+.newPostForm {
+    max-width: 540px;
+    width: 50%;
+    margin: 0 auto;
+}

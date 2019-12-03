@@ -40,16 +40,31 @@ const NewPostForm = ({ posts, setPosts }) => {
         setNewTitle('')
         setNewText('')
     }
-
     return (
         <div>
-            <form onSubmit={addPost}>
-                <input type="text" value={newTitle} onChange={handleTitleChange} />
-                <input type="text" value={newText} onChange={handleTextChange} />
+            <br />
+            <form className="newPostForm" onSubmit={addPost}>
+                <div className="form-group">
+                    <input id="newPostTitle" className="form-control" type="text" value={newTitle} onChange={handleTitleChange} placeholder="Title" />
+                </div>
+                <div className="form-group">
+                    <textarea className="form-control" type="text" value={newText} onChange={handleTextChange} placeholder="Text" />
+                </div>
                 <button type="submit">post</button>
             </form>
         </div>
     )
+    /*
+    return (
+        <div>
+            <form onSubmit={addPost}>
+                <input type="text" value={newTitle} onChange={handleTitleChange} />
+                <textarea type="text" value={newText} onChange={handleTextChange} />
+                <button type="submit">post</button>
+            </form>
+        </div>
+    )
+    */
 }
 
 export default NewPostForm
