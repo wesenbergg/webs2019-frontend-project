@@ -29,6 +29,7 @@ function App() {
   })
   const[singleUser, setSingleUser] = useState('')
   const[singlePost, setSinglePost] = useState('')
+  const[credentials, setCredentials] = useState({username: '', password: ''})
 
   useEffect(() => {
     userService
@@ -84,7 +85,8 @@ function App() {
       <Notification message={message} />
       <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
        setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
-       setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost}/>
+       setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost} 
+       credentials={credentials} setCredentials={setCredentials}/>
       <Footer setCurrentPage={setCurrentPage}/>
     </div>
   );

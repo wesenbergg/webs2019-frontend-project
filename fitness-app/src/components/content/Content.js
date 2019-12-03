@@ -10,7 +10,7 @@ import SingleUser from './single/SingleUser'
 import SinglePost from './single/singlePost'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
-setSingleUser, singleUser, singlePost, setSinglePost}) => {
+setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -52,7 +52,7 @@ setSingleUser, singleUser, singlePost, setSinglePost}) => {
   if(currentPage === autPages[0]){
     return(
       <>
-        <SignIn />
+        <SignIn credentials={credentials} setCredentials={setCredentials} setMessage={setMessage} setCurrentPage={setCurrentPage}/>
       </>
     )
   }
@@ -60,7 +60,8 @@ setSingleUser, singleUser, singlePost, setSinglePost}) => {
   if(currentPage === autPages[1]){
     return(
       <>
-        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} setMessage={setMessage}/>
+        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} 
+        setMessage={setMessage} setCurrentPage={setCurrentPage}/>
       </>
     )
   }
