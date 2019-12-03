@@ -1,7 +1,7 @@
 import React from 'react'
-import '../../../styles/Form.css'
+import '../../styles/Form.css'
 
-import walter from "../../../img/walter.jpg"
+import walter from "../../img/walter.jpg"
 const Form = () => {
     const editButton = <button type="submit">Update profile</button>
 

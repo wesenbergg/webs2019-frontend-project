@@ -8,8 +8,8 @@ import About from "./about/About";
 import Team from "./about/Team";
 import SingleUser from './single/SingleUser'
 import SinglePost from './single/singlePost'
-import EditProfile from "./about/EditProfile";
-import Form from "./about/Form";
+import EditProfile from "../profile/EditProfile";
+import Form from "../profile/Form";
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
 setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser}) => {

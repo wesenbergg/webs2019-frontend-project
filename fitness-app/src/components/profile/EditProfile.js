@@ -1,7 +1,7 @@
 import React from 'react'
-import '../../../styles/EditProfile.css'
-import walter from "../../../img/walter.jpg"
-import a from "../../../img/test.png"
+import '../../styles/EditProfile.css'
+import walter from "../../img/walter.jpg"
+import a from "../../img/test.png"
 const EditProfile = () => {
 
 
