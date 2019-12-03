@@ -17,7 +17,7 @@ const EditProfile = () => {
                 </div>
                  <h5> Walter95 </h5>
                  <h5> Finland </h5>
-                 <h4>About me</h4>
+                 <h4> About me</h4>
                 Harrastuksiini kuuluu sali ja cardio. Harrastan välillä tanssia myös. Vapaa-aikani tykkään viettää Espanjan lämmössä, juoden sangriaa, olutta ja mojitoja.
                 <div className="d-flex justify-content-center">
                 </div>
