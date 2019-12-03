@@ -10,8 +10,12 @@ const findAuthorname = (author_id, users) => {
     return author.username
 }
 
-function handleClick({setCurrentPage, setSinglePost, id}) {
-    console.log(id)
+// yksittäinen posti (singlePost) ei saa propseinaan setCurrentPagea tai setSinglePostia (ne ovat 'undefined')
+// tällöin halutaan onClick, joka ei tee mitään (parempaa ratkaisua odotellessa :D)... 
+function handleClick({ setCurrentPage, setSinglePost, id }) {
+    if (setCurrentPage === undefined || setSinglePost === undefined) {
+        return
+    }
     postServices.getById(id)
         .then(post => {
             setSinglePost(post)
@@ -32,7 +36,7 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h4 className="card-title" onClick={() => handleClick({setCurrentPage, setSinglePost, id})}>{title}</h4>
+                                <h4 className="card-title" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
                                 <p className="card-text">{text}</p>
                                 <p className="card-text"><small className="text-muted">From: <span className="card-link author-link">{author_name}</span> {date}</small></p>
                             </div>
@@ -48,7 +52,7 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                 <div className="row no-gutters">
                     <div className="col-md-12">
                         <div className="card-body">
-                        <h4 className="card-title" onClick={() => handleClick({setCurrentPage, setSinglePost, id})}>{title}</h4>
+                            <h4 className="card-title" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
                             <p className="card-text">{text}</p>
                             <p className="card-text"><small className="text-muted">From: <span className="card-link author-link">{author_name}</span>     {date}</small></p>
                         </div>

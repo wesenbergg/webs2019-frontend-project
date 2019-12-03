@@ -73,7 +73,7 @@
       "date": "10.000 eaa.",
       "author_id": 28937192838,
       "author_name": "boriss"
-    },		
+    },
     {
       "id": 5,
       "title": "Viides",
@@ -82,6 +82,33 @@
       "date": "Huomenna, ajan rakenne on muuttunut",
       "author_id": 28937192837,
       "author_name": "walter"
+    },
+    {
+      "id": 6,
+      "title": "Kuudes",
+      "text": "Uuden postin lisääminen onnistuunee(=?)",
+      "image": null,
+      "date": "22:34 3/11/2019",
+      "author_id": 10000000,
+      "author_name": "Testi"
+    },
+    {
+      "id": 7,
+      "title": "Seiska",
+      "text": "Lista postauksista päivittyy",
+      "image": null,
+      "date": "22:39 3/11/2019",
+      "author_id": 10000000,
+      "author_name": "Testi"
+    },
+    {
+      "id": 8,
+      "title": "8",
+      "text": "Postaus päivittyy listan päällimmäiseksi",
+      "image": null,
+      "date": "23:17 3/11/2019",
+      "author_id": 10000000,
+      "author_name": "Testi"
     }
   ],
   "comments": [
@@ -93,17 +120,5 @@
   ],
   "profile": {
     "name": "typicode"
-  },
-  "login": {
-    "firstname": "User",
-    "lastname": "Test",
-    "username": "testuser123",
-    "description": "This is test user, ullamco dolore. Aliqua ipsum velit hamburger magna mollit dolor doner id tempor. Elit turducken minim ipsum mollit. Andouille burgdoggen voluptate shank ham sausage aliquip. Enim sed exercitation bacon, spare ribs drumstick ground round doner eu pig meatball.",
-    "email": "test@test.com",
-    "level": "intermediate",
-    "region": "Europe",
-    "profilepic": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
-    "id": 28937192837,
-    "token": "123456"
   }
 }

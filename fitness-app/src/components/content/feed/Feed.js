@@ -9,6 +9,7 @@ const Feed = ({ setSinglePost, setCurrentPage }) => {
 	useEffect(() => {
 		postServices.getAll()
 			.then(initialPosts => {
+				initialPosts.reverse()
 				setPosts(initialPosts)
 			})
 	}, [])
@@ -31,7 +32,7 @@ const Feed = ({ setSinglePost, setCurrentPage }) => {
 
 	return (
 		<>
-			<NewPostForm />
+			<NewPostForm posts={posts} setPosts={setPosts}/>
 			<div className="card-columns" className="feedContainer">
 				{generateFeed()}
 			</div>
