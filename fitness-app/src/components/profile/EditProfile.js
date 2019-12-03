@@ -2,6 +2,8 @@ import React from 'react'
 import '../../styles/EditProfile.css'
 import walter from "../../img/walter.jpg"
 import a from "../../img/test.png"
+import ProfilePost from "./ProfilePost";
+
 const EditProfile = () => {
 
 
@@ -30,11 +32,11 @@ const EditProfile = () => {
 
                 <div className="block">
 
-                    <p><img className="image1"  alt="a" src={a}/></p>
-                    <p><img className="image1"  alt="a" src={a}/></p>
-                    <p><img className="image1"  alt="a" src={a}/></p>
-                    <p><img className="image1"  alt="a" src={a}/></p>
-                    <p><img className="image1"  alt="a" src={a}/></p>
+                    <ProfilePost/>
+                    <ProfilePost/>
+                    <ProfilePost/>
+                    <ProfilePost/>
+                    <ProfilePost/>
 
                 </div>
             </form>
