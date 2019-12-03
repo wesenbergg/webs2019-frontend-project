@@ -7,7 +7,7 @@ import Notification from './Notification.js'
 import userService from '../services/userServices'
 
 function App() {
-  const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About']
+  const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About','EditProfile',"Form"]
   const autPages = ['Sign in', 'Sign up']
 
   const[filter, setFilter] = useState('')
@@ -29,6 +29,8 @@ function App() {
   })
   const[singleUser, setSingleUser] = useState('')
   const[singlePost, setSinglePost] = useState('')
+  const[credentials, setCredentials] = useState({username: '', password: ''})
+  const[loggedUser, setLoggedUser] = useState({})
 
   useEffect(() => {
     userService
@@ -53,7 +55,28 @@ function App() {
     })
   }
 
-  const update = (newObject) => {
+  return (
+    <div className="App">
+      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage} loggedUser={loggedUser}/>
+      <Notification message={message} />
+      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
+       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
+       setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost} 
+       credentials={credentials} setCredentials={setCredentials} loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
+      <Footer setCurrentPage={setCurrentPage}/>
+    </div>
+  );
+}
+
+export default App;
+
+
+/*
+
+ÄLÄ POISTA
+
+*/
+  /*const update = (newObject) => {
     //console.log(newObject)
     userService
     .update(newObject.id, newObject)
@@ -76,18 +99,4 @@ function App() {
       }, 5000)
       setUsers(users.filter(p => p.id !== newObject.id))
     })
-  }
-
-  return (
-    <div className="App">
-      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
-      <Notification message={message} />
-      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
-       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
-       setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost}/>
-      <Footer setCurrentPage={setCurrentPage}/>
-    </div>
-  );
-}
-
-export default App;
+  }*/

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignUp = ({users, newUser, setNewUser, createUser, setMessage}) => {
+const SignUp = ({users, newUser, setNewUser, createUser, setMessage, setCurrentPage}) => {
   const firstnameChangeHandler = e => setNewUser({...newUser, firstname: e.target.value})
   const lastnameChangeHandler = e => setNewUser({...newUser, lastname: e.target.value})
   const usernameChangeHandler = e => setNewUser({...newUser, username: e.target.value})
@@ -36,10 +36,12 @@ const SignUp = ({users, newUser, setNewUser, createUser, setMessage}) => {
     handleError("Username and email must be unique"):
     setNewUser(users.concat(newUser)) || createUser(newUser)
     
+    if (foundUser !== undefined) return
 
     //TODO: Redirect
     setNewUser({...newUser, firstname: "", lastname: "", username: "", email: "", password: "", id: Math.floor(Math.random() * 9999999)})
     //console.log(newUser)
+    setCurrentPage('Sign in')
   }
 
   return(

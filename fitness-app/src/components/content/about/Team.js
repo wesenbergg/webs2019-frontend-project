@@ -6,12 +6,12 @@ import '../../../styles/Team.css'
 class Team extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container margin">
             <div className=" row d-flex justify-content-around">
-                <body className="card col-md-3 ">
+                <div className="card col-md-3 ">
                 <div className="kortti">
                 <div className="upper">
-                    <img className="kuva" src={walter}/>
+                    <img className="kuva" alt="Walter" src={walter}/>
                 </div>
                 <h2>Walter Ruoppa</h2>
                 <div className="details">
@@ -22,17 +22,17 @@ class Team extends Component {
 
                     <i className="far fa-envelope"> Walter.Ruoppa@metropolia.fi</i>
 
-                    <i className="fas fa-phone-alt">050123123123</i>
+                    <i className="fas fa-phone-alt"> 050123123123</i>
 
                 </div>
                 </div>
 
-                </body>
+                </div>
 
 
-                <body className="card col-md-3">
+                <div className="card col-md-3">
                     <div className="upper">
-                        <img className="kuva" src={x1}/>
+                        <img className="kuva" alt="Boriss" src={x1}/>
                     </div>
                     <h2>Boriss Jerjomkim</h2>
                     <div className="details">
@@ -42,14 +42,14 @@ class Team extends Component {
 
                         <i className="far fa-envelope"> Boriss.Jerjomkim@metropolia.fi</i>
 
-                        <i className="fas fa-phone-alt">040123123123</i>
+                        <i className="fas fa-phone-alt"> 040123123123</i>
 
                     </div>
-                    </body>
+                    </div>
 
-                <body className="card col-md-3">
+                <div className="card col-md-3">
                 <div className="upper">
-                    <img className="kuva" src={x1}/>
+                    <img className="kuva" alt="Elias" src={x1}/>
                 </div>
                 <h2>Elias Keränen</h2>
 
@@ -63,7 +63,7 @@ class Team extends Component {
                     <i className="fas fa-phone-alt"> 044123123123</i>
 
                 </div>
-                </body>
+                </div>
 
             </div>
             </div>

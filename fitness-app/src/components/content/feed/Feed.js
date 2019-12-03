@@ -32,7 +32,7 @@ const Feed = ({ setSinglePost, setCurrentPage }) => {
 	return (
 		<>
 			<NewPostForm />
-			<div class="card-columns" className="feedContainer">
+			<div className="card-columns" className="feedContainer">
 				{generateFeed()}
 			</div>
 		</>

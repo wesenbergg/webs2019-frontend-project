@@ -66,7 +66,7 @@ const About = () => {
                 </div>
                 <div className='faqs'>
                 {faqs.map((faq,i)=> (
-                    <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
+                    <FAQ key={Math.floor(Math.random() * 99999999)} faq={faq} index={i} toggleFAQ={toggleFAQ}/>
                     ))}
                     <h2> Creators & Contact</h2>
                 </div>

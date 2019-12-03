@@ -1,0 +1,24 @@
+import React, { useState, useEffect } from 'react'
+import walter from "../../img/walter.jpg"
+const ProfilePost = () => {
+
+return (
+    <div
+        className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative lirumLarum container">
+
+        <div className="col p-4 d-flex flex-column position-static bg-light ">
+            <h2>Koripallo  <div className="mb-1 text-muted">3.12.2019</div> </h2>
+
+            <p className="mb-auto profile-desc">aalimpaa sanojen sijoitusta kuin 'Sisältöä tähän, sisältöä tähän'. Monet tietokoneen julkistusohjelmäyttävät nyt Lorem Ipsumia heidän normaalina mallitekstinä. 'Lorem Ipsumia' etsittäessä löytyy monen monta nettisivua, jotka ovat vasta aluillaan. Useita versioita on muodostunut vuosien kuluessa, jotkut vahingossa ja jotkut tarkoituksella (lisätty huumoria ja niin edelleen).</p>
+            <div className="justify-content-center">
+                <a className="btn btn-dark text-light profile-link">Expand</a>
+            </div>
+        </div>
+        <div className="col-auto d-none d-lg-block">
+            <img className="bd-placeholder-image kuva1" src={walter}/>
+        </div>
+    </div>
+)
+}
+
+export default ProfilePost

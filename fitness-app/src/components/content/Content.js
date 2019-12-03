@@ -8,9 +8,11 @@ import About from "./about/About";
 import Team from "./about/Team";
 import SingleUser from './single/SingleUser'
 import SinglePost from './single/singlePost'
+import EditProfile from "../profile/EditProfile";
+import Form from "../profile/Form";
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
-setSingleUser, singleUser, singlePost, setSinglePost}) => {
+setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -41,18 +43,31 @@ setSingleUser, singleUser, singlePost, setSinglePost}) => {
         </>
     )
   }
+
+
   if(currentPage === pages[5]){
-    return(
-        <>
-          <Team/>
-        </>
-    )
-  }
+        return(
+            <>
+                <EditProfile/>
+            </>
+        )
+    }
+
+    if(currentPage === pages[6]){
+        return(
+            <>
+                <Form/>
+            </>
+        )
+    }
+
+
 
   if(currentPage === autPages[0]){
     return(
       <>
-        <SignIn />
+        <SignIn credentials={credentials} setCredentials={setCredentials} setMessage={setMessage} setCurrentPage={setCurrentPage}
+        setLoggedUser={setLoggedUser}/>
       </>
     )
   }
@@ -60,7 +75,8 @@ setSingleUser, singleUser, singlePost, setSinglePost}) => {
   if(currentPage === autPages[1]){
     return(
       <>
-        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} setMessage={setMessage}/>
+        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} 
+        setMessage={setMessage} setCurrentPage={setCurrentPage}/>
       </>
     )
   }

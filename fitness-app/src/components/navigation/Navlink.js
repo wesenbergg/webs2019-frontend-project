@@ -7,7 +7,7 @@ const Navlink = ({name, setCurrentPage, styleAttr}) => {
     return(
       <>
         <li className="nav-item">
-            <a className="nav-link disabled" title={name} onClick={handleNavClick} tabIndex="-1" aria-disabled="true">{name}</a>
+            <span className="nav-link disabled" title={name} onClick={handleNavClick} tabIndex="-1" aria-disabled="true">{name}</span>
         </li>
       </>
     )
@@ -15,7 +15,7 @@ const Navlink = ({name, setCurrentPage, styleAttr}) => {
   return(
     <>
       <li className="nav-item">
-          <a className={styleAttr} title={name} onClick={handleNavClick} tabIndex="-1" aria-disabled="true">{name}</a>
+          <span className={styleAttr} title={name} onClick={handleNavClick} tabIndex="-1" aria-disabled="true">{name}</span>
       </li>
     </>
   )
