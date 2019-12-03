@@ -27,40 +27,41 @@ const Form = () => {
                         </div>
                     </div>
 
+
                     <div className="mb-3">
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="email">Username</label>
+                        <input type="email" className="form-control" id="email" placeholder="" value=""  required/>
+                        <div className="invalid-feedback">
+                            Please enter a valid username
+                        </div>
+                    </div>
+
+                    <div className="mb-3">
+                        <label htmlFor="username">Email</label>
                         <div className="input-group">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">@</span>
                             </div>
-                            <input type="text" className="form-control" id="username" placeholder="Username" value=""  required />
+                            <input type="text" className="form-control" id="username" placeholder="you@example.com" value=""  required />
                             <div className="invalid-feedback">
-                                <p>Your username is required.</p>
+                                <p>Please enter a valid email address for shipping updates.</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" className="form-control" id="email" placeholder="you@example.com" value=""  required/>
+                        <label htmlFor="email">Bio</label>
+                        <input type="email" className="form-control" id="email" placeholder="" value="MULLE EI VITTUILLA EI VÄHÄÄKÄÄN, NOLLATOLERANSSI"  required/>
+                        <div className="invalid-feedback">
+
+                        </div>
+                    </div>
+
+                    <div className="mb-3">
+                        <label htmlFor="email">Paste picture link here</label>
+                        <input type="email" className="form-control" id="email" placeholder="https://www.cnet.com/pictures/see-winning-wildlife-photography-pictures-and-marvel-at-the-animal-world/" value=""  required/>
                         <div className="invalid-feedback">
                             Please enter a valid email address for shipping updates.
-                        </div>
-                    </div>
-
-                    <div className="mb-3">
-                        <label htmlFor="password">Bio</label>
-                        <input type="text" className="form-control" id="password" placeholder="******" type='password' value="user"  required />
-                        <div className="invalid-feedback">
-                            Please enter a valid password.
-                        </div>
-                    </div>
-
-                    <div className="mb-3">
-                        <label htmlFor="password">Paste picture link here</label>
-                        <input type="text" className="form-control" id="password" placeholder="******" type='password' value="user"  required />
-                        <div className="invalid-feedback">
-                            Please enter a valid password.
                         </div>
                     </div>
 
