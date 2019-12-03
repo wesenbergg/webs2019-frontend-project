@@ -11,7 +11,7 @@ const EditProfile = () => {
 
             <form>
 
-                <p> <h4> Walter Ruoppa </h4> </p>
+                <h4> Walter Ruoppa </h4> 
                 <div className="align-self-end">
                     <img  alt="Walter" src={walter}/>
                 </div>
