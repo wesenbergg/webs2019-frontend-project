@@ -2,12 +2,18 @@ import React from 'react'
 import Navlink from './Navlink'
 import NavDropdown from './NavDropdown'
 
-const Navbar = ({pages, autPages, setCurrentPage}) => {
+const Navbar = ({pages, autPages, setCurrentPage, loggedUser}) => {
   const showLinks = () => {
     return pages.map(page => <Navlink key={Math.floor(Math.random() * 9999999999)} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link'/>)
   }
   const showButtons = () => {
     return autPages.map(page => <Navlink key={Math.floor(Math.random() * 9999999999)} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link'/>)
+  }
+
+  const sideNav = () => {
+    return loggedUser.username === undefined ?
+    showButtons():
+    <NavDropdown name={loggedUser.username} setCurrentPage=""/>
   }
 
   return(
@@ -26,8 +32,7 @@ const Navbar = ({pages, autPages, setCurrentPage}) => {
 
           <div className="form-inline mt-2 mt-md-0">
             <ul className="navbar-nav mr-auto">
-              <NavDropdown name="Kalle" setCurrentPage=""/>
-              {showButtons()}
+              {sideNav()}
             </ul>
           </div>
         </div>

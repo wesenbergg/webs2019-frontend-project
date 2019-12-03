@@ -12,7 +12,7 @@ import EditProfile from "./about/EditProfile";
 import Form from "./about/Form";
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
-setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials}) => {
+setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -66,7 +66,8 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
   if(currentPage === autPages[0]){
     return(
       <>
-        <SignIn credentials={credentials} setCredentials={setCredentials} setMessage={setMessage} setCurrentPage={setCurrentPage}/>
+        <SignIn credentials={credentials} setCredentials={setCredentials} setMessage={setMessage} setCurrentPage={setCurrentPage}
+        setLoggedUser={setLoggedUser}/>
       </>
     )
   }

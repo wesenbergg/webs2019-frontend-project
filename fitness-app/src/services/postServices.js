@@ -38,4 +38,4 @@ const deleteById = (id) =>
     axios.delete(`${baseUrl}/${id}`)
 
 
-export default { getAll, getById, create, update, deleteById }
+export default { getAll, getById, create, update, deleteById, setToken }

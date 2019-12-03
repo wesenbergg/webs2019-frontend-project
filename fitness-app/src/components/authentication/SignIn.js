@@ -27,11 +27,12 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
 
       try {
         loginService
-        .login(credentials)
+        .getAll(credentials)
         .then(user => {
           window.localStorage.setItem('loggedFitnessAppUser', JSON.stringify(user))
 
           postService.setToken(user.token)
+          console.log(user)
           setLoggedUser(user)
           handleMessage('success', `Logged in as ${user.firstname}`)
         })
