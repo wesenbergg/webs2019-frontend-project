@@ -8,7 +8,7 @@ class Team extends Component {
         return (
             <div className="container">
             <div className=" row d-flex justify-content-around">
-                <body className="card col-md-3 ">
+                <div className="card col-md-3 ">
                 <div className="kortti">
                 <div className="upper">
                     <img className="kuva" src={walter}/>
@@ -27,10 +27,10 @@ class Team extends Component {
                 </div>
                 </div>
 
-                </body>
+                </div>
 
 
-                <body className="card col-md-3">
+                <div className="card col-md-3">
                     <div className="upper">
                         <img className="kuva" src={x1}/>
                     </div>
@@ -45,9 +45,9 @@ class Team extends Component {
                         <i className="fas fa-phone-alt">040123123123</i>
 
                     </div>
-                    </body>
+                    </div>
 
-                <body className="card col-md-3">
+                <div className="card col-md-3">
                 <div className="upper">
                     <img className="kuva" src={x1}/>
                 </div>
@@ -63,7 +63,7 @@ class Team extends Component {
                     <i className="fas fa-phone-alt"> 044123123123</i>
 
                 </div>
-                </body>
+                </div>
 
             </div>
             </div>

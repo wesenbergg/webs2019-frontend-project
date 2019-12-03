@@ -41,3 +41,23 @@
   margin-top: 2rem;
   font-style: italic;
 }
+
+.post-thumb span {
+  font-size: small;
+}
+
+.post-thumb h4:hover, .post-thumb span:hover {
+  color: gray;
+}
+
+.footer-item:hover{
+  color: aliceblue !important;
+}
+
+.post-thumb .author-link {
+  color: black
+}
+
+.profile-links .dropdown-item:hover{
+  background: rgb(86, 142, 248);
+}

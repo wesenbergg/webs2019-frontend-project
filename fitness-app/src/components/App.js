@@ -54,7 +54,28 @@ function App() {
     })
   }
 
-  const update = (newObject) => {
+  return (
+    <div className="App">
+      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
+      <Notification message={message} />
+      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
+       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
+       setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost} 
+       credentials={credentials} setCredentials={setCredentials}/>
+      <Footer setCurrentPage={setCurrentPage}/>
+    </div>
+  );
+}
+
+export default App;
+
+
+/*
+
+ÄLÄ POISTA
+
+*/
+  /*const update = (newObject) => {
     //console.log(newObject)
     userService
     .update(newObject.id, newObject)
@@ -77,19 +98,4 @@ function App() {
       }, 5000)
       setUsers(users.filter(p => p.id !== newObject.id))
     })
-  }
-
-  return (
-    <div className="App">
-      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage}/>
-      <Notification message={message} />
-      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
-       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
-       setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost} 
-       credentials={credentials} setCredentials={setCredentials}/>
-      <Footer setCurrentPage={setCurrentPage}/>
-    </div>
-  );
-}
-
-export default App;
+  }*/
