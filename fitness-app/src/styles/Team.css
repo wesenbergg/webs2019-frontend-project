@@ -76,3 +76,10 @@ div Team{
     -webkit-align-content: center;
     align-content: center;
 }
+div container {
+    margin-bottom: 30px;
+
+}
+.margin {
+    margin-bottom: 15px;
+}

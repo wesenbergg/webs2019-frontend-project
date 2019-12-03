@@ -8,6 +8,7 @@ import About from "./about/About";
 import Team from "./about/Team";
 import SingleUser from './single/SingleUser'
 import SinglePost from './single/singlePost'
+import EditProfile from "./about/EditProfile";
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
 setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials}) => {
@@ -41,13 +42,17 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
         </>
     )
   }
+
+
   if(currentPage === pages[5]){
-    return(
-        <>
-          <Team/>
-        </>
-    )
-  }
+        return(
+            <>
+                <EditProfile/>
+            </>
+        )
+    }
+
+
 
   if(currentPage === autPages[0]){
     return(

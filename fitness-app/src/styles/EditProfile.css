@@ -1,0 +1,17 @@
+.kuvaEdit  {
+    max-width: 10%;
+    max-height: 200px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+button {
+    margin-left: 10px;
+    max-height: 30px;
+    margin-top: 5px;
+    background-color: #626262;
+    border-color: black;
+    color: white;
+
+}
+
+

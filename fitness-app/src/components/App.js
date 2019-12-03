@@ -7,7 +7,7 @@ import Notification from './Notification.js'
 import userService from '../services/userServices'
 
 function App() {
-  const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About']
+  const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About','EditProfile']
   const autPages = ['Sign in', 'Sign up']
 
   const[filter, setFilter] = useState('')
