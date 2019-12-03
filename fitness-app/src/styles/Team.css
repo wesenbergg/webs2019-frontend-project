@@ -34,7 +34,6 @@ body Team {
     border-radius: 50%;
     position: relative;
     top:80px;
-    left: 70px;
     border:7px solid white;
     outline: none;
 }
