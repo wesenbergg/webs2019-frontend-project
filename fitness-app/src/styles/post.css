@@ -1,0 +1,22 @@
+.singlePost {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.horizontalPost {
+    max-width: 540px;
+    margin: 10px;
+    border: 4px solid #282c34;
+}
+
+.horizontalPostText {
+    padding-left: 10px;
+}
+
+.horizontalPostFooter {
+    text-align: right;
+}
+  
+.card-img {
+    width: 200px;
+}

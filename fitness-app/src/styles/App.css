@@ -21,18 +21,6 @@
   color: #09d3ac;
 }
 
-.horizontalPost {
-  max-width: 540px;
-  border: 4px solid #a7c29b;
-}
-
-.card-img {
-  width: 200px;
-}
-.feedContainer {
-  display: inline-block;
-}
-
 .filter-form{
   margin-top: 1rem;
 }

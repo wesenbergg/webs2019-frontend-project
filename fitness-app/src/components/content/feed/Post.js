@@ -2,6 +2,7 @@ import React from 'react'
 import postServices from '../../../services/postServices'
 import testImage from '../../../img/test.png'
 import notFound from '../../../img/not_found.png'
+import '../../../styles/post.css'
 
 // Vertaa postauksen id:tä ja käyttäjälistan henkilöiden id:tä 
 const findAuthorname = (author_id, users) => {
@@ -10,7 +11,7 @@ const findAuthorname = (author_id, users) => {
 }
 
 function handleClick({setCurrentPage, setSinglePost, id}) {
-    console.log(id)
+    if (setCurrentPage === undefined || setSinglePost === undefined) return
     postServices.getById(id)
         .then(post => {
             setSinglePost(post)
@@ -32,8 +33,8 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#" onClick={() => handleClick({setCurrentPage, setSinglePost, id})}>{title}</a></h5>
-                                <p class="card-text">{text}</p>
-                                <p class="card-text"><small class="text-muted">From: <a href="#" class="card-link">{author_name}</a> {date}</small></p>
+                                <p class="card-text" className="horizontalPostText">{text}</p>
+                                <p class="card-text" className="horizontalPostFooter"><small class="text-muted">From: <a href="#" class="card-link">{author_name}</a> {date}</small></p>
                             </div>
                         </div>
                     </div>
@@ -48,8 +49,8 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                     <div class="col-md-12">
                         <div class="card-body">
                         <h5 class="card-title"><a href="#" onClick={() => handleClick({setCurrentPage, setSinglePost, id})}>{title}</a></h5>
-                            <p class="card-text">{text}</p>
-                            <p class="card-text"><small class="text-muted">From: <a href="#" class="card-link">{author_name}</a>     {date}</small></p>
+                            <p class="card-text" className="horizontalPostText">{text}</p>
+                            <p class="card-text" className="horizontalPostFooter"><small class="text-muted">From: <a href="#" class="card-link">{author_name}</a>     {date}</small></p>
                         </div>
                     </div>
                 </div>

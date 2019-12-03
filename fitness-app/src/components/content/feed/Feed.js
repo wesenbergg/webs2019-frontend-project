@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Post from './Post'
 import NewPostForm from '../../utilities/NewPostForm'
 import postServices from '../../../services/postServices'
+import '../../../styles/feed.css'
 
 const Feed = ({ setSinglePost, setCurrentPage }) => {
 	const [posts, setPosts] = useState([])
