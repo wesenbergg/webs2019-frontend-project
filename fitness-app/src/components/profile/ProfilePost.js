@@ -3,6 +3,7 @@ import walter from "../../img/walter.jpg"
 const ProfilePost = () => {
 
 return (
+
     <div
         className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative lirumLarum container">
 

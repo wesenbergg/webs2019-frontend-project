@@ -1,8 +1,8 @@
-button {
+.buttoni {
     margin-left: 10px;
     max-height: 30px;
     margin-top: 5px;
-    background-color: #626262;
+    background-color: gray;
     border-color: black;
     color: white;
 

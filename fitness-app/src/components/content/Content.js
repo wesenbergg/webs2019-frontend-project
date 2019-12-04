@@ -48,7 +48,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
   if(currentPage === pages[5]){
         return(
             <>
-                <EditProfile/>
+                <EditProfile setCurrentPage={setCurrentPage}/>
             </>
         )
     }
