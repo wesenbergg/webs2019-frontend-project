@@ -9,7 +9,7 @@ return (
         <div className="col p-4 d-flex flex-column position-static bg-light ">
             <h2>Koripallo  <div className="mb-1 text-muted">3.12.2019</div> </h2>
 
-            <p className="mb-auto profile-desc">aalimpaa sanojen sijoitusta kuin 'Sisältöä tähän, sisältöä tähän'. Monet tietokoneen julkistusohjelmäyttävät nyt Lorem Ipsumia heidän normaalina mallitekstinä. 'Lorem Ipsumia' etsittäessä löytyy monen monta nettisivua, jotka ovat vasta aluillaan. Useita versioita on muodostunut vuosien kuluessa, jotkut vahingossa ja jotkut tarkoituksella (lisätty huumoria ja niin edelleen).</p>
+            <p className="mb-auto profile-desc"> .  ovat vasta aluillaan. Useita versioita on muodostunut vuosien kuluessa, jotkut vahingossa ja jotkut tarkoituksella (lisätty huumoria ja niin edelleen).</p>
             <div className="justify-content-center">
                 <a className="btn btn-dark text-light profile-link">Expand</a>
             </div>
