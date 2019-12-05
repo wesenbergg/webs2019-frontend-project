@@ -32,14 +32,12 @@ const NewPostForm = ({ posts, setPosts }) => {
         //console.log("Title:", newPost.title, "\ntext: ", newPost.text, " ", newPost.date)
         //console.log("image: ", newPost.image, "author_id: ", newPost.author_id, "name: ", newPost.author_name)
         
-        /*
         postServices.create(newPost)
             .then(response => {
                 // Mikäli newPostForm:ia kutsutaan Feedin ulkopuolelta
                 if (setPosts !== undefined && posts !== undefined)
                     setPosts(posts => [newPost, ...posts])
             })
-            */
         setNewTitle('')
         setNewText('')
         setNewLink('')

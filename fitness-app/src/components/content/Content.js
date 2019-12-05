@@ -27,7 +27,6 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
     return (
       <>
         <Feed setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />
-
       </>
     )
   }

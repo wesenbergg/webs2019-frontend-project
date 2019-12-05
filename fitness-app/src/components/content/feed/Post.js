@@ -28,9 +28,9 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                     <div className="row no-gutters">
                         <div className="col-md-12">
                             <div className="card-body">
-                                <h4 className="card-title" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
+                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
                                 <p className="card-text">{text}</p>
-                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link">{author_name}</span> {date}</small></p>
+                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
                             </div>
                         </div>
                     </div>
@@ -47,9 +47,9 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h4 className="card-title" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
+                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
                                 <p className="card-text">{text}</p>
-                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link">{author_name}</span> {date}</small></p>
+                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
                             </div>
                         </div>
                     </div>
@@ -66,9 +66,9 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h4 className="card-title" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
+                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
                                 <p className="card-text">{text}</p>
-                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link">{author_name}</span> {date}</small></p>
+                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
                             </div>
                         </div>
                     </div>
