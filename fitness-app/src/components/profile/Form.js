@@ -4,7 +4,7 @@ import userService from '../../services/userServices'
 
 const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
     const update = (newObject) => {
-      console.log(newObject)
+      //console.log(newObject)
       userService.update(newObject.id, newObject)
       .then(returnedPerson => {
         setUsers(users.map(user => user.id !== newObject.id ? user : newObject))
@@ -32,12 +32,14 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
             description: loggedUser.description,
             region: loggedUser.region,
             profilepic: loggedUser.profilepic,
+            posts: loggedUser.posts,
             id: loggedUser.id
         }
 
         update(user)
         window.localStorage.setItem('loggedFitnessAppUser', JSON.stringify(loggedUser))
-        console.log(loggedUser)
+        //console.log(loggedUser)
+        setCurrentPage('EditProfile')
     }
 
     const handleCancel = e => {

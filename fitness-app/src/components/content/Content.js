@@ -10,9 +10,10 @@ import SingleUser from './single/SingleUser'
 import SinglePost from './single/singlePost'
 import EditProfile from "../profile/EditProfile";
 import Form from "../profile/Form";
+import NewPostForm from '../utilities/NewPostForm'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, users, setUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
-setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser}) => {
+setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser, posts, setPosts}) => {
   if(currentPage === pages[0]){
     return(
       <>
@@ -62,7 +63,14 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
         )
     }
 
-
+    /*
+    if(currentPage === 'Add Post'){
+      return(
+        <>
+          <NewPostForm posts={posts} setPosts={setPosts}/>
+        </>
+      )
+    }*/
 
   if(currentPage === autPages[0]){
     return(
