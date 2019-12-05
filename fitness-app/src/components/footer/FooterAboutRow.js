@@ -6,7 +6,7 @@ const FooterAboutRow = ({content, setCurrentPage, styleAttr}) => {
   }
 
   return(
-    <li><span className="text-muted footer-item" onClick={handleClick} >{content}</span></li>
+    <li><span className="text-muted footer-item  mouse-pointer" onClick={handleClick} >{content}</span></li>
   )
 }
 

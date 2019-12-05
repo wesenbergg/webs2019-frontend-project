@@ -10,7 +10,7 @@ const FooterRow = ({content, setCurrentPage, styleAttr}) => {
   if(content.name !== undefined){
     return(
       <>
-        <li><span className="text-muted footer-item" href={content.link}><i className={content.logo}></i> {content.name}</span></li>
+        <li><span className="text-muted footer-item mouse-pointer" href={content.link}><i className={content.logo}></i> {content.name}</span></li>
       </>
     )
   }
@@ -18,13 +18,13 @@ const FooterRow = ({content, setCurrentPage, styleAttr}) => {
   if(content === 'QA'){
     return(
       <>
-        <li><span className="text-muted" disabled>{content}</span></li>
+        <li><span className="text-muted mouse-pointer" disabled>{content}</span></li>
       </>
     )
   }
 
   return(
-    <li><span className="text-muted footer-item" title={content} onClick={handleClick} >{content}</span></li>
+    <li><span className="text-muted footer-item mouse-pointer" title={content} onClick={handleClick} >{content}</span></li>
   )
 }
 
