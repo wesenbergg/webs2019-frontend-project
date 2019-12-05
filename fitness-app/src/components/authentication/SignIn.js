@@ -32,7 +32,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
           window.localStorage.setItem('loggedFitnessAppUser', JSON.stringify(user))
 
           postService.setToken(user.token)
-          console.log(user)
+          //console.log(user)
           setLoggedUser(user)
           handleMessage('success', `Logged in as ${user.firstname}`)
         })
@@ -52,7 +52,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
 
         <label htmlFor="inputUsername" className="sr-only">Username</label>
         <input type="text" id="inputUsername" className="form-control" placeholder="Username" 
-          value={credentials.username} onChange={e => setCredentials({...credentials, username: e.target.value}) || console.log(credentials.username)} required/>
+          value={credentials.username} onChange={e => setCredentials({...credentials, username: e.target.value})} required/>
 
         <label htmlFor="inputPassword" className="sr-only">Password</label>
         <input type="password" id="inputPassword" className="form-control" placeholder="Password" 

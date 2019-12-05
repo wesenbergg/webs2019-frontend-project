@@ -2,7 +2,7 @@ import React from 'react'
 import Navlink from './Navlink'
 import NavDropdown from './NavDropdown'
 
-const Navbar = ({pages, autPages, setCurrentPage, loggedUser}) => {
+const Navbar = ({pages, autPages, setCurrentPage, loggedUser, setLoggedUser}) => {
   const showLinks = () => {
     return pages.map(page => <Navlink key={Math.floor(Math.random() * 9999999999)} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link'/>)
   }
@@ -13,7 +13,7 @@ const Navbar = ({pages, autPages, setCurrentPage, loggedUser}) => {
   const sideNav = () => {
     return loggedUser.username === undefined ?
     showButtons():
-    <NavDropdown name={loggedUser.username} setCurrentPage=""/>
+    <NavDropdown name={loggedUser.username} setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser}/>
   }
 
   return(

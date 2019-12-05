@@ -11,7 +11,7 @@ import SinglePost from './single/singlePost'
 import EditProfile from "../profile/EditProfile";
 import Form from "../profile/Form";
 
-const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
+const Content = ({pages, autPages, currentPage, setCurrentPage, users, setUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
 setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser}) => {
   if(currentPage === pages[0]){
     return(
@@ -32,7 +32,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
   if(currentPage === pages[2]){
     return(
       <>
-        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>
+        <Search users={users} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>
       </>
     )
   }
@@ -56,7 +56,8 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
     if(currentPage === pages[6]){
         return(
             <>
-                <Form/>
+                <Form setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser} loggedUser={loggedUser} setUsers={setUsers} users={users}
+                setMessage={setMessage}/>
             </>
         )
     }
@@ -75,7 +76,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
   if(currentPage === autPages[1]){
     return(
       <>
-        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} 
+        <SignUp users={users} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} 
         setMessage={setMessage} setCurrentPage={setCurrentPage}/>
       </>
     )
