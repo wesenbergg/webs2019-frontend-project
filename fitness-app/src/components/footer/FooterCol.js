@@ -1,9 +1,17 @@
 import React from 'react'
 import FooterRow from './FooterRow'
+import FooterAboutRow from './FooterAboutRow'
 
-const FooterCol = ({colContent, name, setCurrentPage, styleAttr}) => {
-  const showFooterRows = () => colContent.content.map(row => <FooterRow key={Math.floor(Math.random() * 99999999)} content={row}
-  setCurrentPage={setCurrentPage}/>)
+const FooterCol = ({colContent, setCurrentPage}) => {
+  const showFooterRows = () => {
+    if(colContent.name === 'About'){
+      return colContent.content.map(row => <FooterAboutRow key={Math.floor(Math.random() * 99999999)} content={row}
+        setCurrentPage={setCurrentPage}/>)
+    }else{
+      return colContent.content.map(row => <FooterRow key={Math.floor(Math.random() * 99999999)} content={row}
+        setCurrentPage={setCurrentPage}/>)
+    }
+  }
 
   return(
     <div className="col-6 col-md">

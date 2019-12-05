@@ -5,9 +5,11 @@ import Navbar from './navigation/Navbar'
 import Footer from './footer/Footer'
 import Notification from './Notification.js'
 import userService from '../services/userServices'
+import postService from '../services/postServices'
+
 
 function App() {
-  const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About','EditProfile',"Form"]
+  const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About','EditProfile','Form']
   const autPages = ['Sign in', 'Sign up']
 
   const[filter, setFilter] = useState('')
@@ -40,6 +42,15 @@ function App() {
       })
   }, [])
 
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedFitnessAppUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setLoggedUser(user)
+      postService.setToken(user.token)
+    }
+  }, [])
+
   const createUser = newObject => {
     userService
     .create(newObject)
@@ -57,10 +68,10 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage} loggedUser={loggedUser}/>
+      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage} loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
       <Notification message={message} />
-      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} showUsers={users}
-       setShowUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
+      <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} users={users}
+       setUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
        setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost} 
        credentials={credentials} setCredentials={setCredentials} loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
       <Footer setCurrentPage={setCurrentPage}/>
@@ -69,34 +80,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
-
-ÄLÄ POISTA
-
-*/
-  /*const update = (newObject) => {
-    //console.log(newObject)
-    userService
-    .update(newObject.id, newObject)
-    .then(returnedPerson => {
-      setUsers(users.map(user => user.id !== newObject.id ? user : newObject))
-      setMessage({
-        type: 'success',
-        message: `Succesfully updated ${newObject.firstname}.`
-      })
-      setTimeout(() => {
-        setMessage({...message, type: "hidden"})
-      }, 5000)
-    }).catch(error => {
-      setMessage({
-        type: 'error',
-        message: `Person '${newObject.username}' was already removed from server`
-      })
-      setTimeout(() => {
-        setMessage({...message, type: "hidden"})
-      }, 5000)
-      setUsers(users.filter(p => p.id !== newObject.id))
-    })
-  }*/

@@ -1,23 +1,22 @@
-button {
+.buttoni {
     margin-left: 10px;
     max-height: 30px;
     margin-top: 5px;
-    background-color: #626262;
+    background-color: gray;
     border-color: black;
     color: white;
 
 }
-h3 {
+.posts {
     margin-top: 20px;
     margin-right: 300px;
 }
 
-h4 {
+.header4 {
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
-h5 {
+.header5{
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -31,4 +30,20 @@ h5 {
 }
 .kuva1 {
     height: 300px;
+}
+
+.profiili {
+    margin-top: 20px;
+    border: 1px solid black;
+    width: 40%;
+    margin-left: 650px;
+    border-width: 5px;
+
+}
+.profiilikuva {
+    height: 275px;
+}
+.text {
+    text-align: left;
+    margin-left: 100px;
 }

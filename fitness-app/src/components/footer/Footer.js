@@ -2,7 +2,7 @@ import React from 'react'
 import FooterCol from './FooterCol'
 import FooterBrand from './FooterBrand'
 
-const Footer = (setCurrentPage) => {
+const Footer = ({setCurrentPage}) => {
   const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About']
   const about = ['Contact', 'Team', 'Privacy', 'Terms', 'FAQ']
   const medias = [
