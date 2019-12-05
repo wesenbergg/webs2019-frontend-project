@@ -2,10 +2,11 @@ import React from 'react'
 
 const FooterRow = ({content, setCurrentPage, styleAttr}) => {
   const handleClick = e => {
-    console.log(e.target.title)
-    //setCurrentPage(e.target.title)
+    //console.log(e.target.title)
+    setCurrentPage(e.target.title)
   }
 
+  //console.log(content)
   if(content.name !== undefined){
     return(
       <>
