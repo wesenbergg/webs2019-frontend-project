@@ -4,12 +4,12 @@ import postServices from '../../services/postServices'
 
 // Komponentti uutta postausta varten
 const NewPostForm = ({ posts, setPosts }) => {
-    var currPostAmount = posts.length
+    var currPostAmount = null
     // Jos newPostForm:ia kutsutaan Feedin ulkopuolelta
     if (currPostAmount === undefined || currPostAmount === null) {
         postServices.getAll()
             .then(results => currPostAmount = results.length)
-    }
+    } else currPostAmount = posts.length
     const [newTitle, setNewTitle] = useState('')
     const [newText, setNewText] = useState('')
     const [newLink, setNewLink] = useState('')
@@ -31,13 +31,15 @@ const NewPostForm = ({ posts, setPosts }) => {
         console.log(newPost.image)
         //console.log("Title:", newPost.title, "\ntext: ", newPost.text, " ", newPost.date)
         //console.log("image: ", newPost.image, "author_id: ", newPost.author_id, "name: ", newPost.author_name)
+        
+        /*
         postServices.create(newPost)
             .then(response => {
                 // Mikäli newPostForm:ia kutsutaan Feedin ulkopuolelta
                 if (setPosts !== undefined && posts !== undefined)
                     setPosts(posts => [newPost, ...posts])
-                console.log(response)
             })
+            */
         setNewTitle('')
         setNewText('')
         setNewLink('')
@@ -47,16 +49,20 @@ const NewPostForm = ({ posts, setPosts }) => {
             <br />
             <form className="newPostForm" onSubmit={addPost}>
                 <div className="form-group">
-                    <input id="newPostTitle" className="form-control" type="text" value={newTitle} onChange={handleTitleChange} placeholder="Title" />
+                    <input id="newPostTitle" className="form-control"
+                        type="text" value={newTitle} onChange={handleTitleChange} placeholder="Title" />
                 </div>
                 <div className="form-group">
-                    <textarea className="form-control" type="text" value={newText} onChange={handleTextChange} placeholder="Text" />
+                    <textarea className="form-control" type="text" value={newText}
+                        onChange={handleTextChange} placeholder="Text" />
                 </div>
                 <div className="form-group">
-                    <input id="linkToImage" type="text" value={newLink} onChange={handleLinkChange} placeholder="Image URL" />
+                    <input id="linkToImage" type="text" value={newLink} onChange={handleLinkChange}
+                        placeholder="Image URL" />
                 </div>
                 <button type="submit">post</button>
             </form>
+            <br />
         </div>
     )
 }

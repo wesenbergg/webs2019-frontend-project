@@ -10,11 +10,12 @@ import SingleUser from './single/SingleUser'
 import SinglePost from './single/singlePost'
 import EditProfile from "../profile/EditProfile";
 import Form from "../profile/Form";
+import NewPostPage from '../content/single/NewPostPage'
 
-const Content = ({pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
-setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser}) => {
-  if(currentPage === pages[0]){
-    return(
+const Content = ({ pages, autPages, currentPage, setCurrentPage, showUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
+  setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser }) => {
+  if (currentPage === pages[0]) {
+    return (
       <>
         <FrontPage />
       </>
@@ -25,74 +26,83 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
     return (
       <>
         <Feed setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />
+
       </>
     )
   }
 
-  if(currentPage === pages[2]){
-    return(
+  if (currentPage === pages[2]) {
+    return (
       <>
-        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>
+        <Search showUsers={showUsers} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost} />
       </>
     )
   }
-  if(currentPage === pages[4]){
-    return(
-        <>
-         <About/>
-        </>
+  if (currentPage === pages[4]) {
+    return (
+      <>
+        <About />
+      </>
     )
   }
 
 
-  if(currentPage === pages[5]){
-        return(
-            <>
-                <EditProfile/>
-            </>
-        )
-    }
+  if (currentPage === pages[5]) {
+    return (
+      <>
+        <EditProfile />
+      </>
+    )
+  }
 
-    if(currentPage === pages[6]){
-        return(
-            <>
-                <Form/>
-            </>
-        )
-    }
+  if (currentPage === pages[6]) {
+    return (
+      <>
+        <Form />
+      </>
+    )
+  }
 
 
 
-  if(currentPage === autPages[0]){
-    return(
+  if (currentPage === autPages[0]) {
+    return (
       <>
         <SignIn credentials={credentials} setCredentials={setCredentials} setMessage={setMessage} setCurrentPage={setCurrentPage}
-        setLoggedUser={setLoggedUser}/>
+          setLoggedUser={setLoggedUser} />
       </>
     )
   }
 
-  if(currentPage === autPages[1]){
-    return(
+  if (currentPage === autPages[1]) {
+    return (
       <>
-        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} 
-        setMessage={setMessage} setCurrentPage={setCurrentPage}/>
+        <SignUp users={showUsers} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName}
+          setMessage={setMessage} setCurrentPage={setCurrentPage} />
       </>
     )
   }
 
-  if(currentPage === 'User Page'){
-    return(
+  if (currentPage === 'User Page') {
+    return (
       <>
-        <SingleUser singleUser={singleUser}/>
+        <SingleUser singleUser={singleUser} />
       </>
     )
   }
 
-  if(currentPage === 'Post Page'){
-    return(
+  if (currentPage === 'Post Page') {
+    return (
       <>
-        <SinglePost singlePost={singlePost}/>
+        <SinglePost singlePost={singlePost} />
+      </>
+    )
+  }
+
+  if (currentPage === 'New Post') {
+    return (
+      <>
+        <NewPostPage />
       </>
     )
   }

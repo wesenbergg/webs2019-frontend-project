@@ -13,8 +13,8 @@ const Feed = ({ setSinglePost, setCurrentPage }) => {
 				setPosts(initialPosts)
 			})
 	}, [])
-	
-	const generateFeed = () =>
+
+	const generateFeed = () => 
 		posts.map(post =>
 			<Post
 				key={post.id}
@@ -32,7 +32,7 @@ const Feed = ({ setSinglePost, setCurrentPage }) => {
 
 	return (
 		<>
-			<NewPostForm posts={posts} setPosts={setPosts}/>
+			<button onClick={() => setCurrentPage('New Post')}>New post</button>
 			<div className="card-columns" className="feedContainer">
 				{generateFeed()}
 			</div>
