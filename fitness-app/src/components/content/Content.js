@@ -11,6 +11,7 @@ import SinglePost from './single/singlePost'
 import EditProfile from "../profile/EditProfile";
 import Form from "../profile/Form";
 import NewPostForm from '../utilities/NewPostForm'
+import NewPostPage from '../content/single/NewPostPage'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, users, setUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
 setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser, posts, setPosts}) => {
