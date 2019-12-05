@@ -33,7 +33,16 @@ function App() {
   const[singlePost, setSinglePost] = useState('')
   const[credentials, setCredentials] = useState({username: '', password: ''})
   const[loggedUser, setLoggedUser] = useState({})
+  const[posts, setPosts] = useState([])
 
+  useEffect(() => {
+		postService.getAll()
+			.then(initialPosts => {
+				initialPosts.reverse()
+				setPosts(initialPosts)
+			})
+  }, [])
+  
   useEffect(() => {
     userService
       .getAll()
@@ -73,7 +82,8 @@ function App() {
       <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} users={users}
        setUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
        setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost} 
-       credentials={credentials} setCredentials={setCredentials} loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
+       credentials={credentials} setCredentials={setCredentials} loggedUser={loggedUser} setLoggedUser={setLoggedUser} 
+       posts={posts} setPosts={setPosts}/>
       <Footer setCurrentPage={setCurrentPage}/>
     </div>
   );

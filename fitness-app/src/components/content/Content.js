@@ -15,6 +15,8 @@ import NewPostPage from '../content/single/NewPostPage'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, users, setUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
 setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser, posts, setPosts}) => {
+  
+  
   if(currentPage === pages[0]){
     return(
       <>
@@ -26,7 +28,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
   if (currentPage === pages[1]) {
     return (
       <>
-        <Feed setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />
+        <Feed posts={posts} setPosts={setPosts} setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />
       </>
     )
   }

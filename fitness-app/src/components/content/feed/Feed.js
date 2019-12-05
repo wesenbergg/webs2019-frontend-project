@@ -4,7 +4,8 @@ import NewPostForm from '../../utilities/NewPostForm'
 import postServices from '../../../services/postServices'
 import '../../../styles/feed.css'
 
-const Feed = ({ setSinglePost, setCurrentPage }) => {
+const Feed = ({ posts, setPosts, setSinglePost, setCurrentPage }) => {
+	/*
 	const [posts, setPosts] = useState([])
 	useEffect(() => {
 		postServices.getAll()
@@ -13,7 +14,7 @@ const Feed = ({ setSinglePost, setCurrentPage }) => {
 				setPosts(initialPosts)
 			})
 	}, [])
-
+	*/
 	const generateFeed = () => 
 		posts.map(post =>
 			<Post
