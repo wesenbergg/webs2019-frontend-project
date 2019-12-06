@@ -5,14 +5,12 @@ import ProfilePost from "./ProfilePost";
 import Post from "../content/feed/Post";
 import { Link, Redirect } from 'react-router-dom'
 
+
 const EditProfile = ({setCurrentPage, loggedUser}) => {
     //console.log(setCurrentPage)
     function handleClick({setCurrentPage}) {
         setCurrentPage('Form')
     }
-    const editButton = <input className="buttoni" type="button" value="Edit profile" onClick={() => handleClick({setCurrentPage})}/>
-
-
     //Palaa etusivulle jos ei ole kirjauduttu sisään
     if(loggedUser.username === undefined) return(<><Redirect to="/signin" /></>)
     return (
@@ -20,7 +18,8 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 <div className=" profiili">
                     <img align="right" className="profiilikuva" alt="Walter" src={walter}/>
                     <div className="text">
-                         <h4 className="header4" > Walter Ruoppa <Link to="/users/profile/edit" className="btn btn-md btn-dark">Edit profile</Link> </h4>
+                         <h4 className="header4" > Walter Ruoppa <Link to="/users/profile/edit" className="btn btn-md btn-dark">Edit profile</Link>
+                             <Link to="/posts/new" className="btn btn-md btn-dark buttoni">Post</Link></h4>
                             <h4 className="header4"> <i className="far fa-user"></i> Walter95 </h4>
                         <h4 className="header4"><i className="fas fa-globe-europe"></i> Finland </h4>
                     </div>

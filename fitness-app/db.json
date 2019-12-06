@@ -190,6 +190,15 @@
       "date": "15:47 4/11/2019",
       "author_id": 5,
       "author_name": "Walter95"
+    },
+    {
+      "id": 17,
+      "title": "Walter",
+      "text": "AAAAAAAAAAAA",
+      "image": "",
+      "date": "16:46 6/11/2019",
+      "author_id": 10000000,
+      "author_name": "Testi"
     }
   ],
   "comments": [
