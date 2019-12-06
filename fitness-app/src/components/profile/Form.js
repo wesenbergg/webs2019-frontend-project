@@ -1,6 +1,10 @@
 import React from 'react'
 import '../../styles/Form.css'
 import userService from '../../services/userServices'
+import {
+    BrowserRouter as Router,
+    Route, Link, Redirect, withRouter
+  } from 'react-router-dom'
 
 const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
     const update = (newObject) => {
@@ -38,8 +42,6 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
 
         update(user)
         window.localStorage.setItem('loggedFitnessAppUser', JSON.stringify(loggedUser))
-        //console.log(loggedUser)
-        setCurrentPage('EditProfile')
     }
 
     const handleCancel = e => {
@@ -51,7 +53,7 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
     }
 
     //Palaa etusivulle jos ei ole kirjauduttu sisään
-    if(loggedUser.username === undefined) return(<></>)
+    if(loggedUser.username === undefined) return(<><Redirect to="/signin" /></>)
     return (
         <div className="container signup">
             <div className="col-md-12 order-md-1">
@@ -127,9 +129,9 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
                             </div>
                         </div>
                     </div>
-                    <button type="button" className="btn btn-success" type="submit">Update</button>
-                    <button className="btn btn-primary" onClick={handleCancel}>Cancel</button>
-                    <button className="btn btn-danger" onClick={handleDelete} disabled>Delete</button>
+                    <button type="button" className="btn btn-success" type="submit" >Update</button>
+                    <Link className="btn btn-primary" to="/users/profile">Cancel</Link>
+                    <Link className="btn btn-danger" onClick={handleDelete} to="/" disabled>Delete</Link>
                 </form>
             </div>
         </div>
