@@ -3,6 +3,7 @@ import Post from './Post'
 import NewPostForm from '../../utilities/NewPostForm'
 import postServices from '../../../services/postServices'
 import '../../../styles/feed.css'
+import { Link } from 'react-router-dom'
 
 const Feed = ({ posts, setPosts, setSinglePost, setCurrentPage }) => {
 	/*
@@ -33,7 +34,7 @@ const Feed = ({ posts, setPosts, setSinglePost, setCurrentPage }) => {
 
 	return (
 		<>
-			<button onClick={() => setCurrentPage('New Post')}>New post</button>
+			<Link className="btn btn-lg btn-dark text-light my-2" to="/posts/new">New post</Link>
 			<div className="card-columns" className="feedContainer">
 				{generateFeed()}
 			</div>

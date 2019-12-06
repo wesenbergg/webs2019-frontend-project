@@ -6,6 +6,7 @@ import Footer from './footer/Footer'
 import Notification from './Notification.js'
 import userService from '../services/userServices'
 import postService from '../services/postServices'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
       <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage} loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
       <Notification message={message} />
       <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} users={users}
@@ -85,6 +87,7 @@ function App() {
        credentials={credentials} setCredentials={setCredentials} loggedUser={loggedUser} setLoggedUser={setLoggedUser} 
        posts={posts} setPosts={setPosts}/>
       <Footer setCurrentPage={setCurrentPage}/>
+      </Router>
     </div>
   );
 }

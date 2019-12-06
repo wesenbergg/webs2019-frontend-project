@@ -1,18 +1,20 @@
 import React from 'react'
 import Navlink from './Navlink'
 import NavDropdown from './NavDropdown'
+import SideNav from './SideNav'
 
 const Navbar = ({pages, autPages, setCurrentPage, loggedUser, setLoggedUser}) => {
+  /*
   const showLinks = () => {
     return pages.map(page => <Navlink key={Math.floor(Math.random() * 9999999999)} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link mouse-pointer'/>)
-  }
+  }*/
   const showButtons = () => {
     return autPages.map(page => <Navlink key={Math.floor(Math.random() * 9999999999)} name={page} setCurrentPage={setCurrentPage} styleAttr='nav-link mouse-pointer'/>)
   }
 
   const sideNav = () => {
     return loggedUser.username === undefined ?
-    showButtons():
+    <SideNav />:
     <NavDropdown name={loggedUser.username} setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser}/>
   }
 
@@ -24,10 +26,9 @@ const Navbar = ({pages, autPages, setCurrentPage, loggedUser, setLoggedUser}) =>
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-            {showLinks()}
+            <Navlink />
           </ul>
 
           <div className="form-inline mt-2 mt-md-0">

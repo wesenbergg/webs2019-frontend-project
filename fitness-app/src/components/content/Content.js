@@ -4,19 +4,47 @@ import Feed from './feed/Feed'
 import Search from './search/Search'
 import SignUp from '../authentication/SignUp'
 import SignIn from '../authentication/SignIn'
-import About from "./about/About";
-import Team from "./about/Team";
+import About from "./about/About"
+import Team from "./about/Team"
 import SingleUser from './single/SingleUser'
 import SinglePost from './single/singlePost'
-import EditProfile from "../profile/EditProfile";
-import Form from "../profile/Form";
+import EditProfile from "../profile/EditProfile"
+import Form from "../profile/Form"
 import NewPostForm from '../utilities/NewPostForm'
 import NewPostPage from '../content/single/NewPostPage'
+import {
+  BrowserRouter as Router,
+  Route, Link, Redirect, withRouter
+} from 'react-router-dom'
 
 const Content = ({pages, autPages, currentPage, setCurrentPage, users, setUsers, filter, setFilter, newUser, setNewUser, createUser, newName, setNewName, setMessage,
 setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredentials, loggedUser, setLoggedUser, posts, setPosts}) => {
   
-  
+  return(
+    <>
+    <Route exact path="/" render={() => <FrontPage />} />
+    <Route exact path="/posts" render={() => <Feed posts={posts} setPosts={setPosts} setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />} />
+    <Route exact path="/users" render={() => <Search users={users} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>} />
+    <Route exact path="/about" render={() => <About />} />
+    <Route exact path="/users/profile" render={() => <EditProfile setCurrentPage={setCurrentPage} />} />
+    <Route path="/users/profile/edit" render={() => <Form setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser} loggedUser={loggedUser} setUsers={setUsers} users={users} setMessage={setMessage}/>} />
+    <Route exact path="/signin" render={() => <SignIn credentials={credentials} setCredentials={setCredentials} setMessage={setMessage} setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser} />} />
+    <Route exact path="/signup" render={() => <SignUp users={users} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} setMessage={setMessage} setCurrentPage={setCurrentPage}/>} />
+    <Route exact path="/posts/new" render={() => <NewPostPage />} />
+    <Route path="/posts/:id" render={() => <SinglePost singlePost={singlePost} />} />
+    <Route exact path="/users/:id" render={() => <SingleUser singleUser={singleUser} />} />
+    </>
+  )
+}
+
+export default Content
+
+
+
+
+
+
+    /*
   if(currentPage === pages[0]){
     return(
       <>
@@ -47,8 +75,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
       </>
     )
   }
-
-
+  
   if(currentPage === pages[5]){
         return(
             <>
@@ -65,15 +92,6 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
             </>
         )
     }
-
-    /*
-    if(currentPage === 'Add Post'){
-      return(
-        <>
-          <NewPostForm posts={posts} setPosts={setPosts}/>
-        </>
-      )
-    }*/
 
   if (currentPage === autPages[0]) {
     return (
@@ -92,7 +110,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
       </>
     )
   }
-
+  
   if (currentPage === 'User Page') {
     return (
       <>
@@ -116,6 +134,4 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
       </>
     )
   }
-}
-
-export default Content
+  */

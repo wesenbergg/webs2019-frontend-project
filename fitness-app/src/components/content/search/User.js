@@ -1,10 +1,15 @@
 import React from 'react'
 import '../../../styles/user.css'
+import {
+  BrowserRouter as Router,
+  Route, Link, Redirect, withRouter
+} from 'react-router-dom'
 
 const User = ({user, setSingleUser ,setCurrentPage}) => {
+  //console.log(user)
   const handleClick = e => {
     setSingleUser(user)
-    setCurrentPage('User Page')
+    //setCurrentPage('User Page')
   }
 
   const handleDescription = () => user.description.length > 90 ? user.description.substring(0, 90) + "..." : user.description
@@ -17,7 +22,7 @@ const User = ({user, setSingleUser ,setCurrentPage}) => {
         <div className="mb-1 text-muted">Region: {user.region}</div>
         <p className="mb-auto profile-desc">{handleDescription()}</p>
         <div className="justify-content-center">
-          <a onClick={handleClick} className="btn btn-dark text-light profile-link">Full profile</a>
+          <Link to={`/users/${user.id}`} onClick={handleClick} className="btn btn-dark text-light profile-link">Full profile</Link>
         </div>
       </div>
       <div className="col-auto d-none d-lg-block">

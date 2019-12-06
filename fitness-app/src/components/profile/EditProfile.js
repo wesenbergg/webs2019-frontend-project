@@ -3,9 +3,10 @@ import '../../styles/EditProfile.css'
 import walter from "../../img/walter.jpg"
 import ProfilePost from "./ProfilePost";
 import Post from "../content/feed/Post";
+import { Link } from 'react-router-dom'
 
 const EditProfile = ({setCurrentPage}) => {
-    console.log(setCurrentPage)
+    //console.log(setCurrentPage)
     function handleClick({setCurrentPage}) {
         setCurrentPage('Form')
     }
@@ -13,12 +14,11 @@ const EditProfile = ({setCurrentPage}) => {
 
 
     return (
-
             <div>
                 <div className=" profiili">
                     <img align="right" className="profiilikuva" alt="Walter" src={walter}/>
                     <div className="text">
-                         <h4 className="header4" > Walter Ruoppa {editButton} </h4>
+                         <h4 className="header4" > Walter Ruoppa <Link to="/users/profile/edit" className="btn btn-md btn-dark">Edit profile</Link> </h4>
                             <h4 className="header4"> <i className="far fa-user"></i> Walter95 </h4>
                         <h4 className="header4"><i className="fas fa-globe-europe"></i> Finland </h4>
                     </div>

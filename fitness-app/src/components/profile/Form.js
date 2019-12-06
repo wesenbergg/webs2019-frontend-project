@@ -51,7 +51,7 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
     }
 
     //Palaa etusivulle jos ei ole kirjauduttu sisään
-    if(loggedUser.username === undefined) setCurrentPage('Front Page')
+    if(loggedUser.username === undefined) return(<></>)
     return (
         <div className="container signup">
             <div className="col-md-12 order-md-1">

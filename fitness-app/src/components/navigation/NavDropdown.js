@@ -1,4 +1,8 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route, Link, Redirect, withRouter
+} from 'react-router-dom'
 
 const NavDropdown = ({name, setCurrentPage, setLoggedUser}) => {
   const handleNavClick = e => setCurrentPage(e.target.title)
@@ -17,9 +21,9 @@ const NavDropdown = ({name, setCurrentPage, setLoggedUser}) => {
           Logged in as, {name}
         </span>
         <div className="dropdown-menu profile-links" aria-labelledby="navbarDropdown">
-          <span className="dropdown-item mouse-pointer" title={'EditProfile'} onClick={handleNavClick}><i className="fas fa-user-circle"></i> Profile</span>
-          <span className="dropdown-item mouse-pointer" title={'Front Page'} onClick={handleNewPostClick} disabled><i className="fas fa-plus"></i> Add post</span>
-          <span className="dropdown-item mouse-pointer" onClick={handleLogOut}><i className="fas fa-sign-out-alt"></i> Log out</span>
+          <Link className="dropdown-item mouse-pointer" to="/users/profile"><i className="fas fa-user-circle"></i> Profile</Link>
+          <Link className="dropdown-item mouse-pointer" to="/posts/new"><i className="fas fa-plus"></i> Add post</Link>
+          <Link className="dropdown-item mouse-pointer" onClick={handleLogOut} to="/"><i className="fas fa-sign-out-alt"></i> Log out</Link>
         </div>
       </li>
     </>

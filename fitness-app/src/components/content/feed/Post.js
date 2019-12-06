@@ -1,5 +1,9 @@
 import React from 'react'
 import postServices from '../../../services/postServices'
+import {
+    BrowserRouter as Router,
+    Route, Link, Redirect, withRouter
+  } from 'react-router-dom'
 
 // Vertaa postauksen id:tä ja käyttäjälistan henkilöiden id:tä
 const findAuthorname = (author_id, users) => {
@@ -15,7 +19,8 @@ function handleClick({ setCurrentPage, setSinglePost, id }) {
             .then(post => {
                 setSinglePost(post)
             })
-        setCurrentPage('Post Page')
+        //setCurrentPage('Post Page')
+        console.log('click')
     }
 }
 
@@ -28,7 +33,7 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                     <div className="row no-gutters">
                         <div className="col-md-12">
                             <div className="card-body">
-                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
+                            <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link to={`/posts/${id}`} >{title}</Link></h4>
                                 <p className="card-text">{text}</p>
                                 <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
                             </div>
@@ -47,7 +52,7 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
+                            <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link to={`/posts/${id}`} >{title}</Link></h4>
                                 <p className="card-text">{text}</p>
                                 <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
                             </div>
@@ -66,7 +71,7 @@ const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSing
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}>{title}</h4>
+                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link to={`/posts/${id}`} >{title}</Link></h4>
                                 <p className="card-text">{text}</p>
                                 <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
                             </div>
