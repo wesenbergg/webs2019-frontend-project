@@ -1,10 +1,8 @@
 import React from 'react'
 import Post from '../feed/Post'
 import '../../../styles/post.css'
-// Näyttää rumalta mutta toimii
-// Yksittäiseltä postilta voi myöhemmin ottaa setCuurentPage & setSinglePost pois
-// <Post /> pitää muokata
-const SinglePost = ({ singlePost, setCurrentPage, setSinglePost }) => {
+
+const SinglePost = ({ singlePost, setCurrentPage }) => {
     return (
         <div className="singlePost">
             <Post

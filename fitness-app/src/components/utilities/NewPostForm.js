@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import getTimestamp from '../../util/date'
 import postServices from '../../services/postServices'
 
-// Komponentti uutta postausta varten
 const NewPostForm = ({ posts, setPosts }) => {
     var currPostAmount = null
     // Jos newPostForm:ia kutsutaan Feedin ulkopuolelta
@@ -28,15 +27,10 @@ const NewPostForm = ({ posts, setPosts }) => {
             author_id: 10000000,
             author_name: 'Testi'
         }
-        console.log(newPost.image)
-        //console.log("Title:", newPost.title, "\ntext: ", newPost.text, " ", newPost.date)
-        //console.log("image: ", newPost.image, "author_id: ", newPost.author_id, "name: ", newPost.author_name)
-        
+
         postServices.create(newPost)
             .then(response => {
-                // Mikäli newPostForm:ia kutsutaan Feedin ulkopuolelta
-                if (setPosts !== undefined && posts !== undefined)
-                    setPosts(posts => [newPost, ...posts])
+                setPosts(posts => [newPost, ...posts])
             })
         setNewTitle('')
         setNewText('')

@@ -1,21 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Post from './Post'
-import NewPostForm from '../../utilities/NewPostForm'
-import postServices from '../../../services/postServices'
 import '../../../styles/feed.css'
 import { Link } from 'react-router-dom'
 
-const Feed = ({ posts, setPosts, setSinglePost, setCurrentPage }) => {
-	/*
-	const [posts, setPosts] = useState([])
-	useEffect(() => {
-		postServices.getAll()
-			.then(initialPosts => {
-				initialPosts.reverse()
-				setPosts(initialPosts)
-			})
-	}, [])
-	*/
+const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 	const generateFeed = () => 
 		posts.map(post =>
 			<Post
