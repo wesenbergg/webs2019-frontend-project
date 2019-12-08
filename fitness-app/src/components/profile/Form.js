@@ -129,7 +129,7 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
                             </div>
                         </div>
                     </div>
-                    <button type="button" className="btn btn-success" type="submit" >Update</button>
+                    <button className="btn btn-success" type="submit" >Update</button>
                     <Link className="btn btn-primary" to="/users/profile">Cancel</Link>
                     <Link className="btn btn-danger" onClick={handleDelete} to="/" disabled>Delete</Link>
                 </form>

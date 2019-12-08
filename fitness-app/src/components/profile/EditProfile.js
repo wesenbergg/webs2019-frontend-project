@@ -56,7 +56,7 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 <div align="center">
                 <ProfilePost/>
                 </div>
-                <Link className="mouse-pointer" to="/profile/edit"><i className="fas fa-user-circle"></i> Edit profile</Link>
+                <Link className="mouse-pointer" to="/users/profile/edit"><i className="fas fa-user-circle"></i> Edit profile</Link>
         </div>
 
     )

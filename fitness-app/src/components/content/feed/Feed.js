@@ -23,7 +23,7 @@ const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 	return (
 		<>
 			<Link className="btn btn-lg btn-dark text-light my-2" to="/posts/new">New post</Link>
-			<div className="card-columns" className="feedContainer">
+			<div className="card-columns feedContainer" className="feedContainer">
 				{generateFeed()}
 			</div>
 		</>

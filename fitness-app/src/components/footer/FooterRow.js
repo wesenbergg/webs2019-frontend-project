@@ -1,16 +1,14 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const FooterRow = ({content, setCurrentPage, styleAttr}) => {
-  const handleClick = e => {
-    //console.log(e.target.title)
-    setCurrentPage(e.target.title)
-  }
+
+const FooterRow = ({content, setCurrentPage}) => {
 
   //console.log(content)
-  if(content.name !== undefined){
+  if(content.logo !== undefined){
     return(
       <>
-        <li><span className="text-muted footer-item mouse-pointer" href={content.link}><i className={content.logo}></i> {content.name}</span></li>
+        <li><a className="text-muted footer-item mouse-pointer" href={content.link}><i className={content.logo}></i> {content.name}</a></li>
       </>
     )
   }
@@ -24,7 +22,7 @@ const FooterRow = ({content, setCurrentPage, styleAttr}) => {
   }
 
   return(
-    <li><span className="text-muted footer-item mouse-pointer" title={content} onClick={handleClick} >{content}</span></li>
+    <li><Link className="text-muted footer-item  mouse-pointer" to={content.link}>{content.name}</Link></li>
   )
 }
 

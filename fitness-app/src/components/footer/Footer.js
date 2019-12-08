@@ -3,7 +3,24 @@ import FooterCol from './FooterCol'
 import FooterBrand from './FooterBrand'
 
 const Footer = ({setCurrentPage}) => {
-  const pages = ['Front Page', 'Feed', 'Search', 'QA', 'About']
+  const pages = [
+    {
+      name: 'Front Page',
+      link: '/'
+    },
+    {
+      name: 'Feed',
+      link: '/posts'
+    },
+    {
+      name: 'Search',
+      link: '/users'
+    },
+    {
+      name: 'About',
+      link: '/about'
+    }
+  ]
   const about = ['Contact', 'Team', 'Privacy', 'Terms', 'FAQ']
   const medias = [
     {

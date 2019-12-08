@@ -23,16 +23,20 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
   return(
     <>
     <Route exact path="/" render={() => <FrontPage />} />
-    <Route exact path="/posts" render={() => <Feed posts={posts} setPosts={setPosts} setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />} />
-    <Route exact path="/users" render={() => <Search users={users} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>} />
+    
     <Route exact path="/about" render={() => <About />} />
-    <Route exact path="/profile" render={() => <EditProfile setCurrentPage={setCurrentPage} loggedUser={loggedUser}/>} />
-    <Route path="/profile/edit" render={() => <Form setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser} loggedUser={loggedUser} setUsers={setUsers} users={users} setMessage={setMessage}/>} />
+
     <Route exact path="/signin" render={() => <SignIn credentials={credentials} setCredentials={setCredentials} setMessage={setMessage} setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser} />} />
     <Route exact path="/signup" render={() => <SignUp users={users} newUser={newUser} setNewUser={setNewUser} createUser={createUser} newName={newName} setNewName={setNewName} setMessage={setMessage} setCurrentPage={setCurrentPage}/>} />
+
+    <Route exact path="/posts" render={() => <Feed posts={posts} setPosts={setPosts} setCurrentPage={setCurrentPage} setSinglePost={setSinglePost} />} />
     <Route exact path="/posts/new" render={() => <NewPostPage posts={posts} setPosts={setPosts} />} />
-    <Route path="/posts/:id" render={() => <SinglePost singlePost={singlePost} />} />
-    <Route exact path="/users/:id" render={() => <SingleUser singleUser={singleUser} />} />
+    <Route exact path="/posts/p/:id" render={() => <SinglePost singlePost={singlePost} />} />
+    
+    <Route exact path="/users" render={() => <Search users={users} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>} />
+    <Route exact path="/users/u/:id" render={() => <SingleUser singleUser={singleUser} />} />
+    <Route exact path="/users/profile" render={() => <EditProfile setCurrentPage={setCurrentPage} loggedUser={loggedUser}/>} />
+    <Route exact path="/users/profile/edit" render={() => <Form setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser} loggedUser={loggedUser} setUsers={setUsers} users={users} setMessage={setMessage}/>} />
     </>
   )
 }

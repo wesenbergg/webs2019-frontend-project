@@ -1,13 +1,11 @@
 import React from 'react'
 import '../../../styles/user.css'
 import {
-  BrowserRouter as Router,
-  Route, Link, Redirect, withRouter
-} from 'react-router-dom'
+  Link} from 'react-router-dom'
 
-const User = ({user, setSingleUser ,setCurrentPage}) => {
+const User = ({user, setSingleUser}) => {
   //console.log(user)
-  const handleClick = e => {
+  const handleClick = () => {
     setSingleUser(user)
     //setCurrentPage('User Page')
   }
@@ -22,11 +20,11 @@ const User = ({user, setSingleUser ,setCurrentPage}) => {
         <div className="mb-1 text-muted">Region: {user.region}</div>
         <p className="mb-auto profile-desc">{handleDescription()}</p>
         <div className="justify-content-center">
-          <Link to={`/users/${user.id}`} onClick={handleClick} className="btn btn-dark text-light profile-link">Full profile</Link>
+          <Link to={`/users/u/${user.id}`} onClick={handleClick} className="btn btn-dark text-light profile-link">Full profile</Link>
         </div>
       </div>
       <div className="col-auto d-none d-lg-block">
-        <img className="bd-placeholder-image" src={user.profilepic}/>
+        <img className="bd-placeholder-image" src={user.profilepic} alt={user.username}/>
       </div>
     </div>
   )
