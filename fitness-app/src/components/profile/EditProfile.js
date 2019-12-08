@@ -23,12 +23,12 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 <div className="info">
                     <div className="info_data">
                         <div className="data">
-                            <Link className="mouse-pointer" to="/posts/new"><button className="nappi">Add Post</button> </Link>
+                            <Link className="btn btn-lg btn-dark text-light my-2 buttonProfile" to="/posts/new">Add post</Link>
                             <h4>Username</h4>
                             <h6>walter95</h6>
                         </div>
                         <div className="data">
-                            <Link className="mouse-pointer" to="/users/profile/edit"> <button className="nappi">Edit profile</button> </Link>
+                            <Link className="btn btn-lg btn-dark text-light my-2 buttonProfile" to="/users/profile/edit">Edit Profile</Link>
                             <h4>Region</h4>
                         </div>
                     </div>

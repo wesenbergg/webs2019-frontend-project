@@ -1,5 +1,7 @@
 /*CSS feedin postauksille*/
-
+.buttonProfile {
+   margin: 3px 3px 3px 3px;
+}
 .horizontalPost {
     max-width: 30%;
     margin: 10px;
