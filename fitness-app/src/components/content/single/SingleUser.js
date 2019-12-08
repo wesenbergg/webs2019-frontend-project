@@ -13,8 +13,10 @@ const SingleUser = ({singleUser}) => {
               <div className="info">
                   <div className="info_data">
                       <div className="data">
+                          <div className="buttons">
                           <h4>Username</h4>
                           <h6>walter95</h6>
+                          </div>
                       </div>
                       <div className="data">
                           <h4>Region</h4>

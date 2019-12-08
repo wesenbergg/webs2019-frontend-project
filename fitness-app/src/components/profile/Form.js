@@ -129,9 +129,9 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
                             </div>
                         </div>
                     </div>
-                    <button className="btn btn-success" type="submit" >Update</button>
-                    <Link className="btn btn-primary" to="/users/profile">Cancel</Link>
-                    <Link className="btn btn-danger" onClick={handleDelete} to="/" disabled>Delete</Link>
+                    <button className="btn btn-success napit" type="submit" >Update</button>
+                    <Link className="btn btn-primary napit" to="/users/profile">Cancel</Link>
+                    <Link className="btn btn-danger napit" onClick={handleDelete} to="/" disabled>Delete</Link>
                 </form>
             </div>
         </div>

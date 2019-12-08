@@ -28,7 +28,7 @@ const Post = ({ title, text, image_url, date, setCurrentPage, setSinglePost, aut
                             <div className="card-body fix">
                             <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link to={`/posts/p/${id}`} >{title}</Link></h4>
                                 <p className="card-text">{text}</p>
-                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
+                                 <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
                             </div>
                         </div>
                     </div>

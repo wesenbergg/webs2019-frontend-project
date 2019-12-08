@@ -1,7 +1,10 @@
-button {
-    width: 15%;
-    height: 40px;
+.napit {
+    width: 10%;
+    height: 50px;
+    border-radius: 10px;
+
 }
+
 
 .block {
     display: inline-block;

@@ -1,7 +1,6 @@
 import React from 'react'
-import '../../styles/singleUser.css'
+import '../../styles/post.css'
 import walter from "../../img/walter.jpg"
-import ProfilePost from "./ProfilePost";
 import Post from "../content/feed/Post";
 import { Link, Redirect } from 'react-router-dom'
 
@@ -24,10 +23,12 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 <div className="info">
                     <div className="info_data">
                         <div className="data">
+                            <Link className="mouse-pointer" to="/posts/new"><button className="nappi">Add Post</button> </Link>
                             <h4>Username</h4>
                             <h6>walter95</h6>
                         </div>
                         <div className="data">
+                            <Link className="mouse-pointer" to="/users/profile/edit"> <button className="nappi">Edit profile</button> </Link>
                             <h4>Region</h4>
                         </div>
                     </div>
@@ -53,9 +54,7 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 id="5"
                 />
                     </div>
-                <div align="center">
-                <ProfilePost/>
-                </div>
+
                 <Link className="mouse-pointer" to="/users/profile/edit"><i className="fas fa-user-circle"></i> Edit profile</Link>
         </div>
 
