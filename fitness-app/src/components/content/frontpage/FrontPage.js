@@ -22,7 +22,7 @@ const FrontPage = () => {
                 <button id="expand-button" className="lead collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
                     Click here to read our stories
                 </button>
-                <div class="collapse" id="collapseExample">
+                <div className="collapse" id="collapseExample">
                     <div className="container marketing">
                         <div className="row">
                             <div className="col-lg-4">
