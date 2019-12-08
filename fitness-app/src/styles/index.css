@@ -1,15 +1,24 @@
-.carousel-item img {
-    width: 100% !important;
-    max-height: 650px !important;
-}
-
-body {
-    background-color: beige !important;
+.frontpage {
+    background-color: #141a20 !important;
 }
 
 .marketing{
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+
+.marketing .col-lg-4 {
+    background: #303a40;
+    border-radius: 2px;
+    padding: 1.5rem;
+}
+
+.marketing .col-lg-4 p{
+    color: #808a90 !important;
+}
+
+.marketing h2{
+    color: #f0faf0;
 }
 
 .card-image{
@@ -27,3 +36,53 @@ body {
     padding-bottom: 180px;
 }
 
+.flyer {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.flyer img{
+    opacity: .4 !important;
+}
+
+/* Centered text */
+.flyer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#expand-button{
+    min-width: 100%;
+    max-width: 100%;
+    font-size: x-large !important;
+    border: none;
+    background: none;
+    color: #707a80;
+    transition: 1.3s;
+}
+
+#expand-button:hover{
+    background: #242a30;
+    color: #f0faf0;
+    transition: 1.3s;
+}
+
+#expand-button:focus { outline: none; }
+
+.collapse-section .collapsed {
+    background: #343a40 !important;
+}
+
+.collapsed .fa-arrow-down {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari 3-8 */
+    transform: rotate(180deg);
+    transition: 1.3s;
+}
+
+.frontpage .btn {
+    transition: 0.8s !important;
+}

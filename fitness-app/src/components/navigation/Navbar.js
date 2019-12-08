@@ -2,6 +2,7 @@ import React from 'react'
 import Navlink from './Navlink'
 import NavDropdown from './NavDropdown'
 import SideNav from './SideNav'
+import {Link} from 'react-router-dom'
 
 const Navbar = ({pages, autPages, setCurrentPage, loggedUser, setLoggedUser}) => {
   /*
@@ -21,7 +22,7 @@ const Navbar = ({pages, autPages, setCurrentPage, loggedUser, setLoggedUser}) =>
   return(
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <span className="navbar-brand  mouse-pointer" onClick={() => setCurrentPage('Front Page')}><i className="fas fa-dumbbell"></i> Fitness App</span>
+        <Link className="navbar-brand  mouse-pointer"><i className="fas fa-dumbbell"></i> StayFit</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

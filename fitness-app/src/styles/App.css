@@ -65,3 +65,19 @@
 .navbar-brand:hover{
   transform: scale(1.05);
 }
+
+.frontpage-flyer{
+  width: 100%;
+}
+
+.flyer {
+  padding: 0;
+}
+
+.jumbotron {
+  background: #343a40;
+}
+
+.jumbotron p, .jumbotron h1{
+  color: white;
+}

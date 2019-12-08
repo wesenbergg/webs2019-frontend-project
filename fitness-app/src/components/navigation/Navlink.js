@@ -7,11 +7,10 @@ import {
 const Navlink = ({name, setCurrentPage, styleAttr}) => {
   return(
     <>
-    <li className="nav-item"><Link className="dropdown-item mouse-pointer" to="/">Front Page</Link></li>
-    <li className="nav-item"><Link className="dropdown-item mouse-pointer" to="/posts">Feed</Link></li>
-    <li className="nav-item"><Link className="dropdown-item mouse-pointer" to="/users">Search</Link></li>
-    <li className="nav-item"><Link className="dropdown-item mouse-pointer" to="/">QA</Link></li>
-    <li className="nav-item"><Link className="dropdown-item mouse-pointer" to="/about">About</Link></li>
+    <li className="nav-item"><Link className="nav-link mouse-pointer" to="/">Front Page</Link></li>
+    <li className="nav-item"><Link className="nav-link mouse-pointer" to="/posts">Feed</Link></li>
+    <li className="nav-item"><Link className="nav-link mouse-pointer" to="/users">Search</Link></li>
+    <li className="nav-item"><Link className="nav-link mouse-pointer" to="/about">About</Link></li>
     </>
   )
 }       
