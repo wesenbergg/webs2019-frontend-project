@@ -5,7 +5,10 @@
     list-style: none;
     font-family: 'Josefin Sans', sans-serif;
 }
-
+.styling {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .userBox{
 
@@ -34,7 +37,7 @@
 
 
 .userBox .oikea{
-    width: 65%;
+    width: 85%;
     background: whitesmoke;
     padding: 25px 25px;
 }

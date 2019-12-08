@@ -4,7 +4,7 @@ import walter from '../../../img/walter.jpg'
 const SingleUser = ({singleUser}) => {
 
   return(
-      <div className="userBox">
+      <div className="userBox styling">
           <div className="vasen">
               <img src={walter} alt="user"/>
                   <h3 className="otsikko3">{singleUser.firstname} {singleUser.lastname}</h3>
