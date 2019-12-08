@@ -1,45 +1,82 @@
-.singlePost {
-    width: 50%;
-    margin: 0 auto;
-
-}
-
+/*CSS feedin postauksille*/
 .horizontalPost {
     max-width: 540px;
     margin: 10px;
-
-
-
 }
 
 .horizontalPostText {
     padding-left: 10px;
-
 }
 
 .horizontalPostFooter {
     text-align: right;
-
 }
 
 .card-img {
     width: 200px;
     border-radius: 30px;
-
-
 }
-
+/*CSS uudelle postaukselle*/
 .newPostForm {
     max-width: 540px;
     width: 50%;
     margin: 0 auto;
-
 }
-
 
 .fix {
     background-color: white;
     border-radius: 0px 30px 30px 0px;
     border: 2px solid gainsboro;
+}
 
+/*SinglePost -sivun CSS*/
+/*Post container*/
+.singlePostOuter {
+    border: 1px solid black;
+    width: 100%;
+}
+.singlePostInner {
+    max-width: 800px;
+    width: 80%;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+.singlePostTitle {
+    padding-left: 80px;
+    text-align: left;
+}
+.singlePostDate {
+    float: right;
+    padding-right: 10px;
+}
+
+/*CSS for author info & profile pic*/
+.singlePostAuthorInfo {
+    background-color: transparent;
+}
+.singlePostAuthorInfo img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    padding-left: 10px;
+    background-color: transparent;
+}
+.singlePostAuthorInfo p {
+    float: left;
+    padding: 20px 0 0 20px;
+}
+
+/*CSS for single post content*/
+.singlePostContent {
+    margin-top: 80px;
+    overflow: hidden;
+}
+.singlePostContent img {
+    width: 120px;
+    float: left;
+}
+.singlePostContent p {
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 10px;
 }
