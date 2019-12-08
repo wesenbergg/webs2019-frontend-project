@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/EditProfile.css'
+import '../../styles/singleUser.css'
 import walter from "../../img/walter.jpg"
 import ProfilePost from "./ProfilePost";
 import Post from "../content/feed/Post";
@@ -14,20 +14,34 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
     //Palaa etusivulle jos ei ole kirjauduttu sisään
     if(loggedUser.username === undefined) return(<><Redirect to="/signin" /></>)
     return (
-            <div>
-                <div className=" profiili">
-                    <img align="right" className="profiilikuva" alt="Walter" src={walter}/>
-                    <div className="text">
-                         <h4 className="header4" > Walter Ruoppa <Link to="/users/profile/edit" className="btn btn-md btn-dark">Edit profile</Link>
-                             <Link to="/posts/new" className="btn btn-md btn-dark buttoni">Post</Link></h4>
-                            <h4 className="header4"> <i className="far fa-user"></i> Walter95 </h4>
-                        <h4 className="header4"><i className="fas fa-globe-europe"></i> Finland </h4>
+        <div>
+        <div className="userBox" align="center">
+            <div className="vasen">
+                <img src={walter} alt="user"/>
+                <h3 className="otsikko3">NIMI</h3>
+            </div>
+            <div className="oikea">
+                <div className="info">
+                    <div className="info_data">
+                        <div className="data">
+                            <h4>Username</h4>
+                            <h6>walter95</h6>
+                        </div>
+                        <div className="data">
+                            <h4>Region</h4>
+                        </div>
                     </div>
-                 <h3> About me</h3>
-                    <h6>Harrastuksiini kuuluu sali ja cardio. Harrastan välillä tanssia myös. Vapaa-aikani tykkään viettää Espanjan lämmössä, juoden sangriaa, olutta ja mojitoja.</h6>
-
                 </div>
-                <h1> POSTS </h1>
+
+                <div className="projects">
+                    <h3 className="otsikko3">Bio</h3>
+                    <div className="projects_data">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
                     <div align="center">
                 <Post
@@ -42,8 +56,8 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 <div align="center">
                 <ProfilePost/>
                 </div>
-
         </div>
+
     )
 }
 export default EditProfile;
