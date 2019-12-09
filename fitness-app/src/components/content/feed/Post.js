@@ -31,16 +31,20 @@ const PostImage = ({ image_url }) => {
     )
 }
 
+// Näyttää postauksesta vain 200 ensimmäistä merkkiä (koko postaus tai sampleText)
+// Merkin 200 jälkeinen teksti katkaistaan seuraavaan ' ', jotta viimeinen sana on kokonainen
+// Ilman välilyöntiä näytetään seuraavat 25 merkkiä 
 const PostText = ({ text, id, setSinglePost, setCurrentPage }) => {
     if (text.length < 200) {
         return (
-            <p className="card-text">{text}</p>
+            <p className="postContent">{text}</p>
         )
     }
     var sampleText = text.slice(0, 200)
+    var remainder = text.slice(200, 225)
     return (
         <div>
-            <p className="card-text">{sampleText + text.slice(200).split(' ', 1) + '...'} </p>
+            <p className="postContent">{sampleText + (remainder.includes(' ') ? remainder.split(' ', 1) + '...' : '...')} </p>
             <button className="postShowMore" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}> <Link className="postTitle" to={`/posts/p/${id}`} > show more</Link></button>
         </div>
     )

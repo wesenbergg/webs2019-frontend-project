@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 	const generateFeed = () => 
 		posts.map(post =>
-			<div className="feedColumns">
 			<Post
 				key={post.id}
 				title={post.title}
@@ -19,7 +18,6 @@ const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 				id={post.id}
 				author_name={post.author_name}
 			/>
-			</div>
 		)
 
 	return (

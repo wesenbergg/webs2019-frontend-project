@@ -1,15 +1,15 @@
-/*CSS feedin postauksille*/
 .buttonProfile {
    margin: 3px 3px 3px 3px;
 }
+/*CSS feedin postauksille*/
 .horizontalPost {
     max-width: 50%;
     margin: 10px;
     min-width: 300px;
-    border: 3px solid #212529;
+    border: 3px solid #506070;
     border-radius: 10px;
     background-color: #212529;
-    color: grey;
+    color: #506070;
 }
 .horizontalPostText {
     padding-left: 10px;
@@ -20,11 +20,12 @@
 }
 .postTitle {
     text-decoration: none;
+    padding-top: 10px;
     outline: none;
     color: grey;
 }
 .postTitle:hover {
-    color: #e0e0e0;
+    color: #91A3B5;
     text-decoration: none;
 }
 .postThumbnail {
@@ -33,6 +34,7 @@
 }
 .postContent {
     overflow: hidden;
+    display: block;
 }
 .postContent img {
     float: left;
@@ -40,7 +42,8 @@
 .postContent p {
     text-align: left;
     margin-top: 10px;
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
+    overflow-wrap: break-word;
 }
 .postShowMore {
     font-size: 100%;
@@ -49,13 +52,7 @@
     padding: 0;
     background: transparent;
 }
-/*
-.card-img {
-    width: 100%;
-    height: 100%;
 
-}
-*/
 /*CSS uudelle postaukselle*/
 .newPostForm {
     max-width: 540px;
@@ -63,17 +60,6 @@
     margin: 0 auto;
 }
 
-/*
-.fix {
-    background-color: white;
-    border-radius: 0px 30px 30px 0px;
-    border: 2px solid gainsboro;
-}
-.nappi {
-    width: 100%;
-    margin-bottom: 4px;
-}
-*/
 /*SinglePost -sivun CSS*/
 /*Post container*/
 .singlePostOuter {
