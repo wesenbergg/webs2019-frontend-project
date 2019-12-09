@@ -1,3 +1,9 @@
+/* profilePage */
+.userBox {
+    width: 25% !important;
+    height: 25%;
+}
+
 .buttonProfile {
    margin: 3px 3px 3px 3px;
 }
