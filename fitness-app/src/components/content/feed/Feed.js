@@ -3,7 +3,7 @@ import Post from './Post'
 import '../../../styles/feed.css'
 import { Link } from 'react-router-dom'
 
-const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
+const Feed = ({ posts, setSinglePost, setSingleUser }) => {
 	const generateFeed = () =>
 		posts.map(post =>
 			<Post
@@ -13,10 +13,10 @@ const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 				author_id={post.author_id}
 				image_url={post.image}
 				date={post.date}
-				setCurrentPage={setCurrentPage}
 				setSinglePost={setSinglePost}
 				id={post.id}
 				author_name={post.author_name}
+				setSingleUser={setSingleUser}
 			/>
 		)
 

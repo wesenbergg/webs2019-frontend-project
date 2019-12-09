@@ -2,14 +2,25 @@ import React from 'react'
 import postServices from '../../../services/postServices'
 import { Link } from 'react-router-dom'
 import '../../../styles/post.css'
+import userServices from '../../../services/userServices'
 
 // yksittäinen posti (singlePost) ei saa propseinaan setCurrentPagea tai setSinglePostia (ne ovat 'undefined')
 // tällöin halutaan onClick, joka ei tee mitään (parempaa ratkaisua odotellessa :D)... 
-function handleClick({ setCurrentPage, setSinglePost, id }) {
-    if (setCurrentPage !== undefined || setSinglePost !== undefined) {
+function handlePostClick({ setSinglePost, id }) {
+    if (setSinglePost !== undefined) {
         postServices.getById(id)
             .then(post => {
                 setSinglePost(post)
+            })
+    }
+}
+
+// Metodi joka päivittää singleUser -staten postauksen kirjoittaneeksi käyttäjäksi
+function handleProfileClick({ setSingleUser, author_id }) {
+    if (setSingleUser !== undefined) {
+        userServices.getById(author_id)
+            .then(user => {
+                setSingleUser(user)
             })
     }
 }
@@ -33,7 +44,7 @@ const PostImage = ({ image_url }) => {
 // Näyttää postauksesta vain 200 ensimmäistä merkkiä (koko postaus tai sampleText)
 // Merkin 200 jälkeinen teksti katkaistaan seuraavaan ' ', jotta viimeinen sana on kokonainen
 // Jos ei ole välilyöntiä tekstiin lisätään vain '...'
-const PostText = ({ text, id, setSinglePost, setCurrentPage }) => {
+const PostText = ({ text, id, setSinglePost, setSingleUser }) => {
     if (text.length < 200) {
         return (
             <p className="postContent">{text}</p>
@@ -44,19 +55,19 @@ const PostText = ({ text, id, setSinglePost, setCurrentPage }) => {
     return (
         <div>
             <p className="postContent">{sampleText + (remainder.includes(' ') ? remainder.split(' ', 1) + '...' : '...')} </p>
-            <button className="postShowMore" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}> <Link className="postTitle" to={`/posts/p/${id}`} > show more</Link></button>
+            <button className="postShowMore" onClick={() => handlePostClick({ setSinglePost, id })}> <Link className="postTitle" to={`/posts/p/${id}`} > show more</Link></button>
         </div>
     )
 }
-const Post = ({ title, text, image_url, date, setCurrentPage, setSinglePost, author_name, id }) => {
+const Post = ({ title, text, image_url, date, setSinglePost, author_name, author_id, id, setSingleUser }) => {
     return (
         <div className="horizontalPost">
-            <h4 className="postTitle mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link className="postTitle" to={`/posts/p/${id}`} >{title}</Link></h4>
+            <h4 className="postTitle mouse-pointer" onClick={() => handlePostClick({ setSinglePost, id })}><Link className="postTitle" to={`/posts/p/${id}`} >{title}</Link></h4>
             <div className="postContent">
                 <PostImage image_url={image_url} />
-                <PostText text={text} id={id} setSinglePost={setSinglePost} setCurrentPage={setCurrentPage} />
+                <PostText text={text} id={id} setSinglePost={setSinglePost} />
             </div>
-            <p><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
+            <p><small className="text-muted">From: <span className="card-link author-link mouse-pointer"><Link to={`/users/u/${author_id}`} onClick={() => handleProfileClick({ setSingleUser, author_id })}>{author_name}</Link></span> {date}</small></p>
         </div>
     )
 }
