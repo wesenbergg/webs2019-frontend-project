@@ -1,10 +1,23 @@
 import React from 'react'
 import '../../../styles/post.css'
+import { Link, useHistory } from 'react-router-dom'
+import userServices from '../../../services/userServices'
+
+function handleProfileClick({ setSingleUser, author_id }) {
+    if (setSingleUser !== undefined) {
+        userServices.getById(author_id)
+            .then(user => {
+                setSingleUser(user)
+            })
+    }
+}
 
 // Tarkoitus olisi hakea käyttäjän profiilikuva users:sta
-const ProfilePic = () => {
+const ProfilePic = ({ author_id, setSingleUser }) => {
     return (
-        <img className="singlePostAuthorInfo" src={`${process.env.PUBLIC_URL}/assets/images/default_avatar.png`} />
+        <Link to={`/users/u/${author_id}`} onClick={() => handleProfileClick({ setSingleUser, author_id })}>
+            <img className="singlePostAuthorInfo" src={`${process.env.PUBLIC_URL}/assets/images/default_avatar.png`} />
+        </Link>
     )
 }
 
@@ -23,18 +36,19 @@ const SinglePostImage = ({ imageSrc }) => {
         </a>
     )
 }
-const SinglePost = ({ singlePost }) => {
-    console.log(singlePost.autho_name, singlePost.date)
+const SinglePost = ({ singlePost, setSingleUser }) => {
+    let author_id = singlePost.author_id
     return (
         <div className="singlePostOuter">
             <div className="singlePostInner">
                 <h3 className="singlePostTitle">{singlePost.title}</h3>
                 <section className="singlePostAuthorInfo">
                     <div>
-                        <ProfilePic />
+                        <ProfilePic author_id={author_id} setSingleUser={setSingleUser} />
                     </div>
                     <div>
-                        <p><a href="">{singlePost.author_name}</a> {singlePost.date}</p>
+                        <p><Link to={`/users/u/${author_id}`} onClick={() => handleProfileClick({ setSingleUser, author_id })}>
+                            {singlePost.author_name}</Link> {singlePost.date}</p>
                     </div>
                 </section>
                 <div className="singlePostContent">
