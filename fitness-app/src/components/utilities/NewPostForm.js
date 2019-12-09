@@ -4,8 +4,11 @@ import postServices from '../../services/postServices'
 import { useHistory } from 'react-router-dom'
 
 const NewPostForm = ({ posts, setPosts, loggedUser }) => {
-    //(Object.values(loggedUser).length)
     let history = useHistory()
+    console.log('Current username (NewPostForm): ', loggedUser.username)
+    if (loggedUser.username === "" || loggedUser.username === undefined) {
+        history.push("/signin")
+    }
     var currPostAmount = null
     // Jos newPostForm:ia kutsutaan Feedin ulkopuolelta
     if (currPostAmount === undefined || currPostAmount === null) {
@@ -31,14 +34,20 @@ const NewPostForm = ({ posts, setPosts, loggedUser }) => {
             author_name: loggedUser.username
         }
 
-        postServices.create(newPost)
-            .then(response => {
-                setPosts(posts => [newPost, ...posts])
-            })
-        setNewTitle('')
-        setNewText('')
-        setNewLink('')
-        history.push("/posts")
+        if (loggedUser.username === "" || loggedUser.username === undefined) {
+            console.log('please log in first')
+            history.push("/signin")
+        }
+        if (newTitle !== "" && newText !== "") {
+            postServices.create(newPost)
+                .then(response => {
+                    setPosts(posts => [newPost, ...posts])
+                    setNewTitle('')
+                    setNewText('')
+                    setNewLink('')
+                    history.push("/posts")
+                })
+        }
     }
 
     return (
