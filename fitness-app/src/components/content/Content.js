@@ -31,7 +31,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
 
     <Route exact path="/posts" render={() => <Feed posts={posts} setPosts={setPosts} setSinglePost={setSinglePost} setSingleUser={setSingleUser} />} />
     <Route exact path="/posts/new" render={() => <NewPostPage posts={posts} setPosts={setPosts} loggedUser={loggedUser}/>} />
-    <Route exact path="/posts/p/:id" render={() => <SinglePost singlePost={singlePost} />} />
+    <Route exact path="/posts/p/:id" render={() => <SinglePost singlePost={singlePost} setSingleUser={setSingleUser} />} />
     
     <Route exact path="/users" render={() => <Search users={users} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>} />
     <Route exact path="/users/u/:id" render={() => <SingleUser singleUser={singleUser} />} />
