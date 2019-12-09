@@ -1,8 +1,6 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
-  Route, Link, Redirect, withRouter
-} from 'react-router-dom'
+  Link} from 'react-router-dom'
 
 const SideNav = ({name, setCurrentPage, styleAttr}) => {
   const handleNavClick = e => setCurrentPage(e.target.title)

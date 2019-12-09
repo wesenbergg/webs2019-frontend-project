@@ -1,5 +1,16 @@
-.frontpage {
+.frontpage, #search-container, .hidden {
     background-color: #141a20 !important;
+}
+
+#search-container .search-title {
+    color: #f0faf0;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+#search-container{
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
 }
 
 .marketing{
@@ -59,6 +70,7 @@
     max-width: 100%;
     font-size: x-large !important;
     border: none;
+    border-bottom: 2px solid #242a30 !important;
     background: none;
     color: #707a80;
     transition: 1.3s;
@@ -85,4 +97,27 @@
 
 .frontpage .btn {
     transition: 0.8s !important;
+}
+
+.user-container .row{
+    padding: 0 !important;
+}
+
+.user-container img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-card{
+    background: #242a30 !important;
+    border: solid 1px #343a40;
+    border-radius: 3px;
+}
+
+.user-card h3{
+    color: #f0faf0;
+}
+
+.user-card p{
+    color: #909aa0;
 }

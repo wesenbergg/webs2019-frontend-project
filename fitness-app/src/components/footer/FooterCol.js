@@ -14,7 +14,7 @@ const FooterCol = ({colContent, setCurrentPage}) => {
   }
 
   return(
-    <div className="col-6 col-md">
+    <div className="col-xs-6 col-md-12 col-lg-6 col-xl-3">
       <h5 className="text-light">{colContent.name}</h5>
       <ul className="list-unstyled text-small">
         {showFooterRows()}

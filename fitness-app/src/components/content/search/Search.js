@@ -12,11 +12,22 @@ const Search = ({users, filter, setFilter, setCurrentPage, setSingleUser}) => {
   }
 
   return(
-    <div className='container'>
-      <h3 className="search-title"> Search users: </h3>
-      <Filter showFilter={filter} setFilter={setFilter}/>
-      {filterUsers()}
+    <div id="search-container">
+      <div  className='container'>
+      <div className="fade-in row justify-content-between">
+        <div className="col-md-4 text-left">
+        <h3 className="search-title"> Search users: </h3>
+        </div>
+        <div className="col-md-4">
+        <Filter showFilter={filter} setFilter={setFilter}/>
+        </div>
+      </div>
+      <div className="user-container row justify-content-around no-gutters">
+        {filterUsers()}
+      </div>
     </div>
+    </div>
+    
   )
 }
 

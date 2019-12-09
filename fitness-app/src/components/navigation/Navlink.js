@@ -1,10 +1,8 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
-  Route, Link, Redirect, withRouter
-} from 'react-router-dom'
+  Link} from 'react-router-dom'
 
-const Navlink = ({name, setCurrentPage, styleAttr}) => {
+const Navlink = () => {
   return(
     <>
     <li className="nav-item"><Link className="nav-link mouse-pointer" to="/">Front Page</Link></li>

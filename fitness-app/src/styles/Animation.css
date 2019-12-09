@@ -6,6 +6,15 @@ Animation classes
 	        animation: puff-in-center 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) 0.2s both;
 }
 
+.slide-in-left {
+	-webkit-animation: slide-in-left 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.fade-in {
+	-webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
+	        animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
+}
 /*
 
 
@@ -56,6 +65,48 @@ Animation key frames  (below)
             transform: scale(1);
     -webkit-filter: blur(0px);
             filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+ @-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+ @-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
