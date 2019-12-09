@@ -1,8 +1,7 @@
 import React from 'react'
 import postServices from '../../../services/postServices'
-import {
-    Link  } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
+import '../../../styles/post.css'
 
 // yksittäinen posti (singlePost) ei saa propseinaan setCurrentPagea tai setSinglePostia (ne ovat 'undefined')
 // tällöin halutaan onClick, joka ei tee mitään (parempaa ratkaisua odotellessa :D)... 
@@ -12,67 +11,36 @@ function handleClick({ setCurrentPage, setSinglePost, id }) {
             .then(post => {
                 setSinglePost(post)
             })
-        //setCurrentPage('Post Page')
-        console.log('click')
     }
 }
 
-// Kaksi vaihtoehtoista postausta, kuvallinen ja ilman kuvaa
-const Post = ({ title, text, image_url, date, setCurrentPage, setSinglePost, author_name, id }) => {
-    if (image_url === null || image_url === undefined || image_url === "")
-        return (
-            <div className="mx-auto post-thumb" align="center">
-                <div className="card mb-3" className="horizontalPost">
-                    <div className="row no-gutters">
-                        <div className="col-md-12">
-                            <div className="card-body fix">
-                            <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link to={`/posts/p/${id}`} >{title}</Link></h4>
-                                <p className="card-text">{text}</p>
-                                 <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
+// Kolme mahdollista kuvalähdettä
+const PostImage = ({ image_url }) => {
+    if (image_url === null || image_url === undefined || image_url === "") return null
     if (image_url.includes('/assets/images')) {
         return (
-            <div className="mx-auto post-thumb" align="center">
-                <div className="card mb-3" className="horizontalPost">
-                    <div className="row no-gutters">
-                        <div className="col-md-4">
-                            <img src={`${process.env.PUBLIC_URL}${image_url}`} className="card-img" alt="Image not found" />
-                        </div>
-                        <div className="col-md-8 fix">
-                            <div className="card-body ">
-                            <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link to={`/posts/p/${id}`} >{title}</Link></h4>
-                                <p className="card-text">{text}</p>
-                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-    } else {
-        return (
-            <div className="mx-auto post-thumb" align="center">
-                <div className="card mb-3" className="horizontalPost">
-                    <div className="row no-gutters">
-                        <div className="col-md-4">
-                            <img src={image_url} className="card-img" className="card-img" alt="No image found" />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body fix">
-                                <h4 className="card-title mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link to={`/posts/p/${id}`} >{title}</Link></h4>
-                                <p className="card-text">{text}</p>
-                                <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a target="_blank" href={`${process.env.PUBLIC_URL}${image_url}`}>
+                <img className="postThumbnail" src={`${process.env.PUBLIC_URL}${image_url}`} />
+            </a>
         )
     }
+    return (
+        <a target="_blank" href={image_url}>
+            <img className="postThumbnail" src={image_url} />
+        </a>
+    )
+}
+
+const Post = ({ title, text, image_url, date, setCurrentPage, setSinglePost, author_name, id }) => {
+    return (
+        <div className="horizontalPost">
+            <h4 className="postTitle mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link className="postTitle" to={`/posts/p/${id}`} >{title}</Link></h4>
+            <div className="postContent">
+                <PostImage image_url={image_url} />
+                <p className="card-text">{text}</p>
+            </div>
+            <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
+        </div>
+    )
 }
 export default Post

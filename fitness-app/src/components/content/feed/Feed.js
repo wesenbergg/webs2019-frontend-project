@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 	const generateFeed = () => 
 		posts.map(post =>
+			<div className="feedColumns">
 			<Post
 				key={post.id}
 				title={post.title}
@@ -18,12 +19,13 @@ const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 				id={post.id}
 				author_name={post.author_name}
 			/>
+			</div>
 		)
 
 	return (
 		<>
 			<Link className="btn btn-lg btn-dark text-light my-2" to="/posts/new">New post</Link>
-			<div className="card-columns feedContainer" className="feedContainer">
+			<div className="feedContainer">
 				{generateFeed()}
 			</div>
 		</>

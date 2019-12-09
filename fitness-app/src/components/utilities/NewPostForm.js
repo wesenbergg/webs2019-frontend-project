@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import getTimestamp from '../../util/date'
 import postServices from '../../services/postServices'
+import { useHistory } from 'react-router-dom'
 
 const NewPostForm = ({ posts, setPosts }) => {
+    let history = useHistory()
     var currPostAmount = null
     // Jos newPostForm:ia kutsutaan Feedin ulkopuolelta
     if (currPostAmount === undefined || currPostAmount === null) {
@@ -35,7 +37,9 @@ const NewPostForm = ({ posts, setPosts }) => {
         setNewTitle('')
         setNewText('')
         setNewLink('')
+        history.push("/posts")
     }
+
     return (
         <div>
             <br />
