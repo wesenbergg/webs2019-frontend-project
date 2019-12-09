@@ -62,7 +62,7 @@ const NewPostForm = ({ posts, setPosts, loggedUser }) => {
                 </div>
                 <div className="form-group">
                     <textarea className="form-control" type="text" value={newText}
-                        onChange={handleTextChange} placeholder="what are you doing? ..." />
+                        onChange={handleTextChange} placeholder="what are you up to? ..." />
                 </div>
                 <div className="form-group">
                     <input id="linkToImage" type="text" value={newLink} onChange={handleLinkChange}

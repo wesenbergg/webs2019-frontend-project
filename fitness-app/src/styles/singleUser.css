@@ -1,4 +1,63 @@
-*{
+.single-user
+ {
+    background: #242a30;
+}
+
+.single-user-container{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.single-user .profile-img{
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.single-user-card,
+.single-user-description{
+    background: #141a20;
+    color: #707a80;
+}
+
+.single-user-top{
+    max-width: 300px;
+}
+
+.single-user-bottom {
+    padding-top: 5%;
+    padding-bottom: 15%;
+    max-height: 300px;
+}
+
+.user-profile-title {
+    padding-bottom: 7%;
+    color: #b0bac0;
+}
+
+.single-user-description{
+    padding: 1rem;
+    border-radius: 2px;
+    margin-top: 1.5rem;
+}
+
+.single-user-posts-container{
+    background: #141a20;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.single-user-posts-title{
+    color: #909aa0;
+}
+
+.single-no-posts{
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #606a70;
+}
+
+/**{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -48,7 +107,7 @@
     display: flex;
     justify-content: space-between;
 }
-
+*/
 
 
 
