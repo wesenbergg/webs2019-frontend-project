@@ -8,7 +8,7 @@ const Team = () => {
     return (
     <div className="container margin">
         <div className=" row d-flex justify-content-around">
-            <div className="card col-xl-3 col-lg-6 col-sm-12">
+            <div className="card team-card col-xl-3 col-lg-6 col-sm-12">
                 <div className="kortti">
                     <div className="upper">
                         <img className="kuva" alt="Walter" src={walter}/>
@@ -21,7 +21,7 @@ const Team = () => {
                 </div>
             </div>
 
-            <div className="card col-xl-3 col-lg-6 col-sm-12">
+            <div className="card team-card col-xl-3 col-lg-6 col-sm-12">
                 <div className="upper">
                     <img className="kuva" alt="Boriss" src={x1}/>
                 </div>
@@ -32,7 +32,7 @@ const Team = () => {
                 </div>
             </div>
 
-            <div className="card col-xl-3 col-lg-6 col-sm-12">
+            <div className="card team-card col-xl-3 col-lg-6 col-sm-12">
                 <div className="upper">
                     <img className="kuva" alt="Elias" src={x1}/>
                 </div>
