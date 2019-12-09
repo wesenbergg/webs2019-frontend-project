@@ -16,11 +16,11 @@ const Contact = () => {
           <form id="contact-form">
             <div className="form-group">
               <p className="contact-form-text" for="formGroupExampleInput">Name</p>
-              <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input placeholder"/>
+              <input type="text" className="form-control" id="formGroupExampleInput" placeholder="John Doe..."/>
             </div>
             <div className="form-group">
               <p for="formGroupExampleInput2" className="contact-form-text">Phone number</p>
-              <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder"/>
+              <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="050-555-5555"/>
             </div>
             <div className="justify-content-right text-right">
               <button className="btn btn-outline-light">Submit</button>
