@@ -3,6 +3,7 @@ import '../../styles/post.css'
 import walter from "../../img/walter.jpg"
 import Post from "../content/feed/Post";
 import { Link, Redirect } from 'react-router-dom'
+import Feed from "../content/feed/Feed";
 
 
 const EditProfile = ({setCurrentPage, loggedUser}) => {
@@ -43,18 +44,7 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 </div>
             </div>
         </div>
-
-                    <div align="center">
-                <Post
-                title="title"
-                text="text"
-                image_url={walter}
-                date="27.8.2019"
-                author_name="Walter95"
-                id="5"
-                />
-                    </div>
-
+            
         </div>
 
     )
