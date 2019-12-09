@@ -56,6 +56,18 @@
       "region": "Europe",
       "profilepic": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
       "id": 6682406
+    },
+    {
+      "firstname": "Aku",
+      "lastname": "Ankka",
+      "username": "aku_ankka",
+      "description": "This is default description",
+      "email": "esim@gmail.com",
+      "password": "akuankka",
+      "level": "beginner",
+      "region": "North-America",
+      "profilepic": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
+      "id": 5160157
     }
   ],
   "posts": [

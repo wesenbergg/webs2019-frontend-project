@@ -1,8 +1,10 @@
 import React from 'react'
 import loginService from '../../services/loginServices'
 import postService from '../../services/postServices'
+import { useHistory } from 'react-router-dom'
 
 const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLoggedUser}) => {
+  let history = useHistory()
   const handleMessage = (type, message) => {
     setMessage({
       type: type,
@@ -35,7 +37,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
           //console.log(user)
           setLoggedUser(user)
           handleMessage('success', `Logged in as ${user.firstname}`)
-          // TODO: Redirect front page
+          history.push("")
         })
 
         setCredentials({username: '', password: ''})
