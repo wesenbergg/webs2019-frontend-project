@@ -55,7 +55,6 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 />
                     </div>
 
-                <Link className="mouse-pointer" to="/users/profile/edit"><i className="fas fa-user-circle"></i> Edit profile</Link>
         </div>
 
     )
