@@ -7,7 +7,8 @@ import SignIn from '../authentication/SignIn'
 import About from "./about/About"
 import Team from "./about/Team"
 import SingleUser from './single/SingleUser'
-import SinglePost from './single/singlePost'
+import SinglePost from './single/SinglePost'
+import EditPostPage from './single/EditPostPage'
 import EditProfile from "../profile/EditProfile"
 import Form from "../profile/Form"
 import NewPostForm from '../utilities/NewPostForm'
@@ -32,7 +33,8 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
     <Route exact path="/posts" render={() => <Feed posts={posts} setPosts={setPosts} setSinglePost={setSinglePost} setSingleUser={setSingleUser} />} />
     <Route exact path="/posts/new" render={() => <NewPostPage posts={posts} setPosts={setPosts} loggedUser={loggedUser}/>} />
     <Route exact path="/posts/p/:id" render={() => <SinglePost singlePost={singlePost} setSingleUser={setSingleUser} />} />
-    
+    <Route exact path="/posts/p/:id/edit" render={() => <EditPostPage singlePost={singlePost} setPosts={setPosts} loggedUser={loggedUser} />} />
+
     <Route exact path="/users" render={() => <Search users={users} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>} />
     <Route exact path="/users/u/:id" render={() => <SingleUser singleUser={singleUser} loggedUser={loggedUser}/>} />
     <Route exact path="/users/profile" render={() => <EditProfile setCurrentPage={setCurrentPage} loggedUser={loggedUser}/>} />

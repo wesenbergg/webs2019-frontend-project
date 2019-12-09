@@ -13,7 +13,7 @@ function handlePostClick({ setSinglePost, id, setSingleUser, author_id }) {
                 setSinglePost(post)
             })
     }
-    handleProfileClick({ setSingleUser, author_id})
+    handleProfileClick({ setSingleUser, author_id })
 }
 
 // Metodi joka päivittää singleUser -staten postauksen kirjoittaneeksi käyttäjäksi
@@ -56,14 +56,16 @@ const PostText = ({ text, id, setSinglePost, setSingleUser, author_id }) => {
     return (
         <div>
             <p className="postContent">{sampleText + (remainder.includes(' ') ? remainder.split(' ', 1) + '...' : '...')} </p>
-            <button className="postShowMore" onClick={() => handlePostClick({ setSinglePost, setSingleUser, id, author_id })}> <Link className="postTitle" to={`/posts/p/${id}`} > show more</Link></button>
+            <button className="postShowMore" onClick={() => handlePostClick({ setSinglePost, setSingleUser, id, author_id })}>
+                <Link className="postTitle" to={`/posts/p/${id}`} > show more</Link></button>
         </div>
     )
 }
 const Post = ({ title, text, image_url, date, setSinglePost, author_name, author_id, id, setSingleUser }) => {
     return (
         <div className="horizontalPost">
-            <h4 className="postTitle mouse-pointer" onClick={() => handlePostClick({ setSinglePost, setSingleUser, id, author_id })}><Link className="postTitle" to={`/posts/p/${id}`} >{title}</Link></h4>
+            <h4 className="postTitle mouse-pointer" onClick={() => handlePostClick({ setSinglePost, setSingleUser, id, author_id })}>
+                <Link className="postTitle" to={`/posts/p/${id}`} >{title}</Link></h4>
             <div className="postContent">
                 <PostImage image_url={image_url} />
                 <PostText text={text} id={id} setSinglePost={setSinglePost} />
