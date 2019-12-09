@@ -6,10 +6,10 @@ function FAQ ({faq,index,toggleFAQ}) {
         <div className={"faq " + (faq.auki ? 'auki' : '')}
              key={index} onClick={() => toggleFAQ(index)}>
             <div className="faq-kysymys">
-                {faq.kysymys}
+                <p className="text-left">{faq.kysymys}</p>
             </div>
             <div className ="faq-vastaus">
-                {faq.vastaus}
+                <p className="text-left">{faq.vastaus}</p>
             </div>
         </div>
     )

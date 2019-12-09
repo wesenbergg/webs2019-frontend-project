@@ -10,8 +10,8 @@
     justify-content: center;
     align-content: center;
     padding: 15px;
-    background: #343A40;
 }
+
 .header h1 {
     color: white;
     font-size: 30px;
@@ -22,7 +22,6 @@
 
 .faqs {
     width: 100%;
-    max-width: 768px;
     margin: 0 auto;
     padding: 15px;
 }
@@ -30,7 +29,7 @@
 .faqs .faq {
     margin: 15px;
     padding: 15px;
-    background-color: #FFF;
+    background-color: #242a30;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -39,7 +38,7 @@
     position: relative;
     font-size: 20px;
     padding-right: 80px;
-    color: #09d3ac;
+    color: #909aa0;
     transition: all 0.4s ease;
 }
 
@@ -62,7 +61,7 @@
 
 .faqs .faq .faq-vastaus {
     opacity: 0;
-    color: #09d3ac;
+    color: #808a90;
     max-height: 0;
     overflow-y: hidden;
     transition: all 0.4s ease-out;
@@ -70,6 +69,7 @@
 
 .faqs .faq.auki .faq-kysymys {
     margin-bottom: 12px;
+    transition: 1s;
 }
 
 .faqs .faq.auki .faq-kysymys::after {
@@ -79,4 +79,33 @@
 .faqs .faq.auki .faq-vastaus {
     max-height: 900px;
     opacity: 1;
+}
+
+.about {
+    margin-bottom: 0;
+    padding-bottom: 5rem;
+}
+
+.faq-kysymys:hover{
+    color: #f0faf0 !important;
+}
+
+#faq-h {
+    padding-left: 1.5rem !important;
+    color: #909aa0 !important;
+}
+
+.about  .header-team {
+    color: #f0faf0 !important;
+}
+
+.contact-info{
+    background: #242a30;
+    border-radius: 2px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+#contact-form button{
+    justify-content: right !important;
 }

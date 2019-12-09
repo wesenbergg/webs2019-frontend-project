@@ -7,7 +7,7 @@ body Team {
 }
 
 .card {
-    background-color: #eeeeee !important;
+    background-color: #242a30 !important;
     height: 420px;
     width: 300px;
     top: 0;
@@ -15,8 +15,8 @@ body Team {
     bottom: 0;
     left: 0;
     right: 0;
-    border-radius: 10px;
-    box-shadow: 2px 2px 7px 5px #626262;
+    border-radius: 3px;
+    border: solid 1px #343a40;
     padding: 0;
 
 }
@@ -26,7 +26,7 @@ body Team {
     width: 100%;
     background-color: #4158d0;
     background-image: linear-gradient(43deg,#4158d0 0%, violet 30%,#ffcc70 66%);
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
 
 }
 .kuva{
@@ -34,30 +34,26 @@ body Team {
     border-radius: 50%;
     position: relative;
     top:80px;
-    border:7px solid white;
+    border:2px solid #666;
     outline: none;
 }
-h2 {
-    padding-top: 60px;
-    color:#404040;
+.team-card-title {
+    padding-top: 55px;
+    color:#909aa0;
     text-align: center;
     position: relative;
     top:30px;
     top: 10px;
-    color: grey;;
-}
-i {
-    padding-left: 5px;
-    padding-top: 10px;
 }
 .details {
     position: relative;
     top:5px;
     font-size: 18px;
-    color: #4158d0;
+    color: #808a90;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .details i{
-    color: black;
     margin-left: 10px;
     margin-bottom: 2px;
 
@@ -81,4 +77,16 @@ div container {
 }
 .margin {
     margin-bottom: 15px;
+}
+
+.details i {
+    color: #909aa0 !important;
+}
+
+.details .text-small {
+    font-size: small;
+}
+
+.contact-form-text{
+    text-align: left !important;
 }

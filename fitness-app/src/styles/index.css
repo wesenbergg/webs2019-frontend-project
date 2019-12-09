@@ -1,4 +1,5 @@
-.frontpage, #search-container, .hidden {
+.frontpage, #search-container, .hidden,
+.about {
     background-color: #141a20 !important;
 }
 
@@ -70,9 +71,8 @@
     max-width: 100%;
     font-size: x-large !important;
     border: none;
-    border-bottom: 2px solid #242a30 !important;
     background: none;
-    color: #707a80;
+    color: #141a20;
     transition: 1.3s;
 }
 
@@ -86,6 +86,8 @@
 
 .collapse-section .collapsed {
     background: #343a40 !important;
+    color: #707a80 !important;
+    border-bottom: 2px solid #242a30 !important;
 }
 
 .collapsed .fa-arrow-down {
