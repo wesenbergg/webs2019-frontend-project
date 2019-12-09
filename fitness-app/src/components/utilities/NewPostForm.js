@@ -42,6 +42,23 @@ const NewPostForm = ({ posts, setPosts, loggedUser }) => {
            user: loggedUser.id
        }
 
+       const appendingPost = {
+            title: newTitle,
+            image: newLink,
+            text: newText,
+            user: {
+                role: "writer",
+                description: loggedUser.description,
+                profilepic: loggedUser.profilepic,
+                username: loggedUser.username,
+                firstname: loggedUser.firstname,
+                lastname: loggedUser.lastname,
+                email: loggedUser.email,
+                region: loggedUser.region,
+                id: loggedUser.id
+            }
+        }
+
         if (loggedUser.username === "" || loggedUser.username === undefined) {
             console.log('please log in first')
             history.push("/signin")
@@ -50,10 +67,11 @@ const NewPostForm = ({ posts, setPosts, loggedUser }) => {
         if (newTitle !== "" && newText !== "") {
             postServices.create(newPost)
                 .then(response => {
-                    setPosts(posts => [newPost, ...posts])
+                    setPosts(posts => [appendingPost, ...posts])
                     setNewTitle('')
                     setNewText('')
                     setNewLink('')
+                    console.log(appendingPost)
                     history.push("/posts")
                 })
         }

@@ -10,12 +10,12 @@ const Feed = ({ posts, setSinglePost, setSingleUser }) => {
 				key={post.id}
 				title={post.title}
 				text={post.text}
-				author_id={post.author_id}
+				author_id={post.user.id}
 				image_url={post.image}
 				date={post.date}
 				setSinglePost={setSinglePost}
 				id={post.id}
-				author_name={post.author_name}
+				author_name={post.user.username}
 				setSingleUser={setSingleUser}
 			/>
 		)
