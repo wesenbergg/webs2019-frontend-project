@@ -42,7 +42,13 @@
     margin-top: 10px;
     padding-left: 10px;
 }
-
+.postShowMore {
+    font-size: 100%;
+    font-family: inherit;
+    border: 0;
+    padding: 0;
+    background: transparent;
+}
 /*
 .card-img {
     width: 100%;

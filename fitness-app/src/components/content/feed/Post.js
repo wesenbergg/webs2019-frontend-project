@@ -6,6 +6,7 @@ import '../../../styles/post.css'
 // yksittäinen posti (singlePost) ei saa propseinaan setCurrentPagea tai setSinglePostia (ne ovat 'undefined')
 // tällöin halutaan onClick, joka ei tee mitään (parempaa ratkaisua odotellessa :D)... 
 function handleClick({ setCurrentPage, setSinglePost, id }) {
+    console.log('click')
     if (setCurrentPage !== undefined || setSinglePost !== undefined) {
         postServices.getById(id)
             .then(post => {
@@ -30,13 +31,27 @@ const PostImage = ({ image_url }) => {
     )
 }
 
+const PostText = ({ text, id, setSinglePost, setCurrentPage }) => {
+    if (text.length < 200) {
+        return (
+            <p className="card-text">{text}</p>
+        )
+    }
+    var sampleText = text.slice(0, 200)
+    return (
+        <div>
+            <p className="card-text">{sampleText + text.slice(200).split(' ', 1) + '...'} </p>
+            <button className="postShowMore" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}> <Link className="postTitle" to={`/posts/p/${id}`} > show more</Link></button>
+        </div>
+    )
+}
 const Post = ({ title, text, image_url, date, setCurrentPage, setSinglePost, author_name, id }) => {
     return (
         <div className="horizontalPost">
             <h4 className="postTitle mouse-pointer" onClick={() => handleClick({ setCurrentPage, setSinglePost, id })}><Link className="postTitle" to={`/posts/p/${id}`} >{title}</Link></h4>
             <div className="postContent">
                 <PostImage image_url={image_url} />
-                <p className="card-text">{text}</p>
+                <PostText text={text} id={id} setSinglePost={setSinglePost} setCurrentPage={setCurrentPage} />
             </div>
             <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
         </div>
