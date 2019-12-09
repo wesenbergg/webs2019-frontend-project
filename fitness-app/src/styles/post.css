@@ -62,8 +62,7 @@
 
 /*CSS uudelle postaukselle*/
 .newPostForm {
-    max-width: 540px;
-    width: 50%;
+    max-width: 600px;
     margin: 0 auto;
 }
 

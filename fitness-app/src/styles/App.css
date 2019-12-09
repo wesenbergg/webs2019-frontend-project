@@ -74,3 +74,60 @@
 .jumbotron p, .jumbotron h1{
   color: white;
 }
+
+.sign-in-group{
+  padding-bottom: 1.25rem;
+}
+
+.signin{
+  max-width: 600px;
+}
+
+#signin, #signup{
+  background: #343a40;
+  color: #909aa0;
+}
+
+#signin i{
+  background: #343a40;
+  color: #f0faf0;
+}
+
+.terms-form {
+  padding-bottom: 1rem;
+}
+
+#signup a{
+  color: #f0faf0;
+}
+
+#signup button{
+  width: 60%;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 !important;
+}
+
+#addPostForm {
+  background: #282c34;
+  padding-bottom: 15%;
+  padding-top: 15%;
+}
+
+#addPostForm button{
+  width: 60%;
+  max-width: 400px;
+}
+
+#addPostForm h1{
+  color: #707a80;
+  text-align: center;
+}
+
+#addPostForm .fas{
+  color: #f0faf0;
+}
+
+#notification{
+  margin: 0 !important;
+}

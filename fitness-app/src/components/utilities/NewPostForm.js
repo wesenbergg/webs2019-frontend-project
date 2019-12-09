@@ -42,24 +42,28 @@ const NewPostForm = ({ posts, setPosts, loggedUser }) => {
     }
 
     return (
-        <div>
-            <br />
+        <div id="addPostForm">
+            <div className="container fade-sign-in">
             <form className="newPostForm" onSubmit={addPost}>
+                <h1><i className="fas fa-dumbbell"></i></h1>
+                <h1 className="h3 mb-3 font-weight-normal">Create new post</h1>
                 <div className="form-group">
                     <input id="newPostTitle" className="form-control"
                         type="text" value={newTitle} onChange={handleTitleChange} placeholder="Title" />
                 </div>
                 <div className="form-group">
                     <textarea className="form-control" type="text" value={newText}
-                        onChange={handleTextChange} placeholder="Text" />
+                        onChange={handleTextChange} placeholder="what are you doing? ..." />
                 </div>
                 <div className="form-group">
                     <input id="linkToImage" type="text" value={newLink} onChange={handleLinkChange}
-                        placeholder="Image URL" />
+                        placeholder="Image URL" className="form-control"/>
                 </div>
-                <button type="submit">post</button>
+                <div className="text-center">
+                    <button type="submit" className="btn btn-outline-light ">Post</button>
+                </div>  
             </form>
-            <br />
+            </div>
         </div>
     )
 }

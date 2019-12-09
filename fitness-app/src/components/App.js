@@ -67,7 +67,7 @@ function App() {
     .then(returnedUser => {
       setUsers(users.concat(returnedUser))
         setMessage({
-          type: 'success',
+          type: 'alert alert-success text-center',
           message: `Succesfully added '${returnedUser.firstname}' to server`
         })
         setTimeout(() => {

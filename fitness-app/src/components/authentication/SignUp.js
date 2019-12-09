@@ -12,7 +12,7 @@ const SignUp = ({ users, newUser, setNewUser, createUser, setMessage, setCurrent
 	//const termsChangeHandler = e => setNewUser({...newUser, terms: !e.target.value}) || console.log(e.target.value)
 	const handleError = (m) => {
 		setMessage({
-			type: 'error',
+			type: 'alert alert-danger text-center',
 			message: m
 		})
 		setTimeout(() => {
@@ -45,6 +45,7 @@ const SignUp = ({ users, newUser, setNewUser, createUser, setMessage, setCurrent
 	}
 
 	return (
+		<div id="signup">
 		<div className="container signup">
 			<div className="col-md-12 order-md-1">
 				<h4 className="mb-3">Sign up</h4>
@@ -115,14 +116,17 @@ const SignUp = ({ users, newUser, setNewUser, createUser, setMessage, setCurrent
 
 					<h4 className="mb-3">Terms of service</h4>
 
-					<div className="custom-control custom-checkbox">
+					<div className="custom-control custom-checkbox terms-form">
 						<input type="checkbox" className="custom-control-input" id="same-address" required />
 						<label className="custom-control-label" htmlFor="same-address">I have read the <a href='https://en.wikipedia.org/wiki/Terms_of_service'>terms of service</a></label>
 					</div>
 
-					<button className="btn btn-primary btn-lg btn-block" type="submit">Create account</button>
+					<div className="justify-content-center text-center">
+						<button className="btn btn-outline-light btn-lg" type="submit">Create account</button>
+					</div>
 				</form>
 			</div>
+		</div>
 		</div>
 	)
 }

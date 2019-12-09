@@ -36,7 +36,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
           postService.setToken(user.token)
           //console.log(user)
           setLoggedUser(user)
-          handleMessage('success', `Logged in as ${user.firstname}`)
+          handleMessage('alert alert-success text-center', `Logged in as ${user.firstname}`)
           history.push("")
         })
 
@@ -48,28 +48,34 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
   }
 
   return(
-    <div className="signin container text-center signin" onSubmit={handleSubmit}>
+    <div id="signin">
+    <div className="signin container text-center signin fade-sign-in" onSubmit={handleSubmit}>
       <form className="form-signin">
         <h1><i className="fas fa-dumbbell"></i></h1>
         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
 
-        <label htmlFor="inputUsername" className="sr-only">Username</label>
-        <input type="text" id="inputUsername" className="form-control" placeholder="Username" 
-          value={credentials.username} onChange={e => setCredentials({...credentials, username: e.target.value})} required/>
-
-        <label htmlFor="inputPassword" className="sr-only">Password</label>
-        <input type="password" id="inputPassword" className="form-control" placeholder="Password" 
-          value={credentials.password} onChange={e => setCredentials({...credentials, password: e.target.value})} required/>
+        <div className="sign-in-group">
+          <label htmlFor="inputUsername" className="sr-only">Username</label>
+          <input type="text" id="inputUsername" className="form-control" placeholder="Username" 
+            value={credentials.username} onChange={e => setCredentials({...credentials, username: e.target.value})} required/>
+        </div>
+        
+        <div className="sign-in-group">
+          <label htmlFor="inputPassword" className="sr-only">Password</label>
+          <input type="password" id="inputPassword" className="form-control" placeholder="Password" 
+            value={credentials.password} onChange={e => setCredentials({...credentials, password: e.target.value})} required/>
+        </div>
 
         <div className="checkbox mb-3">
           <label>
             <input type="checkbox" value="remember-me" disabled/> Remember me
           </label>
         </div>
-        <button className="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+        <button className="btn btn-lg btn-outline-light btn-block" type="submit">Sign in</button>
       </form>
 
       <p className="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+    </div>
     </div>
   )
 }

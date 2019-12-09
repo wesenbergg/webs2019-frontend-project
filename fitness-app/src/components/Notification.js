@@ -5,7 +5,9 @@ const Notification = ({message}) => {
 
   return(
     <>
-      <div className={message.type}><h3>{message.message}</h3></div>
+      <div id="notification" className={`notification-alert ${message.type}`}>
+        <h3>{message.message}</h3>
+      </div>
     </>
   )
 }
