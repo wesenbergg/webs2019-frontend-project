@@ -4,18 +4,26 @@ import walter from "../../img/walter.jpg"
 import Post from "../content/feed/Post";
 import { Link, Redirect } from 'react-router-dom'
 import Feed from "../content/feed/Feed";
+import SingleUser from '../content/single/SingleUser'
 
 
-const EditProfile = ({setCurrentPage, loggedUser}) => {
-    //console.log(setCurrentPage)
-    function handleClick({setCurrentPage}) {
-        setCurrentPage('Form')
-    }
+const EditProfile = ({ loggedUser}) => {
+
     //Palaa etusivulle jos ei ole kirjauduttu sisään
     if(loggedUser.username === undefined) return(<><Redirect to="/signin" /></>)
     return (
-        <div>
-        <div className="userBox" align="center">
+        <>
+            <SingleUser singleUser={loggedUser} loggedUser={loggedUser}/>   
+        </>
+
+    )
+}
+export default EditProfile;
+
+//const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSinglePost, author_name, id }) => {
+
+/*
+<div className="userBox" align="center">
             <div className="vasen">
                 <img src={walter} alt="user"/>
                 <h3 className="otsikko3">NIMI</h3>
@@ -44,11 +52,4 @@ const EditProfile = ({setCurrentPage, loggedUser}) => {
                 </div>
             </div>
         </div>
-            
-        </div>
-
-    )
-}
-export default EditProfile;
-
-//const Post = ({ title, text, author_id, image_url, date, setCurrentPage, setSinglePost, author_name, id }) => {
+            */

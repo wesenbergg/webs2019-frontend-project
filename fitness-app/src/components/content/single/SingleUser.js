@@ -1,10 +1,34 @@
 import React from 'react'
 import '../../../styles/singleUser.css'
-const SingleUser = ({singleUser}) => {
+import PostItem from './PostItem'
+import {Link} from 'react-router-dom'
+
+const SingleUser = ({singleUser, loggedUser}) => {
+
+    const showPosts = () => {
+        return (singleUser.posts === undefined || singleUser.posts.length < 1) ?
+        <h4 class="single-no-posts">No posts to show</h4> :
+        <div className="row justify-content-around">{singleUser.posts.map(p => <PostItem key={Math.floor(Math.random() * 9999999)} content={p}/>)}</div>
+    }
+
+    const showButtons = () => {
+        if (singleUser.username === loggedUser.username)
+            return (
+                <div className="row text-center d-flex justify-content-end single-user-full-width">
+                    <div className="col-auto text-right">
+                        <Link to="/posts/new" className="btn btn-outline-light">Add Post</Link>
+                    </div>
+                    <div className="col-auto text-left">
+                        <Link to="/users/profile/edit" className="btn btn-outline-light">Edit</Link>
+                    </div>
+                </div>
+            )
+    }
 
   return(
       <div className="single-user">
           <div className="container single-user-container">
+            {showButtons()}
             <div className="card single-user-card" >
                 <div className="row no-gutters">
                     <div className="col-md-4 col-xs-12 single-user-top">
@@ -12,15 +36,15 @@ const SingleUser = ({singleUser}) => {
                     </div>
                     <div className="col-md-8 col-xs-12">
                         <div className="card-body single-user-bottom">
-                            <h3 className="card-title text-center user-profile-title">User Profile</h3>
                             <div className="row justify-content-between">
                                 <div className="col-sm-12 col-md-6 text-left">
-                                    <h3 className="card-title">{singleUser.firstname} {singleUser.lastname}</h3>
+                                    <h3 className="card-title user-profile-title">User Profile</h3>
                                 </div>
                                 <div className="col-sm-12 col-md-6 text-right">
-                                    <h3 className="card-title">@{singleUser.username}</h3>
+                                    <h3 className="card-title user-profile-title">@{singleUser.username}</h3>
                                 </div>
                             </div>
+                            <h3 className="card-title text-left">{singleUser.firstname} {singleUser.lastname}</h3>
                             <p className="card-text text-muted">Region: {singleUser.region}</p>
                         </div>
                     </div>
@@ -34,7 +58,7 @@ const SingleUser = ({singleUser}) => {
             <div className="single-user-posts">
                 <h3 className="single-user-posts-title">Posts</h3>
                 <div className="single-user-posts-container">
-                    <h4 class="single-no-posts">No posts to show</h4>
+                    {showPosts()}
                 </div>
             </div>
           </div>

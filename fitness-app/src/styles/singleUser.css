@@ -57,6 +57,17 @@
     color: #606a70;
 }
 
+.single-user-post-card{
+    background: #242a30 !important;
+    color: #606a70 !important;
+    margin: 1rem;
+}
+
+.single-user-full-width{
+    width: 100% !important;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
 /**{
     margin: 0;
     padding: 0;

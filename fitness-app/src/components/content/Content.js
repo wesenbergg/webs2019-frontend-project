@@ -34,7 +34,7 @@ setSingleUser, singleUser, singlePost, setSinglePost, credentials, setCredential
     <Route exact path="/posts/p/:id" render={() => <SinglePost singlePost={singlePost} />} />
     
     <Route exact path="/users" render={() => <Search users={users} filter={filter} setFilter={setFilter} setCurrentPage={setCurrentPage} setSingleUser={setSingleUser} setSinglePost={setSinglePost}/>} />
-    <Route exact path="/users/u/:id" render={() => <SingleUser singleUser={singleUser} />} />
+    <Route exact path="/users/u/:id" render={() => <SingleUser singleUser={singleUser} loggedUser={loggedUser}/>} />
     <Route exact path="/users/profile" render={() => <EditProfile setCurrentPage={setCurrentPage} loggedUser={loggedUser}/>} />
     <Route exact path="/users/profile/edit" render={() => <Form setCurrentPage={setCurrentPage} setLoggedUser={setLoggedUser} loggedUser={loggedUser} setUsers={setUsers} users={users} setMessage={setMessage}/>} />
     </>

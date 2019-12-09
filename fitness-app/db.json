@@ -16,8 +16,28 @@
       "lastname": "Ruoppa",
       "username": "wwaltsu",
       "email": "wwaltsu@test.com",
-      "description": "This is test user, ullamco dolore. Aliqua ipsum velit hamburger magna mollit dolor doner id tempor. Elit turducken minim ipsum mollit. Andouille burgdoggen voluptate shank ham sausage aliquip. Enim sed exercitation bacon, spare ribs drumstick ground round doner eu pig meatball.",
+      "description": "Tähän on tallennettu postauksia. This is test user, ullamco dolore. Aliqua ipsum velit hamburger magna mollit dolor doner id tempor. Elit turducken minim ipsum mollit. Andouille burgdoggen voluptate shank ham sausage aliquip. Enim sed exercitation bacon, spare ribs drumstick ground round doner eu pig meatball.",
       "region": "Europe",
+      "posts": [
+        {
+          "id": 17,
+          "title": "Walter",
+          "text": "AAAAAAAAAAAA",
+          "image": "",
+          "date": "16:46 6/11/2019",
+          "author_id": 10000000,
+          "author_name": "Testi"
+        },
+        {
+          "id": 18,
+          "title": "Chest workout",
+          "text": "pää olkapää peppu polvet varpaat",
+          "image": "https://images.unsplash.com/photo-1494073428648-0a5be7e5f189?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=30",
+          "date": "19:11 9/12/2019",
+          "author_id": 1234567890,
+          "author_name": "testuser123"
+        }
+      ],
       "profilepic": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=20",
       "id": 28937192837
     },
