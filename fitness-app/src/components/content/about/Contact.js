@@ -1,6 +1,4 @@
 import React from 'react'
-import walter from '../../../img/walter.jpg'
-import x1 from '../../../img/test.png'
 import '../../../styles/Team.css'
 
 const Contact = () => {
