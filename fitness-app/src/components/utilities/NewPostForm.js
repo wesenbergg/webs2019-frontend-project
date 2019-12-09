@@ -3,7 +3,8 @@ import getTimestamp from '../../util/date'
 import postServices from '../../services/postServices'
 import { useHistory } from 'react-router-dom'
 
-const NewPostForm = ({ posts, setPosts }) => {
+const NewPostForm = ({ posts, setPosts, loggedUser }) => {
+    //(Object.values(loggedUser).length)
     let history = useHistory()
     var currPostAmount = null
     // Jos newPostForm:ia kutsutaan Feedin ulkopuolelta
@@ -26,8 +27,8 @@ const NewPostForm = ({ posts, setPosts }) => {
             text: newText,
             image: newLink,
             date: getTimestamp(),
-            author_id: 10000000,
-            author_name: 'Testi'
+            author_id: loggedUser.id,
+            author_name: loggedUser.username
         }
 
         postServices.create(newPost)

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 const SignUp = ({users, newUser, setNewUser, createUser, setMessage, setCurrentPage}) => {
+  
   const firstnameChangeHandler = e => setNewUser({...newUser, firstname: e.target.value})
   const lastnameChangeHandler = e => setNewUser({...newUser, lastname: e.target.value})
   const usernameChangeHandler = e => setNewUser({...newUser, username: e.target.value})
@@ -38,10 +40,10 @@ const SignUp = ({users, newUser, setNewUser, createUser, setMessage, setCurrentP
     
     if (foundUser !== undefined) return
 
-    //TODO: Redirect
     setNewUser({...newUser, firstname: "", lastname: "", username: "", email: "", password: "", id: Math.floor(Math.random() * 9999999)})
     //console.log(newUser)
-    setCurrentPage('Sign in')
+    //TODO: Redirect sign-in 
+        
   }
 
   return(

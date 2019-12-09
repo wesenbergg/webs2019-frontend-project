@@ -35,6 +35,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
           //console.log(user)
           setLoggedUser(user)
           handleMessage('success', `Logged in as ${user.firstname}`)
+          // TODO: Redirect front page
         })
 
         setCredentials({username: '', password: ''})

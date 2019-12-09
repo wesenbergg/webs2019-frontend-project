@@ -211,6 +211,15 @@
       "date": "13:6 9/12/2019",
       "author_id": 10000000,
       "author_name": "Testi"
+    },
+    {
+      "id": 18,
+      "title": "Post from testuser123",
+      "text": "Tekstiä",
+      "image": "",
+      "date": "15:59 9/12/2019",
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     }
   ],
   "comments": [
