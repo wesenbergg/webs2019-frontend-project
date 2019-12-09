@@ -114,7 +114,7 @@
       "image": "/assets/images/test.png",
       "date": "Huomenna, ajan rakenne on muuttunut",
       "author_id": 28937192837,
-      "author_name": "walter"
+      "author_name": "wwaltsu"
     },
     {
       "id": 6,
@@ -122,8 +122,8 @@
       "text": "Uuden postin lisääminen onnistuunee(=?)",
       "image": null,
       "date": "22:34 3/11/2019",
-      "author_id": 10000000,
-      "author_name": "Testi"
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     },
     {
       "id": 7,
@@ -131,8 +131,8 @@
       "text": "Lista postauksista päivittyy",
       "image": null,
       "date": "22:39 3/11/2019",
-      "author_id": 10000000,
-      "author_name": "Testi"
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     },
     {
       "id": 8,
@@ -140,8 +140,8 @@
       "text": "Postaus päivittyy listan päällimmäiseksi",
       "image": null,
       "date": "23:17 3/11/2019",
-      "author_id": 10000000,
-      "author_name": "Testi"
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     },
     {
       "id": 9,
@@ -149,8 +149,8 @@
       "text": "bootstrapin testausta... css vielä kesken",
       "image": null,
       "date": "23:33 3/11/2019",
-      "author_id": 10000000,
-      "author_name": "Testi"
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     },
     {
       "id": 10,
@@ -158,8 +158,8 @@
       "text": "Image URL -kentän testi",
       "image": "https://cdn.pixabay.com/photo/2019/11/26/20/57/tatry-4655509_1280.jpg",
       "date": "11:18 4/11/2019",
-      "author_id": 10000000,
-      "author_name": "Testi"
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     },
     {
       "id": 11,
@@ -167,8 +167,8 @@
       "text": "testi\n",
       "image": "https://cdn.pixabay.com/photo/2019/11/29/09/47/foggy-4660940_1280.jpg",
       "date": "14:46 4/11/2019",
-      "author_id": 10000000,
-      "author_name": "Testi"
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     },
     {
       "id": 12,
@@ -176,8 +176,8 @@
       "text": "pelasin korista maken kaa",
       "image": "/assets/images/walter.jpg",
       "date": "15:45 4/11/2019",
-      "author_id": 5,
-      "author_name": "Walter95"
+      "author_id": 28937192837,
+      "author_name": "wwaltsu"
     },
     {
       "id": 13,
@@ -185,8 +185,8 @@
       "text": "b",
       "image": "/assets/images/walter.jpg",
       "date": "15:45 4/11/2019",
-      "author_id": 5,
-      "author_name": "Walter95"
+      "author_id": 28937192837,
+      "author_name": "wwaltsu"
     },
     {
       "id": 14,
@@ -194,8 +194,8 @@
       "text": "Vuosaaren uimahallissa uin 2 kilometriä",
       "image": "/assets/images/walter.jpg",
       "date": "15:46 4/11/2019",
-      "author_id": 5,
-      "author_name": "Walter95"
+      "author_id": 28937192837,
+      "author_name": "wwaltsu"
     },
     {
       "id": 15,
@@ -203,8 +203,8 @@
       "text": "Pelasin 18 reikää, hyvä sää ja 4 par ",
       "image": "/assets/images/walter.jpg",
       "date": "15:46 4/11/2019",
-      "author_id": 5,
-      "author_name": "Walter95"
+      "author_id": 28937192837,
+      "author_name": "wwaltsu"
     },
     {
       "id": 16,
@@ -212,8 +212,8 @@
       "text": "Miksi minä tässä",
       "image": "/assets/images/walter.jpg",
       "date": "15:47 4/11/2019",
-      "author_id": 5,
-      "author_name": "Walter95"
+      "author_id": 28937192837,
+      "author_name": "wwaltsu"
     },
     {
       "id": 17,
@@ -221,8 +221,8 @@
       "text": "AAAAAAAAAAAA",
       "image": "",
       "date": "16:46 6/11/2019",
-      "author_id": 10000000,
-      "author_name": "Testi"
+      "author_id": 1234567890,
+      "author_name": "testuser123"
     },
     {
       "id": 18,
