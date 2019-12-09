@@ -1,6 +1,11 @@
 .frontpage, #search-container, .hidden,
-.about {
+.about, .newPostContainer, .feedContainer {
     background-color: #141a20 !important;
+}
+
+.newPostContainer, .feedContainer, .about,
+footer{
+    text-align: center;
 }
 
 #search-container .search-title {
@@ -122,4 +127,8 @@
 
 .user-card p{
     color: #909aa0;
+}
+
+.newPostContainer, .feedContainer{
+  
 }

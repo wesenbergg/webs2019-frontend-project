@@ -90,3 +90,11 @@ div container {
 .contact-form-text{
     text-align: left !important;
 }
+
+.contact-info-text{
+    color: #808a90;
+}
+
+.no-bg-contact{
+    background: none !important;
+}

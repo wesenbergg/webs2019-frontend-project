@@ -39,7 +39,7 @@ const About = () => {
                 auki: false
             },
             {
-                kysymys: 'Can I get a hard copy of my workout?',
+                kysymys: 'Can I get a hard copy of my workout post?',
                 vastaus: 'We do not send hard copies, but you can download a high-quality PDF version from your Profile page on our website.',
                 auki: false
             },
