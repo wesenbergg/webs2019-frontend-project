@@ -1,16 +1,13 @@
 import React from 'react'
 import '../../styles/Form.css'
 import userService from '../../services/userServices'
-import {
-    BrowserRouter as Router,
-    Route, Link, Redirect, withRouter
-  } from 'react-router-dom'
+import {Link, Redirect  } from 'react-router-dom'
 
-const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
+const Form = ({loggedUser, setLoggedUser, users, setUsers}) => {
     const update = (newObject) => {
       //console.log(newObject)
       userService.update(newObject.id, newObject)
-      .then(returnedPerson => {
+      .then(() => {
         setUsers(users.map(user => user.id !== newObject.id ? user : newObject))
         console.log('Success')
       }).catch(error => console.log(error))
@@ -44,18 +41,11 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
         window.localStorage.setItem('loggedFitnessAppUser', JSON.stringify(loggedUser))
     }
 
-    const handleCancel = e => {
-        //setLoggedUser()
-    }
-
-    const handleDelete = e => {
-
-    }
-
     //Palaa etusivulle jos ei ole kirjauduttu sisään
     if(loggedUser.username === undefined) return(<><Redirect to="/signin" /></>)
     return (
-        <div className="container signup">
+        <div id="update-form">
+            <div className="container signup">
             <div className="col-md-12 order-md-1">
                 <h4 className="mb-3">Edit profile</h4>
                 <form className="needs-validation" onSubmit={handleSubmit}>
@@ -129,11 +119,13 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers, setCurrentPage}) => {
                             </div>
                         </div>
                     </div>
-                    <button className="btn btn-success napit" type="submit" >Update</button>
-                    <Link className="btn btn-primary napit" to="/users/profile">Cancel</Link>
-                    <Link className="btn btn-danger napit" onClick={handleDelete} to="/" disabled>Delete</Link>
+                    <div className="text-right">
+                        <Link><button className="btn btn-outline-light napit" type="submit" >Update</button></Link>
+                        <Link to="/users/profile"><button className="btn btn-light napit" type="submit" >Cancel</button></Link>
+                    </div>
                 </form>
             </div>
+        </div>
         </div>
     )
 }

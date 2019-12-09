@@ -8,8 +8,8 @@ const PostItem = ({content}) => {
 
   return(
     <div className="col-lg-5 col-md-12 slide-in">
-      <div class="card single-user-post-card">
-        <div class="card-body">
+      <div className="card single-user-post-card">
+        <div className="card-body">
           <h3 className="card-title">{content.title}</h3>
           <div className="text-muted"><small>Time: {content.date}</small></div>
           <p className="card-text">{handleText()}</p>

@@ -1,8 +1,15 @@
-.napit {
-    width: 10%;
-    height: 50px;
-    border-radius: 10px;
+#update-form{
+    background: #242a30;
+    color: #909aa0;
+}
 
+#update-form h4{
+    color: #b0bac0;
+}
+
+.napit {
+    min-width: 70px;
+    margin-left: 1rem;
 }
 
 
