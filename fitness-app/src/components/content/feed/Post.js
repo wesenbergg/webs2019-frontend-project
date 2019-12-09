@@ -6,7 +6,6 @@ import '../../../styles/post.css'
 // yksittäinen posti (singlePost) ei saa propseinaan setCurrentPagea tai setSinglePostia (ne ovat 'undefined')
 // tällöin halutaan onClick, joka ei tee mitään (parempaa ratkaisua odotellessa :D)... 
 function handleClick({ setCurrentPage, setSinglePost, id }) {
-    console.log('click')
     if (setCurrentPage !== undefined || setSinglePost !== undefined) {
         postServices.getById(id)
             .then(post => {
@@ -33,7 +32,7 @@ const PostImage = ({ image_url }) => {
 
 // Näyttää postauksesta vain 200 ensimmäistä merkkiä (koko postaus tai sampleText)
 // Merkin 200 jälkeinen teksti katkaistaan seuraavaan ' ', jotta viimeinen sana on kokonainen
-// Ilman välilyöntiä näytetään seuraavat 25 merkkiä 
+// Jos ei ole välilyöntiä tekstiin lisätään vain '...'
 const PostText = ({ text, id, setSinglePost, setCurrentPage }) => {
     if (text.length < 200) {
         return (
@@ -57,7 +56,7 @@ const Post = ({ title, text, image_url, date, setCurrentPage, setSinglePost, aut
                 <PostImage image_url={image_url} />
                 <PostText text={text} id={id} setSinglePost={setSinglePost} setCurrentPage={setCurrentPage} />
             </div>
-            <p className="card-text"><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
+            <p><small className="text-muted">From: <span className="card-link author-link mouse-pointer">{author_name}</span> {date}</small></p>
         </div>
     )
 }

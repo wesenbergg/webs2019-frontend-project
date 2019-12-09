@@ -4,7 +4,7 @@ import '../../../styles/feed.css'
 import { Link } from 'react-router-dom'
 
 const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
-	const generateFeed = () => 
+	const generateFeed = () =>
 		posts.map(post =>
 			<Post
 				key={post.id}
@@ -22,7 +22,9 @@ const Feed = ({ posts, setSinglePost, setCurrentPage }) => {
 
 	return (
 		<>
-			<Link className="btn btn-lg btn-dark text-light my-2" to="/posts/new">New post</Link>
+			<div className="newPostContainer">
+				<Link className="btn btn-lg btn-dark text-light my-2" to="/posts/new">New post</Link>
+			</div>
 			<div className="feedContainer">
 				{generateFeed()}
 			</div>

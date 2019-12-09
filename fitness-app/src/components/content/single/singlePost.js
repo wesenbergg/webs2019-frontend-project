@@ -7,10 +7,20 @@ const ProfilePic = () => {
         <img className="singlePostAuthorInfo" src={`${process.env.PUBLIC_URL}/assets/images/default_avatar.png`} />
     )
 }
+
 const SinglePostImage = ({ imageSrc }) => {
     if (imageSrc === null || imageSrc === undefined || imageSrc === "") return null
+    if (imageSrc.includes('/assets/images')) {
+        return (
+            <a target="_blank" href={`${process.env.PUBLIC_URL}${imageSrc}`}>
+                <img className="postThumbnail" src={`${process.env.PUBLIC_URL}${imageSrc}`} />
+            </a>
+        )
+    }
     return (
-        <img src={imageSrc} alt="Image not found" />
+        <a target="_blank" href={imageSrc}>
+            <img className="postThumbnail" src={imageSrc} />
+        </a>
     )
 }
 const SinglePost = ({ singlePost }) => {
