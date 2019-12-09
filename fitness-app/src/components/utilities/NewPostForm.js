@@ -24,6 +24,7 @@ const NewPostForm = ({ posts, setPosts, loggedUser }) => {
 
     const addPost = (event) => {
         event.preventDefault()
+        /*
         const newPost = {
             id: currPostAmount + 1,
             title: newTitle,
@@ -33,11 +34,19 @@ const NewPostForm = ({ posts, setPosts, loggedUser }) => {
             author_id: loggedUser.id,
             author_name: loggedUser.username
         }
+        */
+       const newPost = {
+           title: newTitle,
+           image: newLink,
+           text: newText,
+           user: loggedUser.id
+       }
 
         if (loggedUser.username === "" || loggedUser.username === undefined) {
             console.log('please log in first')
             history.push("/signin")
         }
+
         if (newTitle !== "" && newText !== "") {
             postServices.create(newPost)
                 .then(response => {

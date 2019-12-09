@@ -56,7 +56,7 @@ const SinglePost = ({ singlePost, setSingleUser }) => {
                     <p className="singlePostContent">{singlePost.text}</p>
                 </div>
             </div>
-            <Link to={`/posts/p/${singlePost.id}/edit`}>Edit</Link>
+            <Link className="editPost" to={`/posts/p/${singlePost.id}/edit`}>Edit</Link>
         </div>
     )
 }
