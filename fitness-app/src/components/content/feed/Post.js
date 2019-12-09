@@ -14,7 +14,6 @@ function handleClick({ setCurrentPage, setSinglePost, id }) {
     }
 }
 
-// Kolme mahdollista kuvalähdettä
 const PostImage = ({ image_url }) => {
     if (image_url === null || image_url === undefined || image_url === "") return null
     if (image_url.includes('/assets/images')) {
