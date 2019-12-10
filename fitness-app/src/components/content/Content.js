@@ -7,7 +7,7 @@ import SignIn from '../authentication/SignIn'
 import About from "./about/About"
 import Team from "./about/Team"
 import SingleUser from './single/SingleUser'
-import SinglePost from './single/SinglePost'
+import SinglePost from './single/singlePost'
 import EditPostPage from './single/EditPostPage'
 import EditProfile from "../profile/EditProfile"
 import Form from "../profile/Form"
