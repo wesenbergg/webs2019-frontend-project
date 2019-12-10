@@ -131,3 +131,23 @@
 #notification{
   margin: 0 !important;
 }
+
+#single-post-template{
+  background: #282c34 !important;
+  color: #909aa0 !important;
+}
+
+.single-post-container{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.single-author-link{
+  color: #f0faf0 !important;
+  transition: opacity 0.2s ease-in;
+}
+
+.single-author-link:hover{
+  opacity: .4;
+  text-decoration: none;
+}

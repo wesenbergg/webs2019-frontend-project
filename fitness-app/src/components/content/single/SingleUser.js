@@ -4,7 +4,7 @@ import PostItem from './PostItem'
 import {Link} from 'react-router-dom'
 
 const SingleUser = ({singleUser, loggedUser}) => {
-
+    
     const showPosts = () => {
         return (singleUser.posts === undefined || singleUser.posts.length < 1) ?
         <h4 className="single-no-posts">No posts to show</h4> :
