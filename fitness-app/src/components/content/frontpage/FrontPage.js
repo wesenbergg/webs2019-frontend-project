@@ -27,26 +27,20 @@ const FrontPage = () => {
                         <div className="row">
                             <div className="col-lg-4">
                                 <img className="bd-placeholder-img rounded-circle card-image" alt="4" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80"/>
-                                <h2>Heading</h2>
-                                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh
-                                    ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                                    Praesent commodo cursus magna.</p>
+                                <h2>Hedi96</h2>
+                                <p>I have used this app for couple of months now. It´s superb, I have found so many new sports into my lifestyle through user stories.</p>
                                 <p><span className="btn btn-outline-light" role="button">View details &raquo;</span></p>
                             </div>
                             <div className="col-lg-4">
                                 <img className="bd-placeholder-img rounded-circle card-image" alt="5" src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80" />
-                                <h2>Heading</h2>
-                                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec
-                                    elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus
-                                    commodo, tortor mauris condimentum nibh.</p>
+                                <h2>Alexx</h2>
+                                <p>I had very bad lifestyles. I didn´t move hardly at all. Since I started using this app, my life changed and I started exercising regularly. I feel so healthier nowdays.</p>
                                 <p><span className="btn btn-outline-light" role="button">View details &raquo;</span></p>
                             </div>
                             <div className="col-lg-4">
                                     <img className="bd-placeholder-img rounded-circle card-image" alt="6" src="https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80" />
-                                <h2>Heading</h2>
-                                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum
-                                    id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                    condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                                <h2>Tom22</h2>
+                                <p>I have never had a training partner. Since I found exciting user stories, I took a step and asked if I could join into workouts. It all worked out and I got new training partner!</p>
                                 <p><span className="btn btn-outline-light" role="button">View details &raquo;</span></p>
                             </div>
                         </div>
