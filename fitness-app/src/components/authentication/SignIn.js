@@ -21,7 +21,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
   const handleSubmit = e => {
       //TODO: validate form
       e.preventDefault()
-
+      //console.log(credentials)
       if(credentials.password === '' || credentials.username === '') {
         handleMessage('error', 'Fill up credentials.')
         return
@@ -29,7 +29,7 @@ const SignIn = ({credentials, setCredentials, setMessage, setCurrentPage, setLog
 
       try {
         loginService
-        .getAll(credentials)
+        .login(credentials)
         .then(user => {
           window.localStorage.setItem('loggedFitnessAppUser', JSON.stringify(user))
 

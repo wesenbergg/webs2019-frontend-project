@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 const SingleUser = ({singleUser, loggedUser}) => {
     
     const showPosts = () => {
+        console.log(singleUser.posts)
         return (singleUser.posts === undefined || singleUser.posts.length < 1) ?
         <h4 className="single-no-posts">No posts to show</h4> :
         <div className="row justify-content-around">{singleUser.posts.map(p => <PostItem key={Math.floor(Math.random() * 9999999)} content={p}/>)}</div>

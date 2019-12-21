@@ -3,7 +3,7 @@
     background-color: #141a20 !important;
 }
 
-.newPostContainer, .feedContainer, .about,
+.feedContainer, .about,
 footer{
     text-align: center;
 }
@@ -129,6 +129,17 @@ footer{
     color: #909aa0;
 }
 
+.search-title-container{
+    padding-top: 3%;
+}
+
+.userThumbnail {
+    /*margin-top: 0.5rem;
+    margin-bottom: 0.5rem;*/
+    max-width: 220px;
+    max-height: 220px;
+    object-fit: contain;
+}
 /*
 .newPostContainer, .feedContainer{
   

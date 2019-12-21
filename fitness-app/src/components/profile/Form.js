@@ -2,15 +2,30 @@ import React from 'react'
 import '../../styles/Form.css'
 import userService from '../../services/userServices'
 import {Link, Redirect  } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-const Form = ({loggedUser, setLoggedUser, users, setUsers}) => {
+const Form = ({loggedUser, setMessage, setLoggedUser, users, setUsers}) => {
+    const history = useHistory()
+
+    const handleMessage = (t, m) => {
+        setMessage({
+            type: t,
+            message: m
+          })
+          setTimeout(() => {
+            setMessage({ type: "hidden" })
+          }, 5000)
+    }
+
     const update = (newObject) => {
       //console.log(newObject)
       userService.update(newObject.id, newObject)
       .then(() => {
-        setUsers(users.map(user => user.id !== newObject.id ? user : newObject))
-        console.log('Success')
+        setUsers(users.map(user => user.username !== newObject.username ? user : newObject))
+        handleMessage('alert alert-success text-center', `Succesfully updated '${loggedUser.firstname}' to server`)
+        history.push('/users/profile')
       }).catch(error => console.log(error))
+        handleMessage('alert alert-danger text-center', `Succesfully added '${loggedUser.firstname}' to server`)
         setUsers(users.filter(p => p.id !== newObject.id))
     }
 
@@ -33,14 +48,15 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers}) => {
             description: loggedUser.description,
             region: loggedUser.region,
             profilepic: loggedUser.profilepic,
-            posts: loggedUser.posts,
             id: loggedUser.id
         }
-
+        //console.log('update')
+        //console.log(user)
         update(user)
         window.localStorage.setItem('loggedFitnessAppUser', JSON.stringify(loggedUser))
     }
 
+    console.log('update user')
     //Palaa etusivulle jos ei ole kirjauduttu sisään
     if(loggedUser.username === undefined) return(<><Redirect to="/signin" /></>)
     return (
@@ -119,10 +135,11 @@ const Form = ({loggedUser, setLoggedUser, users, setUsers}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="text-right">
-                        <Link><button className="btn btn-outline-light napit" type="submit" >Update</button></Link>
+                    
+                    <span className="text-right">
+                        <button className="btn btn-outline-light napit" type="submit" >Update</button>
                         <Link to="/users/profile"><button className="btn btn-light napit" type="submit" >Cancel</button></Link>
-                    </div>
+                    </span>
                 </form>
             </div>
         </div>

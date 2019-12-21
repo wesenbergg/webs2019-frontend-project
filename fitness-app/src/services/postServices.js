@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/posts'
+const baseUrl = '/api/posts'
 
 let token = null
 
@@ -8,29 +8,33 @@ const setToken = newToken => {
 }
 
 
-const getAll = () => {
+const getAll = async () => {
     const request = axios.get(baseUrl)
-    return request.then(response => response.data)
+    const response = await request
+    return response.data
 }
 
-const getById = (id) => {
+const getById = async (id) => {
     const request = axios.get(`${baseUrl}/${id}`)
-    return request.then(response => response.data)
+    const response = await request
+    return response.data
 }
 
-const create = newObject => {
+const create = async newObject => {
     const config = {
         headers: { Authorization: token },
     }
     
     const request = axios.post(baseUrl, newObject, config)
-    return request.then(response => response.data)
+    const response = await request
+    return response.data
 }
 
 
-const update = (id, newObject) => {
+const update = async (id, newObject) => {
     const request = axios.put(`${baseUrl}/${id}`, newObject)
-    return request.then(response => response.data)
+    const response = await request
+    return response.data
 }
 
 

@@ -10,7 +10,8 @@ const SinglePost = ({ singlePost, singleUser, setSingleUser, user}) => {
     let user = singlePost.user
     console.log(user.username)
     */
-
+    /*console.log(singlePost.user)
+    console.log(singlePost.username)*/
    const handleImage = () => singlePost.image === undefined ? imageNotFound: singlePost.image
     return (
         <div id="single-post-template">
@@ -18,7 +19,9 @@ const SinglePost = ({ singlePost, singleUser, setSingleUser, user}) => {
             <div className="card single-user-card" >
                 <div className="row no-gutters">
                     <div className="col-md-4 col-xs-12 single-user-top">
-                        <img src={handleImage()} className="card-img profile-img bd-placeholder-image " alt="user"/>
+                    <a target="_blank" href={`${process.env.PUBLIC_URL}${handleImage()}`}>
+                        <img className="card-img profile-img bd-placeholder-image" src={`${process.env.PUBLIC_URL}${handleImage()}`} />
+                    </a>
                     </div>
                     <div className="col-md-8 col-xs-12">
                         <div className="card-body single-user-bottom">

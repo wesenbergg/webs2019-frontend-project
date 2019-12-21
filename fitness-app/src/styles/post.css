@@ -9,14 +9,14 @@
 }
 /*CSS feedin postauksille*/
 .horizontalPost {
-    max-width: 50%;
+    max-width: 25%;
     margin: 10px;
-    min-width: 300px;
+    min-width: 500px;
     border: 1px solid black;
     /*border: 3px solid #506070;
     border-radius: 10px;*/
     background-color: #212529;
-    color: #808080;
+    color: #909aa0;
 }
 .horizontalPostText {
     padding-left: 10px;
@@ -36,8 +36,11 @@
     text-decoration: none;
 }
 .postThumbnail {
-    padding: 5px;
-    width: 150px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 250px;
+    max-height: 170px;
+    object-fit: contain;
 }
 .postContent {
     overflow: hidden;

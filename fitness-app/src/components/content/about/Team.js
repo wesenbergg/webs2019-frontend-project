@@ -1,6 +1,7 @@
 import React from 'react'
 import walter from '../../../img/walter.jpg'
-import x1 from '../../../img/test.png'
+import elkku from '../../../img/elias_profile.png'
+import borre from '../../../img/profile.jpg'
 import '../../../styles/Team.css'
 
 const Team = () => {
@@ -23,7 +24,7 @@ const Team = () => {
 
             <div className="card team-card col-xl-3 col-lg-6 col-sm-12">
                 <div className="upper">
-                    <img className="kuva" alt="Boriss" src={x1}/>
+                    <img className="kuva" alt="Boriss" src={borre}/>
                 </div>
                 <h2 className="team-card-title">Boriss Jerjomkim</h2>
                 <div className="details">
@@ -34,7 +35,7 @@ const Team = () => {
 
             <div className="card team-card col-xl-3 col-lg-6 col-sm-12">
                 <div className="upper">
-                    <img className="kuva" alt="Elias" src={x1}/>
+                    <img className="kuva" alt="Elkku" src={elkku}/>
                 </div>
                 <h2 className="team-card-title">Elias Keränen</h2>
                 <div className="details">

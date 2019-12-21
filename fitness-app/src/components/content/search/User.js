@@ -6,11 +6,11 @@ import {
 const User = ({user, setSingleUser}) => {
   //console.log(user)
   const handleClick = () => {
+    //console.log(user)
     setSingleUser(user)
-    //setCurrentPage('User Page')
   }
 
-  const handleDescription = () => user.description.length > 90 ? user.description.substring(0, 45) + "..." : user.description
+  const handleDescription = () => user.description.length > 45 ? user.description.substring(0, 45) + "..." : user.description
 
   return(
     
@@ -24,7 +24,7 @@ const User = ({user, setSingleUser}) => {
         </div>
       </div>
       <div className="col-auto d-none d-lg-block">
-        <img className="bd-placeholder-image" src={user.profilepic} alt={user.username}/>
+        <img className="bd-placeholder-image userThumbnail" src={user.profilepic} alt={user.username}/>
       </div>
     </div>
   )

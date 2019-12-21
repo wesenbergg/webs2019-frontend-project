@@ -79,14 +79,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage} loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
+      <Navbar pages={pages} autPages={autPages} setCurrentPage={setCurrentPage} loggedUser={loggedUser} setLoggedUser={setLoggedUser}
+      setSingleUser={setSingleUser} users={users}/>
       <Notification message={message} />
       <Content pages={pages} autPages={autPages} currentPage={currentPage} setCurrentPage={setCurrentPage} users={users}
        setUsers={setUsers} filter={filter} setFilter={setFilter} newUser={newUser} setNewUser={setNewUser} createUser={createUser}
        setMessage={setMessage} singleUser={singleUser} setSingleUser={setSingleUser} singlePost={singlePost} setSinglePost={setSinglePost} 
        credentials={credentials} setCredentials={setCredentials} loggedUser={loggedUser} setLoggedUser={setLoggedUser} 
        posts={posts} setPosts={setPosts}/>
-      <Footer setCurrentPage={setCurrentPage}/>
+      <Footer setCurrentPage={setCurrentPage} />
       </Router>
     </div>
   );

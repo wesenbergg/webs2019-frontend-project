@@ -3,32 +3,36 @@ import Post from './Post'
 import '../../../styles/feed.css'
 import { Link } from 'react-router-dom'
 
-const Feed = ({ posts, setSinglePost, setSingleUser }) => {
+const Feed = ({ posts, setSinglePost, setSingleUser, loggedUser }) => {
 	const generateFeed = () =>
 		posts.map(post =>
-			<Post
-				key={post.id}
-				title={post.title}
-				text={post.text}
-				author_id={post.user.id}
-				image_url={post.image}
-				date={post.date}
-				setSinglePost={setSinglePost}
-				id={post.id}
-				author_name={post.user.username}
-				setSingleUser={setSingleUser}
-			/>
+			<Post key={post.id} content={post} setSinglePost={setSinglePost} setSingleUser={setSingleUser}/>
 		)
 
+	const showPostButton = () => {
+		return (loggedUser !== undefined && loggedUser.token !== undefined) ?
+		<Link className="btn btn-outline-light" to="/posts/new">New post</Link> :
+		<></>
+	}
 	return (
-		<>
-			<div className="newPostContainer">
-				<Link className="btn btn-lg btn-dark text-light my-2" to="/posts/new">New post</Link>
+		<div className="newPostContainer">
+			<div className="container">
+				<div className="row">
+					<div className="col-6 text-left">
+						<h1 className="text-muted">Posts</h1>
+					</div>
+					<div className="col-6 text-right">
+						{showPostButton()}
+					</div>
+				</div>
 			</div>
-			<div className="feedContainer">
-				{generateFeed()}
+
+			<div className="container">
+				<div className="row justify-content-around">
+					{generateFeed()}
+				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

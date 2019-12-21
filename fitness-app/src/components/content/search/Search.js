@@ -14,9 +14,9 @@ const Search = ({users, filter, setFilter, setCurrentPage, setSingleUser}) => {
   return(
     <div id="search-container">
       <div  className='container'>
-      <div className="fade-in row justify-content-between">
+      <div className="fade-in row justify-content-between search-title-container">
         <div className="col-md-4 text-left">
-        <h3 className="search-title"> Search users: </h3>
+        <h1 className="text-muted"> Search users: </h1>
         </div>
         <div className="col-md-4">
         <Filter showFilter={filter} setFilter={setFilter}/>

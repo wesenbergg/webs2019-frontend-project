@@ -1,9 +1,9 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/login' //'/api/login'
+const baseUrl = '/api/login'
 
 //TODO: muuta postiksi kun lisäät mongo
 const login = credentials => {
-  const request = axios.get(baseUrl, credentials) 
+  const request = axios.post(baseUrl, credentials) 
   return request.then(response => response.data)
 }
 
